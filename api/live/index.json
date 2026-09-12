@@ -1,0 +1,105 @@
+{
+  "events": [
+    {
+      "icon": "⏰",
+      "kind": "clock",
+      "text": "the “Turn off the rented computer” alarm just ran",
+      "ts": "[hidden]",
+      "when": "2 minutes ago"
+    },
+    {
+      "icon": "⏰",
+      "kind": "clock",
+      "text": "the “Heartbeat check” alarm just ran",
+      "ts": "[hidden]",
+      "when": "38 minutes ago"
+    },
+    {
+      "icon": "📇",
+      "kind": "card",
+      "text": "someone changed bot-19’s rule cards for real",
+      "ts": "[hidden]",
+      "when": "2 hours ago"
+    },
+    {
+      "icon": "📇",
+      "kind": "card",
+      "text": "someone changed the shared rule cards for real",
+      "ts": "[hidden]",
+      "when": "3 hours ago"
+    },
+    {
+      "icon": "⏰",
+      "kind": "clock",
+      "text": "the “Noon price check” alarm just ran",
+      "ts": "[hidden]",
+      "when": "5 hours ago"
+    },
+    {
+      "icon": "⏰",
+      "kind": "clock",
+      "text": "the “Profit check” alarm just ran",
+      "ts": "[hidden]",
+      "when": "5 hours ago"
+    },
+    {
+      "icon": "⏰",
+      "kind": "clock",
+      "text": "the “Read customer messages” alarm just ran",
+      "ts": "[hidden]",
+      "when": "5 hours ago"
+    },
+    {
+      "icon": "📇",
+      "kind": "card",
+      "text": "someone changed the shared rule cards for real",
+      "ts": "[hidden]",
+      "when": "7 hours ago"
+    },
+    {
+      "icon": "⏰",
+      "kind": "clock",
+      "text": "the “Market pulse” alarm just ran",
+      "ts": "[hidden]",
+      "when": "8 hours ago"
+    },
+    {
+      "icon": "⏰",
+      "kind": "clock",
+      "text": "the “AI news roundup” alarm just ran",
+      "ts": "[hidden]",
+      "when": "8 hours ago"
+    },
+    {
+      "icon": "⏰",
+      "kind": "clock",
+      "text": "the “Morning prayer” alarm just ran",
+      "ts": "[hidden]",
+      "when": "8 hours ago"
+    },
+    {
+      "icon": "📇",
+      "kind": "card",
+      "text": "someone changed bot-18’s rule cards for real",
+      "ts": "[hidden]",
+      "when": "19 hours ago"
+    },
+    {
+      "icon": "📇",
+      "kind": "card",
+      "text": "someone changed bot-16’s rule cards for real",
+      "ts": "[hidden]",
+      "when": "19 hours ago"
+    },
+    {
+      "icon": "📇",
+      "kind": "card",
+      "text": "someone changed bot-14’s rule cards for real",
+      "ts": "[hidden]",
+      "when": "19 hours ago"
+    }
+  ],
+  "note": "[text hidden in the public snapshot]",
+  "running": 11,
+  "stopped": 0
+}

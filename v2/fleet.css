@@ -1,0 +1,77 @@
+/* Fleet page — Muse dark panels (task sitepage-fleet-131800).
+ * Page-only stylesheet: loaded by /v2/fleet alone (a body-ok <link> in the
+ * page markup). kit.css and v2.py are untouched. Palette: bg #0e0e0f,
+ * panel #1c1c1e, pill/tile #2c2c2e, ONE blue #2b7de9, text white / #9ca3af.
+ * System font; monospace for numbers/dates. No white or light cards. */
+
+/* three hero tiles: reuse kit.css .v2h-hero grain/gradient; stay 3-across */
+/* snapshot: unwrapped media query: media (min-width: 1024px) */
+
+  .fleet-heroes { grid-template-columns: repeat(3, 1fr); }
+
+
+/* bot table: one rounded dark panel, thin dividers, hovered row lighter */
+.fleet-panel { background: #1c1c1e; border-radius: 22px; overflow: hidden; }
+a.v2-rowlink.fleet { display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px; color: #ffffff; text-decoration: none; }
+a.v2-rowlink.fleet + a.v2-rowlink.fleet { border-top: 1px solid #2c2c2e; }
+a.v2-rowlink.fleet:hover { background: #232326; }
+a.v2-rowlink.fleet:focus-visible { outline: 2px solid #2b7de9; outline-offset: -2px; }
+
+.fl-ic { flex: 0 0 40px; width: 40px; height: 40px; border-radius: 11px;
+  background: #2c2c2e; color: #9ca3af;
+  display: flex; align-items: center; justify-content: center; }
+.fl-ic svg { width: 22px; height: 22px; }
+.fl-id { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.fl-name { font-size: 15px; font-weight: 700; color: #ffffff;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fl-cards { font-family: ui-monospace, SF Mono, Menlo, Consolas, monospace;
+  font-size: 12px; color: #9ca3af; }
+/* brain: gray pill. Keeps the v2-chip class the v2b tests assert; the
+   more specific selector below wins over kit.css's light chip. */
+a.v2-rowlink.fleet .v2-chip.fl-brain { flex: 0 0 auto; background: #2c2c2e;
+  border-color: transparent; color: #d7d7d9; border-radius: 999px;
+  padding: 6px 12px; font-size: 12.5px; white-space: nowrap; }
+/* status: dark pill with a green dot (via ::before) + Live. Keeps the
+   v2-chip status ok class the v2b tests assert. */
+a.v2-rowlink.fleet .v2-chip.status.ok { flex: 0 0 auto; display: inline-flex;
+  align-items: center; gap: 7px; background: #141416; border: 1px solid #2c2c2e;
+  border-radius: 999px; padding: 6px 12px; font-size: 12.5px; font-weight: 600;
+  color: #e5e5e7; white-space: nowrap; }
+a.v2-rowlink.fleet .v2-chip.status.ok::before { content: ""; flex: 0 0 auto;
+  width: 8px; height: 8px; border-radius: 50%; background: #2fbf71; }
+.fl-cost { flex: 0 0 auto; display: flex; align-items: center; gap: 10px; }
+/* tokens/turn: thin blue bar. Keeps the v2-bar grow class the v2b tests
+   assert; more specific selectors win over kit.css's light bar. */
+a.v2-rowlink.fleet .v2-bar { display: block; width: 96px; height: 5px;
+  border-radius: 999px; background: #2c2c2e; overflow: hidden; }
+a.v2-rowlink.fleet .v2-bar.grow i { display: block; height: 100%;
+  background: #2b7de9; border-radius: 999px; }
+.fl-tok { font-family: ui-monospace, SF Mono, Menlo, Consolas, monospace;
+  font-size: 13px; color: #d7d7d9; min-width: 3ch; text-align: right;
+  font-variant-numeric: tabular-nums; }
+.fl-chev { flex: 0 0 auto; color: #6b7280; display: inline-flex; }
+.fl-chev svg { width: 18px; height: 18px; }
+
+.fleet-panel .v2-empty { border-color: #2c2c2e; color: #9ca3af; margin: 12px; }
+
+/* detail drawer: same markup/ids as before, re-skinned dark (page-only) */
+.v2-drawer { background: #1c1c1e; border-left: 1px solid #2c2c2e; color: #ffffff; }
+.v2-drawer h2 { color: #ffffff; }
+.v2-drawer .v2-slug { color: #9ca3af; }
+.v2-drawer:focus { outline-color: #2b7de9; }
+.v2-drawer .v2-chip { background: #2c2c2e; border-color: transparent; color: #e5e5e7; }
+.v2-drawer .v2-chip.status.ok { color: #4ade80; background: rgba(47, 191, 113, 0.14); }
+.v2-drawer details.v2-group { border-color: #2c2c2e; }
+.v2-drawer details.v2-group summary .name { color: #ffffff; }
+.v2-drawer details.v2-group summary .count { color: #9ca3af; }
+.v2-drawer details.v2-group summary::before { color: #6b7280; }
+.v2-drawer .v2-group .body { border-top-color: #2c2c2e; }
+.v2-drawer .v2-row { border-bottom-color: #2c2c2e; }
+.v2-drawer .v2-row .name { color: #ffffff; }
+.v2-drawer .v2-row .meaning { color: #9ca3af; }
+.v2-drawer .v2-quiet { color: #9ca3af; }
+.v2-drawer .v2-quiet:hover { color: #ffffff; }
+
+/* snapshot: dropped media query block: media (max-width: 640px) */
+

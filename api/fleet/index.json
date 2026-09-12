@@ -1,0 +1,137 @@
+{
+  "bots": [
+    {
+      "adapter": "claude_code",
+      "cards": 32,
+      "eff_tokens_per_turn": 1060.0,
+      "group": "",
+      "heartbeat": "2026-09-12T17:26:08",
+      "id": "bot-01",
+      "model": "claude-opus-5",
+      "name": "bot-01",
+      "pct_of_heavy": 13.2,
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "cards": 32,
+      "eff_tokens_per_turn": 1049.7,
+      "group": "",
+      "heartbeat": "2026-09-12T17:26:06",
+      "id": "bot-03",
+      "model": "claude-opus-5",
+      "name": "bot-04",
+      "pct_of_heavy": 13.1,
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "cards": 33,
+      "eff_tokens_per_turn": 1065.2,
+      "group": "",
+      "heartbeat": "2026-09-12T17:26:20",
+      "id": "bot-05",
+      "model": "claude-opus-5",
+      "name": "bot-05",
+      "pct_of_heavy": 13.3,
+      "status": "running"
+    },
+    {
+      "adapter": "grok",
+      "cards": 34,
+      "eff_tokens_per_turn": 1090.3,
+      "group": "builders",
+      "heartbeat": "2026-09-12T17:26:06",
+      "id": "bot-07",
+      "model": "grok-4.6",
+      "name": "bot-08",
+      "pct_of_heavy": 13.6,
+      "status": "running"
+    },
+    {
+      "adapter": "codex",
+      "cards": 32,
+      "eff_tokens_per_turn": 1064.2,
+      "group": "system",
+      "heartbeat": "2026-09-12T17:26:19",
+      "id": "bot-09",
+      "model": "gpt-5.6-sol",
+      "name": "bot-09",
+      "pct_of_heavy": 13.3,
+      "status": "running"
+    },
+    {
+      "adapter": "codex",
+      "cards": 34,
+      "eff_tokens_per_turn": 1075.8,
+      "group": "",
+      "heartbeat": "2026-09-12T17:26:10",
+      "id": "bot-11",
+      "model": "gpt-6-astra",
+      "name": "bot-12",
+      "pct_of_heavy": 13.4,
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "cards": 35,
+      "eff_tokens_per_turn": 1223.6,
+      "group": "bot-13",
+      "heartbeat": "2026-09-12T17:26:20",
+      "id": "bot-13",
+      "model": "claude-opus-5",
+      "name": "bot-14",
+      "pct_of_heavy": 15.3,
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "cards": 33,
+      "eff_tokens_per_turn": 1050.2,
+      "group": "",
+      "heartbeat": "2026-09-12T17:26:20",
+      "id": "bot-15",
+      "model": "claude-opus-5",
+      "name": "bot-16",
+      "pct_of_heavy": 13.1,
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "cards": 33,
+      "eff_tokens_per_turn": 1074.2,
+      "group": "finance",
+      "heartbeat": "2026-09-12T17:26:20",
+      "id": "bot-17",
+      "model": "claude-opus-5",
+      "name": "bot-18",
+      "pct_of_heavy": 13.4,
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "cards": 38,
+      "eff_tokens_per_turn": 4375.7,
+      "group": "builders",
+      "heartbeat": "2026-09-12T17:26:24",
+      "id": "bot-19",
+      "model": "claude-fable-5-1",
+      "name": "bot-19",
+      "pct_of_heavy": 54.7,
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "cards": 35,
+      "eff_tokens_per_turn": 1046.2,
+      "group": "",
+      "heartbeat": "2026-09-12T17:26:07",
+      "id": "bot-21",
+      "model": "claude-fable-5-1",
+      "name": "bot-22",
+      "pct_of_heavy": 13.1,
+      "status": "running"
+    }
+  ],
+  "heavy": 8000
+}

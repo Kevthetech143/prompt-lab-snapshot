@@ -1,0 +1,17 @@
+{
+  "bot": "bot-05",
+  "segments": [
+    {
+      "brain": "claude_code/claude-opus-5",
+      "end": "2026-09-12T17:26:32.676825",
+      "start": "2026-09-10T13:16:02"
+    }
+  ],
+  "swaps": [
+    {
+      "new": "claude_code/claude-opus-5",
+      "old": "claude_code/claude-opus-4-8",
+      "ts": "2026-09-10T13:16:02"
+    }
+  ]
+}

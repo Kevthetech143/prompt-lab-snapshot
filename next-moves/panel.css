@@ -1,0 +1,385 @@
+/* IdeasPanel v1 — panel.css. Zero dependencies, no framework, no build step.
+   Dark theme by default, respects prefers-color-scheme, 390px phone width,
+   44px tap targets, keyboard reachable. */
+
+:root {
+  --ip-bg: #1a1b1e;
+  --ip-surface: #232427;
+  --ip-row-hover: #2e3034;
+  --ip-text: #ececf1;
+  --ip-muted: #9b9ba4;
+  --ip-accent: #d97757; /* warm clay, Muse-adjacent */
+  --ip-border: #3a3b40;
+  --ip-icon: #F5D76E; /* flat lightbulb yellow on dark */
+  --ip-title-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* snapshot: dropped media query block: media (prefers-color-scheme: light) */
+
+
+.ideas-panel {
+  font-family: var(--ip-title-font);
+  background: var(--ip-bg);
+  color: var(--ip-text);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 720px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.ideas-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-bottom: 20px;
+}
+
+.ideas-panel__title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+  min-width: 0;
+}
+
+.ideas-panel__refresh {
+  flex-shrink: 0;
+  background: var(--ip-surface);
+  color: var(--ip-text);
+  border: 1px solid var(--ip-border);
+  border-radius: 8px;
+  padding: 0 16px;
+  min-height: 44px;
+  min-width: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ideas-panel__refresh:hover,
+.ideas-panel__refresh:focus-visible {
+  background: var(--ip-row-hover);
+  outline: 2px solid var(--ip-accent);
+  outline-offset: 2px;
+}
+
+.ideas-panel__section {
+  margin-bottom: 28px;
+}
+
+.ideas-panel__section-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--ip-muted);
+  margin: 0 0 8px 4px;
+}
+
+.ideas-panel__row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  background: var(--ip-surface);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  color: var(--ip-text);
+  text-align: left;
+  cursor: pointer;
+  min-height: 44px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.ideas-panel__row:hover,
+.ideas-panel__row:focus-visible {
+  background: var(--ip-row-hover);
+  outline: 2px solid var(--ip-accent);
+  outline-offset: -2px;
+}
+
+.ideas-panel__icon {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ip-icon);
+  line-height: 1;
+}
+
+.ideas-panel__icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.ideas-panel__text {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.ideas-panel__idea-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.ideas-panel__idea-body {
+  font-size: 13px;
+  color: var(--ip-muted);
+  margin: 0;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ideas-panel__menu-btn {
+  flex: 0 0 auto;
+  background: none;
+  border: none;
+  color: var(--ip-muted);
+  font-size: 20px;
+  line-height: 1;
+  padding: 10px 8px;
+  min-height: 44px;
+  min-width: 44px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.ideas-panel__menu-btn:hover,
+.ideas-panel__menu-btn:focus-visible {
+  color: var(--ip-text);
+  background: var(--ip-border);
+  outline: none;
+}
+
+.ideas-panel__menu {
+  position: absolute;
+  z-index: 10;
+  background: var(--ip-surface);
+  border: 1px solid var(--ip-border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  padding: 4px;
+  min-width: 140px;
+}
+
+.ideas-panel__menu-item {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--ip-text);
+  font-size: 14px;
+  padding: 12px 14px;
+  min-height: 44px;
+  text-align: left;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.ideas-panel__menu-item:hover,
+.ideas-panel__menu-item:focus-visible {
+  background: var(--ip-row-hover);
+  outline: none;
+}
+
+.ideas-panel__empty {
+  color: var(--ip-muted);
+  font-size: 15px;
+  text-align: center;
+  padding: 48px 16px;
+  margin: 0;
+}
+
+.ideas-panel__status {
+  font-size: 12px;
+  color: var(--ip-muted);
+  margin-top: 16px;
+  text-align: right;
+}
+
+/* Narrow phone layouts: the panel fills the viewport edge to edge. */
+/* snapshot: dropped media query block: media (max-width: 420px) */
+
+
+/* Step 1b — detail pop-up. Centered modal over a dimmed backdrop. */
+.ideas-panel__modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.ideas-panel__modal {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  background: var(--ip-surface);
+  color: var(--ip-text);
+  border: 1px solid var(--ip-border);
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+  padding: 28px;
+  font-family: var(--ip-title-font);
+}
+
+.ideas-panel__modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--ip-border);
+  background: var(--ip-bg);
+  color: var(--ip-muted);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.ideas-panel__modal-close:hover,
+.ideas-panel__modal-close:focus-visible {
+  color: var(--ip-text);
+  outline: 2px solid var(--ip-accent);
+  outline-offset: 2px;
+}
+
+.ideas-panel__modal-title {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  margin: 0 36px 8px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ideas-panel__modal-body {
+  font-size: 15px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  color: var(--ip-muted);
+  margin: 0 0 18px 0;
+}
+
+.ideas-panel__modal-heading {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.ideas-panel__included {
+  margin-bottom: 18px;
+}
+
+.ideas-panel__included-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ideas-panel__included-icon {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ip-icon);
+  line-height: 1.4;
+}
+
+.ideas-panel__included-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.ideas-panel__included-text {
+  min-width: 0;
+}
+
+.ideas-panel__included-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.ideas-panel__included-detail {
+  font-size: 13px;
+  color: var(--ip-muted);
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  margin: 2px 0 0 0;
+}
+
+.ideas-panel__cta {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 12px;
+  background: #2f7cf6; /* bright blue */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.ideas-panel__cta:hover,
+.ideas-panel__cta:focus-visible {
+  background: #1f6ae0;
+  outline: 2px solid #1f6ae0;
+  outline-offset: 2px;
+}
+
+/* Row pill shown after "Let's do it" flips the status to started. */
+.ideas-panel__started {
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #ffffff;
+  background: #2e9e5b;
+  border-radius: 999px;
+  padding: 5px 11px;
+}
+
+/* Phone width 390: the modal becomes a bottom sheet. */
+/* snapshot: dropped media query block: media (max-width: 420px) */
+

@@ -1,0 +1,27 @@
+{
+  "bot": "bot-21",
+  "segments": [
+    {
+      "brain": "codex/gpt-6-astra",
+      "end": "2026-09-11T06:21:36",
+      "start": "2026-09-07T07:53:38"
+    },
+    {
+      "brain": "claude_code/claude-fable-5-1",
+      "end": "2026-09-12T17:26:39.719680",
+      "start": "2026-09-11T06:21:36"
+    }
+  ],
+  "swaps": [
+    {
+      "new": "codex/gpt-6-astra",
+      "old": "grok/grok-4.6",
+      "ts": "2026-09-07T07:53:38"
+    },
+    {
+      "new": "claude_code/claude-fable-5-1",
+      "old": "codex/gpt-6-astra",
+      "ts": "2026-09-11T06:21:36"
+    }
+  ]
+}

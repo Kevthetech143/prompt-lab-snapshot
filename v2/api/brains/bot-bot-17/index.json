@@ -1,0 +1,37 @@
+{
+  "bot": "bot-17",
+  "segments": [
+    {
+      "brain": "codex/gpt-6-astra",
+      "end": "2026-09-09T11:13:45",
+      "start": "2026-09-09T11:11:22"
+    },
+    {
+      "brain": "claude_code/claude-opus-4-8",
+      "end": "2026-09-10T13:18:45",
+      "start": "2026-09-09T11:13:45"
+    },
+    {
+      "brain": "claude_code/claude-opus-5",
+      "end": "2026-09-12T17:26:37.568326",
+      "start": "2026-09-10T13:18:45"
+    }
+  ],
+  "swaps": [
+    {
+      "new": "codex/gpt-6-astra",
+      "old": "claude_code/claude-opus-4-8",
+      "ts": "2026-09-09T11:11:22"
+    },
+    {
+      "new": "claude_code/claude-opus-4-8",
+      "old": "codex/gpt-6-astra",
+      "ts": "2026-09-09T11:13:45"
+    },
+    {
+      "new": "claude_code/claude-opus-5",
+      "old": "claude_code/claude-opus-4-8",
+      "ts": "2026-09-10T13:18:45"
+    }
+  ]
+}

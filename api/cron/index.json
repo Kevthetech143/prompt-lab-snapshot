@@ -1,0 +1,432 @@
+{
+  "edits": {
+    "com.claw4mac.card-shrink-maintenance": {
+      "edited": "2026-09-05T00:27:20",
+      "hour": 16,
+      "minute": 45
+    },
+    "com.claw4mac.customer-msg-sweep": {
+      "edited": "2026-09-04T19:00:24",
+      "hour": 8,
+      "minute": 50
+    },
+    "com.claw4mac.self-improvement-nightly": {
+      "edited": "2026-09-02T11:45:25",
+      "hour": 18,
+      "minute": 0
+    }
+  },
+  "jobs": [
+    {
+      "args": [
+        "[path]",
+        "--inbox-dir",
+        "[path]",
+        "--from",
+        "cron",
+        "--to",
+        "bot-21",
+        "--prompt-file",
+        "[path]"
+      ],
+      "cal": [
+        {
+          "day": null,
+          "hour": 9,
+          "minute": 6
+        },
+        {
+          "day": null,
+          "hour": 21,
+          "minute": 6
+        }
+      ],
+      "file": "[path]",
+      "hours": [
+        9,
+        21
+      ],
+      "interval": null,
+      "label": "com.claw4mac.ai-news-digest",
+      "last_log": "Delivered to inbox at 2026-09-12 09:06:00 (id=cron_bot-21_[hidden]_b1ec1e30)",
+      "loaded": true,
+      "log": "[path]",
+      "next": "Sat 12 Sep, 9:06pm",
+      "nice": "AI news roundup",
+      "prompt_file": "[path]",
+      "prompt_preview": "[text hidden in the public snapshot]",
+      "schedule": "Every day at 9:06am and 9:06pm",
+      "short": "ai-news-digest"
+    },
+    {
+      "args": [
+        "/bin/bash",
+        "[path]"
+      ],
+      "cal": [],
+      "file": "[path]",
+      "hours": [],
+      "interval": null,
+      "label": "com.claw4mac.app-autostart",
+      "last_log": "",
+      "loaded": true,
+      "log": "[path]",
+      "next": "not on a clock",
+      "nice": "Wake everything up",
+      "prompt_file": null,
+      "prompt_preview": null,
+      "schedule": "When the Mac starts up",
+      "short": "app-autostart"
+    },
+    {
+      "args": [
+        "[path]",
+        "--inbox-dir",
+        "[path]",
+        "--from",
+        "cron",
+        "--to",
+        "bot-03",
+        "--prompt-file",
+        "[path]"
+      ],
+      "cal": [
+        {
+          "day": null,
+          "hour": 9,
+          "minute": 0
+        }
+      ],
+      "file": "[path]",
+      "hours": [
+        9
+      ],
+      "interval": null,
+      "label": "com.claw4mac.bot-03-morning-prayer",
+      "last_log": "Delivered to inbox at 2026-09-12 09:00:00 (id=cron_bot-03_[hidden]_58c84918)",
+      "loaded": true,
+      "log": "[path]",
+      "next": "Sun 13 Sep, 9:00am",
+      "nice": "Morning prayer",
+      "prompt_file": "[path]",
+      "prompt_preview": "[text hidden in the public snapshot]",
+      "schedule": "Every day at 9:00am",
+      "short": "bot-03-morning-prayer"
+    },
+    {
+      "args": [
+        "[path]",
+        "--inbox-dir",
+        "[path]",
+        "--from",
+        "cron",
+        "--to",
+        "bot-01",
+        "--prompt-file",
+        "[path]"
+      ],
+      "cal": [
+        {
+          "day": null,
+          "hour": 12,
+          "minute": 0
+        }
+      ],
+      "file": "[path]",
+      "hours": [
+        12
+      ],
+      "interval": null,
+      "label": "com.claw4mac.bm-buybox-noon-check",
+      "last_log": "Delivered to inbox at 2026-09-12 12:00:00 (id=cron_bot-01_[hidden]_55c7822e)",
+      "loaded": true,
+      "log": "[path]",
+      "next": "Sun 13 Sep, 12:00pm",
+      "nice": "Noon price check",
+      "prompt_file": "[path]",
+      "prompt_preview": "[text hidden in the public snapshot]",
+      "schedule": "Every day at 12:00pm",
+      "short": "bm-buybox-noon-check"
+    },
+    {
+      "args": [
+        "/usr/local/bin/python3",
+        "[path]"
+      ],
+      "cal": [],
+      "file": "[path]",
+      "hours": [],
+      "interval": 1800,
+      "label": "com.claw4mac.bm-premium-watcher",
+      "last_log": "",
+      "loaded": true,
+      "log": "[path]",
+      "next": "within the next 30 minutes",
+      "nice": "Shop watcher",
+      "prompt_file": null,
+      "prompt_preview": null,
+      "schedule": "Every 30 minutes",
+      "short": "bm-premium-watcher"
+    },
+    {
+      "args": [
+        "[path]",
+        "--inbox-dir",
+        "[path]",
+        "--from",
+        "cron",
+        "--to",
+        "bot-01",
+        "--prompt-file",
+        "[path]"
+      ],
+      "cal": [
+        {
+          "day": null,
+          "hour": 9,
+          "minute": 15
+        }
+      ],
+      "file": "[path]",
+      "hours": [
+        9
+      ],
+      "interval": null,
+      "label": "com.claw4mac.bm-win-profit-gated",
+      "last_log": "Delivered to inbox at 2026-09-12 12:00:00 (id=cron_bot-01_[hidden]_55c7822e)",
+      "loaded": true,
+      "log": "[path]",
+      "next": "Sun 13 Sep, 9:15am",
+      "nice": "Profit check",
+      "prompt_file": "[path]",
+      "prompt_preview": "[text hidden in the public snapshot]",
+      "schedule": "Every day at 9:15am",
+      "short": "bm-win-profit-gated"
+    },
+    {
+      "args": [
+        "/usr/bin/python3",
+        "[path]"
+      ],
+      "cal": [
+        {
+          "day": null,
+          "hour": 6,
+          "minute": 0
+        }
+      ],
+      "file": "[path]",
+      "hours": [
+        6
+      ],
+      "interval": null,
+      "label": "com.claw4mac.brain-index-drift",
+      "last_log": "",
+      "loaded": true,
+      "log": "[path]",
+      "next": "Sun 13 Sep, 6:00am",
+      "nice": "Brain index drift",
+      "prompt_file": null,
+      "prompt_preview": null,
+      "schedule": "Every day at 6:00am",
+      "short": "brain-index-drift"
+    },
+    {
+      "args": [
+        "[path]",
+        "--inbox-dir",
+        "[path]",
+        "--from",
+        "cron",
+        "--to",
+        "bot-19",
+        "--prompt-file",
+        "[path]"
+      ],
+      "cal": [
+        {
+          "day": 1,
+          "hour": 14,
+          "minute": 20
+        },
+        {
+          "day": 16,
+          "hour": 14,
+          "minute": 20
+        }
+      ],
+      "file": "[path]",
+      "hours": [
+        14
+      ],
+      "interval": null,
+      "label": "com.claw4mac.card-shrink-maintenance",
+      "last_log": "",
+      "loaded": true,
+      "log": "[path]",
+      "next": "Wed 16 Sep, 2:20pm",
+      "nice": "Tidy the rule cards",
+      "prompt_file": "[path]",
+      "prompt_preview": "[text hidden in the public snapshot]",
+      "schedule": "The 1st and 16th of each month at 2:20pm",
+      "short": "card-shrink-maintenance"
+    },
+    {
+      "args": [
+        "[path]",
+        "--inbox-dir",
+        "[path]",
+        "--from",
+        "cron",
+        "--to",
+        "bot-01",
+        "--prompt-file",
+        "[path]"
+      ],
+      "cal": [
+        {
+          "day": null,
+          "hour": 8,
+          "minute": 33
+        }
+      ],
+      "file": "[path]",
+      "hours": [
+        8
+      ],
+      "interval": null,
+      "label": "com.claw4mac.customer-msg-sweep",
+      "last_log": "Delivered to inbox at 2026-09-12 12:00:00 (id=cron_bot-01_[hidden]_55c7822e)",
+      "loaded": true,
+      "log": "[path]",
+      "next": "Sun 13 Sep, 8:33am",
+      "nice": "Read customer messages",
+      "prompt_file": "[path]",
+      "prompt_preview": "[text hidden in the public snapshot]",
+      "schedule": "Every day at 8:33am",
+      "short": "customer-msg-sweep"
+    },
+    {
+      "args": [
+        "/usr/bin/python3",
+        "[path]"
+      ],
+      "cal": [],
+      "file": "[path]",
+      "hours": [],
+      "interval": 60,
+      "label": "com.claw4mac.helper-dispatcher",
+      "last_log": "",
+      "loaded": true,
+      "log": "[path]",
+      "next": "within the next 1 minute",
+      "nice": "Helper dispatcher",
+      "prompt_file": null,
+      "prompt_preview": null,
+      "schedule": "Every 1 minute",
+      "short": "helper-dispatcher"
+    },
+    {
+      "args": [
+        "/usr/bin/python3",
+        "[path]"
+      ],
+      "cal": [],
+      "file": "[path]",
+      "hours": [],
+      "interval": 180,
+      "label": "com.claw4mac.runpod-idle-watcher",
+      "last_log": "[2026-09-12 17:23:51 EDT] poll complete",
+      "loaded": true,
+      "log": "[path]",
+      "next": "within the next 3 minutes",
+      "nice": "Turn off the rented computer",
+      "prompt_file": null,
+      "prompt_preview": null,
+      "schedule": "Every 3 minutes",
+      "short": "runpod-idle-watcher"
+    },
+    {
+      "args": [
+        "[path]",
+        "--inbox-dir",
+        "[path]",
+        "--from",
+        "cron",
+        "--to",
+        "bot-19",
+        "--prompt-file",
+        "[path]"
+      ],
+      "cal": [
+        {
+          "day": null,
+          "hour": 0,
+          "minute": 5
+        }
+      ],
+      "file": "[path]",
+      "hours": [
+        0
+      ],
+      "interval": null,
+      "label": "com.claw4mac.self-improvement-nightly",
+      "last_log": "Delivered to inbox at 2026-09-07 00:05:00 (id=cron_bot-19_[hidden]_75a76ea4)",
+      "loaded": false,
+      "log": "[path]",
+      "next": "Sun 13 Sep, 12:05am",
+      "nice": "Nightly lesson round",
+      "prompt_file": "[path]",
+      "prompt_preview": "[text hidden in the public snapshot]",
+      "schedule": "Every day at 12:05am",
+      "short": "self-improvement-nightly"
+    },
+    {
+      "args": [],
+      "broken": "not well-formed (invalid token): line 11, column 30",
+      "cal": [],
+      "file": "[path]",
+      "hours": [],
+      "interval": null,
+      "label": "com.claw4mac.sentinel",
+      "last_log": "",
+      "loaded": true,
+      "log": "",
+      "next": "unknown",
+      "nice": "Heartbeat check",
+      "prompt_file": null,
+      "prompt_preview": null,
+      "schedule": "could not be read",
+      "short": "sentinel"
+    },
+    {
+      "args": [
+        "/bin/bash",
+        "-lc",
+        "cd [path] && /usr/local/bin/python3 tools/trading_pulse.py --send"
+      ],
+      "cal": [
+        {
+          "day": null,
+          "hour": 9,
+          "minute": 7
+        }
+      ],
+      "file": "[path]",
+      "hours": [
+        9
+      ],
+      "interval": null,
+      "label": "com.claw4mac.trading-pulse",
+      "last_log": "[2026-09-12T13:07:09+00:00] pulse sent to Telegram",
+      "loaded": true,
+      "log": "[path]",
+      "next": "Sun 13 Sep, 9:07am",
+      "nice": "Market pulse",
+      "prompt_file": null,
+      "prompt_preview": null,
+      "schedule": "Every day at 9:07am",
+      "short": "trading-pulse"
+    }
+  ]
+}

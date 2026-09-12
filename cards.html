@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards — Claw4Mac Prompt Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        header {
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .mode-banner {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            color: #1565c0;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .mode-banner.sandbox {
+            background: #fff3cd;
+            border-color: #ffc107;
+            color: #856404;
+        }
+        .mode-banner strong {
+            display: inline;
+            margin-right: 8px;
+        }
+        .mode-banner .btn {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+        }
+        .sandbox-notice {
+            background: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            color: #2e7d32;
+            font-size: 0.9rem;
+        }
+        .sandbox-notice strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .group {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .group-header {
+            background: #fafafa;
+            border-bottom: 1px solid #eee;
+            padding: 16px 20px;
+        }
+        .group-header h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .card {
+            padding: 16px 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .card:last-child {
+            border-bottom: none;
+        }
+        .card-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        .card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .meta-label {
+            color: #999;
+        }
+        .meta-value {
+            color: #444;
+        }
+        .bus-badge {
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .models-badge {
+            background: #f3e5f5;
+            color: #7b1fa2;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .create-form {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            padding: 24px;
+            margin-top: 24px;
+        }
+        .create-form h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-row {
+            margin-bottom: 16px;
+        }
+        .form-row label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #444;
+            margin-bottom: 6px;
+        }
+        .form-row input,
+        .form-row select,
+        .form-row textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            background: white;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .form-row input:focus,
+        .form-row select:focus,
+        .form-row textarea:focus {
+            outline: none;
+            border-color: #4285f4;
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
+        }
+        .form-row textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        .form-row small {
+            display: block;
+            margin-top: 4px;
+            color: #888;
+            font-size: 0.8rem;
+        }
+        .btn {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .btn:hover {
+            background: #3367d6;
+        }
+        .btn:disabled {
+            background: #a8c7fa;
+            cursor: not-allowed;
+        }
+        .btn-secondary {
+            background: #fff;
+            color: #4285f4;
+            border: 1px solid #4285f4;
+        }
+        .btn-secondary:hover {
+            background: #e8f0fe;
+        }
+        .result {
+            margin-top: 16px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .result.success {
+            background: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            color: #2e7d32;
+            display: block;
+        }
+        .result.error {
+            background: #fce4ec;
+            border: 1px solid #f8bbd0;
+            color: #c62828;
+            display: block;
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+        }
+        .empty {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+        .nav-link {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: #4285f4;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        .why-badge {
+            background: #fff3e0;
+            color: #e65100;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="snapshot-banner" role="note" style="background:#1c1a17;color:#f5efe4;font:14px/1.5 -apple-system,'Segoe UI',Helvetica,Arial,sans-serif;padding:10px 16px;text-align:center;position:sticky;top:0;z-index:9999;">Public snapshot, taken 2026-09-12 ET. Names and text hidden. Live site is private.</div>
+    <div class="container">
+        <a href="index.html" class="nav-link">← Back to Prompt Lab</a>
+
+        <header>
+            <h1>Cards</h1>
+            <p class="subtitle">All cards across the fleet — see who owns what, which bus it rides, and which models see it.</p>
+        </header>
+
+        <div id="mode-banner" class="mode-banner" style="display: none;"></div>
+
+        <div class="sandbox-notice">
+            <strong>This is a practice copy.</strong> Nothing here ever changes a real bot — it never changes a real bot. New cards are saved as sandbox drafts only.
+        </div>
+
+        <div id="groups"></div>
+
+        <section class="create-form">
+            <h2>Create a New Card</h2>
+            <form id="create-form">
+                <div class="form-row">
+                    <label for="bot_id">Which bot?</label>
+                    <select id="bot_id" required>
+                        <option value="">Select a bot…</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="name">Card Name</label>
+                    <input type="text" id="name" placeholder="my-new-card" required pattern="^[a-z0-9-]+$">
+                    <small>Lowercase letters, digits, and dashes only</small>
+                </div>
+                <div class="form-row">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" placeholder="My New Card" required>
+                </div>
+                <div class="form-row">
+                    <label for="text">Text</label>
+                    <textarea id="text" placeholder="What this card says…" required></textarea>
+                </div>
+                <div class="form-row">
+                    <label for="bus">Bus (how often it rides)</label>
+                    <select id="bus" required>
+                        <option value="">Loading buses…</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="models">Models (optional)</label>
+                    <input type="text" id="models" placeholder="e.g. claude, gpt (comma-separated)">
+                    <small>Leave empty for all models. Type model names separated by commas.</small>
+                </div>
+                <button type="submit" class="btn" id="submit-btn">Create Card</button>
+                <div id="result" class="result"></div>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        // Fetch and render all cards
+        async function loadCards() {
+            const groupsEl = document.getElementById('groups');
+            groupsEl.innerHTML = '<div class="loading">Loading cards…</div>';
+
+            try {
+                const resp = await fetch('api/cards/all/index.json');
+                const data = await resp.json();
+
+                if (!data.groups || data.groups.length === 0) {
+                    groupsEl.innerHTML = '<div class="empty">No cards found</div>';
+                    return;
+                }
+
+                // Populate bot dropdown
+                const botSelect = document.getElementById('bot_id');
+                const botIds = new Set();
+                data.groups.forEach(g => {
+                    g.cards.forEach(c => {
+                        if (c.bot_id && c.bot_id !== 'fleet') {
+                            botIds.add(c.bot_id);
+                        }
+                    });
+                });
+                botIds.forEach(id => {
+                    const opt = document.createElement('option');
+                    opt.value = id;
+                    opt.textContent = id;
+                    botSelect.appendChild(opt);
+                });
+
+                // Populate bus dropdown from real bus data
+                populateBusDropdown(data);
+
+                // Render groups
+                groupsEl.innerHTML = '';
+                data.groups.forEach(group => {
+                    const groupDiv = document.createElement('div');
+                    groupDiv.className = 'group';
+                    groupDiv.innerHTML = `
+                        <div class="group-header">
+                            <h2>${escapeHtml(group.label)}</h2>
+                        </div>
+                        ${group.cards.map(card => `
+                            <div class="card">
+                                <div class="card-title">${escapeHtml(card.title)}</div>
+                                <div class="card-meta">
+                                    <span class="meta-item">
+                                        <span class="bus-badge">${escapeHtml(card.bus_plain)}</span>
+                                        ${card.why ? `<span class="why-badge">${escapeHtml(card.why)}</span>` : ''}
+                                    </span>
+                                    <span class="meta-item">
+                                        <span class="models-badge">${escapeHtml(card.models_plain)}</span>
+                                    </span>
+                                    ${card.shared_by ? `<span class="meta-item"><span class="meta-value">Shared by ${card.shared_by} bot${card.shared_by > 1 ? 's' : ''}</span></span>` : ''}
+                                </div>
+                            </div>
+                        `).join('')}
+                    `;
+                    groupsEl.appendChild(groupDiv);
+                });
+            } catch (err) {
+                console.error(err);
+                groupsEl.innerHTML = '<div class="empty">Failed to load cards</div>';
+            }
+        }
+
+        // Populate bus dropdown from real bus data in the API response
+        function populateBusDropdown(data) {
+            const busSelect = document.getElementById('bus');
+            const buses = new Map(); // bus name -> {every, plain}
+
+            data.groups.forEach(g => {
+                g.cards.forEach(c => {
+                    if (c.bus && !buses.has(c.bus)) {
+                        buses.set(c.bus, { plain: c.bus_plain });
+                    }
+                });
+            });
+
+            busSelect.innerHTML = '';
+            buses.forEach((info, busName) => {
+                const opt = document.createElement('option');
+                opt.value = busName;
+                opt.textContent = info.plain;
+                busSelect.appendChild(opt);
+            });
+        }
+
+        // Load mode banner
+        async function loadMode() {
+            try {
+                const resp = await fetch('api/overview/index.json');
+                const data = await resp.json();
+                const banner = document.getElementById('mode-banner');
+                const isSandbox = data.mode === 'sandbox';
+                banner.className = 'mode-banner' + (isSandbox ? ' sandbox' : '');
+                banner.style.display = 'flex';
+                if (isSandbox) {
+                    banner.innerHTML = `
+                        <strong>Sandbox mode</strong> — you're editing a practice copy.
+                        <button class="btn btn-secondary" onclick="resetSandbox()">Start over</button>
+                    `;
+                } else {
+                    banner.innerHTML = `<strong>Live mode</strong> — viewing the real system.`;
+                }
+            } catch (err) {
+                console.error('Failed to load mode:', err);
+            }
+        }
+
+        async function resetSandbox() {
+            try {
+                const resp = await fetch('api/sandbox/reset/index.json', { method: 'POST' });
+                const data = await resp.json();
+                if (data.ok) {
+                    loadMode();
+                    loadCards();
+                }
+            } catch (err) {
+                console.error('Failed to reset sandbox:', err);
+            }
+        }
+
+        // Handle form submit
+        document.getElementById('create-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const btn = document.getElementById('submit-btn');
+            const resultEl = document.getElementById('result');
+            resultEl.className = 'result';
+            resultEl.style.display = 'none';
+            btn.disabled = true;
+            btn.textContent = 'Creating…';
+
+            const modelsVal = document.getElementById('models').value.trim();
+            const payload = {
+                bot_id: document.getElementById('bot_id').value,
+                name: document.getElementById('name').value,
+                title: document.getElementById('title').value,
+                text: document.getElementById('text').value,
+                bus: document.getElementById('bus').value,
+                models: modelsVal ? modelsVal.split(',').map(s => s.trim()) : null
+            };
+
+            try {
+                const resp = await fetch('api/cards/create/index.json', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await resp.json();
+
+                if (data.ok) {
+                    resultEl.className = 'result success';
+                    // Don't show the raw sandbox path — just a clean message
+                    resultEl.textContent = `✓ ${data.reason}`;
+                    document.getElementById('create-form').reset();
+                    loadCards(); // Refresh the list
+                } else {
+                    resultEl.className = 'result error';
+                    resultEl.textContent = `✗ ${data.reason}`;
+                }
+            } catch (err) {
+                console.error(err);
+                resultEl.className = 'result error';
+                resultEl.textContent = `✗ Request failed: ${err.message}`;
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Create Card';
+                resultEl.style.display = 'block';
+            }
+        });
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Initial load
+        loadCards();
+        loadMode();
+    </script>
+<script>
+(function () {
+  var MSG = "read-only public snapshot";
+  function toast() {
+    var t = document.getElementById("snapshot-toast");
+    if (!t) {
+      t = document.createElement("div");
+      t.id = "snapshot-toast";
+      t.setAttribute("role", "status");
+      t.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);"
+        + "background:#1c1a17;color:#f5efe4;padding:10px 18px;border-radius:8px;"
+        + "font:14px/1.4 -apple-system,'Segoe UI',Helvetica,Arial,sans-serif;"
+        + "z-index:10000;box-shadow:0 4px 16px rgba(0,0,0,.3);";
+      document.body.appendChild(t);
+    }
+    t.textContent = MSG;
+    t.style.display = "block";
+    clearTimeout(t._h);
+    t._h = setTimeout(function () { t.style.display = "none"; }, 2600);
+  }
+  var origFetch = window.fetch;
+  window.fetch = function (url, opts) {
+    var m = opts && opts.method ? String(opts.method).toUpperCase() : "GET";
+    if (m !== "GET" && m !== "HEAD") {
+      toast();
+      return Promise.resolve(new Response(JSON.stringify({ error: MSG }), {
+        status: 403, headers: { "Content-Type": "application/json" }
+      }));
+    }
+    return origFetch.apply(this, arguments);
+  };
+  document.addEventListener("submit", function (e) {
+    e.preventDefault(); toast();
+  }, true);
+  document.addEventListener("click", function (e) {
+    var b = e.target && e.target.closest ? e.target.closest("button") : null;
+    if (b && (b.type === "submit" || b.getAttribute("data-action"))) {
+      if (!b.closest("form")) { e.preventDefault(); toast(); }
+    }
+  }, true);
+})();
+</script>
+</body>
+</html>

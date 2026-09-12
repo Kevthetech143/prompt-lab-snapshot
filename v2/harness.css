@@ -1,0 +1,85 @@
+/* Muse dark panels - Harness page (task sitepage-harness-131800).
+ * Scoped under .v2hh. Palette: bg #0e0e0f, panel #1c1c1e, pill/tile
+ * #2c2c2e, one blue #2b7de9, text white / gray #9ca3af. System font;
+ * monospace for numbers/dates/times. Reuses kit.css .v2h-* building
+ * blocks (panel, label, hero tile) - this file only adds the Harness
+ * two-pane layout, section rows, chevron rows, pills, progress bar. */
+
+.v2hh { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+
+/* two panes (ref-05): left section list, right stacked panels */
+.v2hh-wrap { display: flex; gap: 16px; align-items: flex-start; margin-top: 18px; }
+.v2hh-sections { flex: 0 0 290px; position: sticky; top: 18px; }
+.v2hh-main { flex: 1 1 auto; min-width: 0; }
+
+/* left: ONE panel with outline-icon section rows */
+.v2hh-nav-panel { padding: 8px; }
+.v2hh-sec-row { display: flex; align-items: center; gap: 12px;
+  padding: 13px 14px; border-radius: 16px; text-decoration: none;
+  border: 1.5px solid transparent; color: #ffffff; font-size: 15px; font-weight: 600; }
+.v2hh-sec-row:hover { background: #2c2c2e; }
+.v2hh-sec-row.v2hh-active { border-color: #2b7de9; }
+.v2hh-sec-row.v2hh-active:hover { background: transparent; }
+.v2hh-sec-row .v2hh-ic { color: #9ca3af; }
+.v2hh-sec-row.v2hh-active .v2hh-ic { color: #2b7de9; }
+.v2hh-sec-row .v2hh-count { margin-left: auto; font-size: 12.5px; color: #9ca3af;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+
+/* icon tile (outline icons only) */
+.v2hh-ic { flex: 0 0 36px; width: 36px; height: 36px; border-radius: 10px;
+  background: #2c2c2e; color: #9ca3af;
+  display: inline-flex; align-items: center; justify-content: center; }
+.v2hh-ic svg { width: 19px; height: 19px; }
+
+/* hero tile on this page: compact, whole-width, like Home */
+.v2hh-hero { width: 100%; box-sizing: border-box; aspect-ratio: auto; min-height: 190px; }
+
+/* overview: thin blue progress bar + mono numbers */
+.v2hh-overview { padding: 20px 22px; }
+.v2hh-bar { height: 6px; border-radius: 999px; background: #2c2c2e; overflow: hidden; }
+.v2hh-bar > span { display: block; height: 100%; background: #2b7de9; border-radius: 999px; }
+.v2hh-nums { margin-top: 12px; font-size: 13.5px; color: #9ca3af; }
+.v2hh-nums, .v2hh-nums .n, .v2hh-date {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+.v2hh-nums .n { color: #ffffff; font-weight: 700; }
+.v2hh-nums .sep { margin: 0 8px; color: #2c2c2e; }
+
+/* right: stacked section panels */
+.v2hh-sec { margin-bottom: 4px; }
+.v2hh-cards { padding: 6px 22px; }
+.v2hh-row { display: flex; align-items: center; gap: 14px;
+  padding: 15px 0; border-bottom: 1px solid #2c2c2e; }
+.v2hh-row:last-child { border-bottom: none; }
+.v2hh-text { flex: 1 1 auto; min-width: 0; }
+.v2hh-name { font-size: 15.5px; font-weight: 700; color: #ffffff;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.v2hh-what { margin-top: 3px; font-size: 13.5px; color: #9ca3af; line-height: 1.45; }
+.v2hh-meta { margin-top: 6px; font-size: 12.5px; color: #9ca3af; line-height: 1.6; }
+.v2hh-meta code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 11.5px; color: #d1d5db; background: #2c2c2e; border-radius: 6px;
+  padding: 1px 6px; word-break: break-all; }
+.v2hh-k { text-transform: uppercase; letter-spacing: 0.06em; font-size: 10.5px; color: #6b7280; }
+.v2hh-chev { flex: 0 0 auto; color: #9ca3af; opacity: 0.7; }
+.v2hh-chev svg { width: 20px; height: 20px; display: block; }
+
+/* status pills */
+.v2hh-pill { display: inline-block; font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.02em; border-radius: 999px; padding: 3px 11px; white-space: nowrap; }
+.v2hh-ok { color: #4ade80; background: rgba(74, 222, 128, 0.13); }
+.v2hh-watch { color: #fbbf24; background: rgba(251, 191, 36, 0.13); }
+.v2hh-off { color: #9ca3af; background: #2c2c2e; }
+.v2hh-fault { color: #fb923c; background: rgba(251, 146, 60, 0.14); }
+
+/* wide: only the selected section shows (ref-05 right pane) */
+/* snapshot: unwrapped media query: media (min-width: 960px) */
+
+  .v2hh-sec { display: none; }
+  .v2hh-sel-prompt .v2hh-sec-prompt { display: block; }
+  .v2hh-sel-watchers .v2hh-sec-watchers { display: block; }
+  .v2hh-sel-muse .v2hh-sec-muse { display: block; }
+  .v2hh-sel-site .v2hh-sec-site { display: block; }
+
+
+/* narrow: single column, all sections visible, each with label + panel */
+/* snapshot: dropped media query block: media (max-width: 959px) */
+

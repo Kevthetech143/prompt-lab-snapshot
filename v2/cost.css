@@ -1,0 +1,70 @@
+/* cost.css — Cost page-only styles for the Muse dark panels rebuild
+   (task sitepage-cost-131800). Linked from /v2/cost only; kit.css and v2.py
+   are untouched. Palette: near-black #0e0e0f, panel #1c1c1e, pill/tile
+   #2c2c2e, one accent blue #2b7de9, text #ffffff, secondary #9ca3af.
+   System font; monospace for numbers, dates, times. No white or light
+   surfaces anywhere on the page. */
+
+/* Hero tiles keep the Home shape (kit.css v2h-hero); on the cost page they sit
+   a touch shorter so the page stays under the 1800px height rule. */
+.v2h-heroes .v2h-hero { aspect-ratio: 16 / 11; }
+
+/* Tighter section labels: same type as kit's v2h-label, own class so the
+   kit-only rendering (test_v2c height rule) stays compact too. */
+.vc-label { margin: 22px 0 8px; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.09em; text-transform: uppercase; color: #9ca3af; }
+
+/* Cost page vertical rhythm: slightly tighter page padding than kit. */
+.v2-home .v2-page { padding-top: 20px; padding-bottom: 48px; }
+.v2-foot { padding-bottom: 32px; }
+
+/* Top panel: same Home panel, slightly tighter on this page. */
+.v2h-top { padding: 20px; margin-bottom: 14px; }
+
+/* ── Per-bot rows: icon tile · bold name · thin blue share-of-max bar · mono number */
+.vc-chart { padding: 6px 20px; }
+.v2-row[data-vc="row"] { display: flex; align-items: center; gap: 14px; padding: 9px 0; }
+.v2-row[data-vc="row"] + .v2-row[data-vc="row"] { border-top: 1px solid #2c2c2e; }
+.vc-tile { flex: 0 0 32px; width: 32px; height: 32px; border-radius: 10px;
+  background: #2c2c2e; color: #9ca3af; display: inline-flex;
+  align-items: center; justify-content: center; }
+/* (The icon svg inside carries an inline 18px size so it stays compact even
+   where cost.css is not loaded; see _icon20 in v2_cost.py.) */
+.vc-name { flex: 0 0 auto; font-size: 15.5px; font-weight: 700; color: #ffffff;
+  max-width: 28ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Thin blue progress bar sized to that bot's share of the max. */
+.v2-bar.vc-bar, .v2-bar.grow { flex: 1 1 auto; min-width: 48px; height: 6px;
+  border-radius: 999px; background: #2c2c2e; border: none; overflow: hidden;
+  display: block; vertical-align: middle; }
+.v2-bar.grow i { display: block; height: 100%; border-radius: 999px;
+  background: #2b7de9; transform-origin: left center; }
+.vc-tok { flex: 0 0 auto; margin-left: auto; font-family: ui-monospace, "SF Mono",
+  Menlo, Consolas, monospace; font-size: 14px; color: #ffffff; white-space: nowrap; }
+
+/* ── Heaviest cards: rank numeral · icon tile · bold card name · mono number */
+.vc-heavy { padding: 6px 20px; }
+.v2-hrow[data-vc="hrow"] { display: flex; align-items: center; gap: 14px; padding: 9px 0; }
+.v2-hrow[data-vc="hrow"] + .v2-hrow[data-vc="hrow"] { border-top: 1px solid #2c2c2e; }
+.v2-hrow[data-vc="hrow"] .rank { font-size: 15px; font-weight: 700; color: #9ca3af;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  flex: 0 0 2ch; text-align: right; }
+/* Icon tile lives inside the name cell so the row keeps kit's 3-column
+   .v2-hrow grid shape (rank / name / number) in every rendering. */
+.v2-hrow[data-vc="hrow"] .name { display: flex; align-items: center; gap: 12px;
+  flex: 1 1 auto; min-width: 0; font-size: 15.5px; font-weight: 700;
+  color: #ffffff; }
+.vc-hname { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ── Trims: three ruled lines, gray mono rank + gray prose.
+   Markup reuses kit's v2-row/meaning so kit-only renderings stay compact. */
+.vc-trims { padding: 6px 20px; }
+.v2-row[data-vc="trow"] { display: flex; align-items: baseline; gap: 14px; padding: 10px 0; }
+.v2-row[data-vc="trow"] + .v2-row[data-vc="trow"] { border-top: 1px solid #2c2c2e; }
+.vc-tnum { flex: 0 0 auto; font-family: ui-monospace, "SF Mono", Menlo, Consolas,
+  monospace; font-size: 13px; color: #9ca3af; }
+.v2-row[data-vc="trow"] .meaning { font-size: 14px; line-height: 1.55; color: #9ca3af;
+  flex: 1 1 auto; min-width: 0; }
+
+/* ── Mobile: names truncate, bars shrink, tiles keep their shape */
+/* snapshot: dropped media query block: media (max-width: 560px) */
+

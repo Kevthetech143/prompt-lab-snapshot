@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Routing & Dials — Prompt Lab</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .page-wrap { max-width: 1000px; margin: 0 auto; padding: var(--space-6); }
+  .pagehead { display: flex; flex-direction: column; gap: 2px; margin-bottom: var(--space-5); }
+  .pagehead .crumb { font-family: var(--sans); font-size: var(--text-xs); color: var(--navy-2); text-transform: uppercase; letter-spacing: .04em; }
+  .pagehead h1 { margin: 0; font-size: var(--text-2xl); }
+  .card { background: var(--cream); border: 3px solid var(--navy); border-radius: var(--radius-lg); padding: var(--space-5); margin-bottom: var(--space-5); }
+  .card h2 { margin: 0 0 var(--space-3); font-family: var(--hand); font-size: var(--text-xl); color: var(--navy); }
+  table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: var(--text-sm); }
+  th, td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid #e2dcc6; }
+  th { font-weight: 600; color: var(--navy-2); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .04em; background: #f7f3e6; }
+  tr:last-child td { border-bottom: none; }
+  td.path { font-family: var(--mono); font-size: var(--text-xs); color: var(--navy-2); word-break: break-all; }
+  td.models { font-family: var(--mono); font-size: var(--text-xs); }
+  .nested { display: flex; flex-direction: column; gap: 2px; margin: 0; padding-left: var(--space-2); border-left: 2px solid var(--blue-l); font-size: var(--text-xs); }
+  .nested-item { display: flex; gap: var(--space-2); }
+  .nested-key { color: var(--navy-2); font-weight: 600; min-width: 120px; }
+  .nested-val { color: var(--navy); font-family: var(--mono); }
+  .source { margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid #e2dcc6; font-size: var(--text-xs); color: var(--navy-2); font-family: var(--mono); word-break: break-all; }
+  .loading { color: var(--navy-2); font-style: italic; }
+  .error { color: var(--stop); }
+</style>
+</head>
+<body>
+<div class="snapshot-banner" role="note" style="background:#1c1a17;color:#f5efe4;font:14px/1.5 -apple-system,'Segoe UI',Helvetica,Arial,sans-serif;padding:10px 16px;text-align:center;position:sticky;top:0;z-index:9999;">Public snapshot, taken 2026-09-12 ET. Names and text hidden. Live site is private.</div>
+<div class="page-wrap">
+  <div class="pagehead">
+    <div class="crumb">Prompt Lab / Routing & Dials</div>
+    <h1>Routing & Dials</h1>
+  </div>
+
+  <div class="card">
+    <h2>Model Tiers</h2>
+    <table id="tiers">
+      <thead>
+        <tr><th>Tier</th><th>Models</th><th>Path</th><th>Chars</th></tr>
+      </thead>
+      <tbody><tr><td colspan="4" class="loading">Loading…</td></tr></tbody>
+    </table>
+    <div class="source" id="tiers-source"></div>
+  </div>
+
+  <div class="card">
+    <h2>Context Watch Dials</h2>
+    <table id="dials">
+      <thead>
+        <tr><th>Key</th><th>Value</th></tr>
+      </thead>
+      <tbody><tr><td colspan="2" class="loading">Loading…</td></tr></tbody>
+    </table>
+    <div class="source" id="dials-source"></div>
+  </div>
+</div>
+
+<script>
+async function fetchJson(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+  return res.json();
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function renderModels(models) {
+  return models.map(m => `<code>${escapeHtml(m)}</code>`).join(', ');
+}
+
+function renderNested(obj) {
+  if (!obj || typeof obj !== 'object') return '';
+  const entries = Object.entries(obj);
+  if (entries.length === 0) return '';
+  return '<div class="nested">' + entries.map(([k, v]) =>
+    `<div class="nested-item"><span class="nested-key">${escapeHtml(k)}:</span><span class="nested-val">${escapeHtml(String(v))}</span></div>`
+  ).join('') + '</div>';
+}
+
+async function loadRouting() {
+  try {
+    const data = await fetchJson('/api/routing');
+    const tbody = document.querySelector('#tiers tbody');
+    tbody.innerHTML = '';
+    data.tiers.forEach(tier => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><strong>${escapeHtml(tier.tier)}</strong></td>
+        <td class="models">${renderModels(tier.models)}</td>
+        <td class="path">${escapeHtml(tier.path)}</td>
+        <td>${tier.chars.toLocaleString()}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+    document.getElementById('tiers-source').textContent = `Source: ${data.source}`;
+  } catch (e) {
+    document.querySelector('#tiers tbody').innerHTML = `<tr><td colspan="4" class="error">Error: ${escapeHtml(e.message)}</td></tr>`;
+  }
+}
+
+async function loadDials() {
+  try {
+    const data = await fetchJson('/api/dials/context-watch');
+    const tbody = document.querySelector('#dials tbody');
+    tbody.innerHTML = '';
+    const dials = data.dials || {};
+    Object.entries(dials).forEach(([key, value]) => {
+      const tr = document.createElement('tr');
+      const valHtml = (value && typeof value === 'object' && !Array.isArray(value))
+        ? renderNested(value)
+        : `<code>${escapeHtml(JSON.stringify(value))}</code>`;
+      tr.innerHTML = `<td><strong>${escapeHtml(key)}</strong></td><td>${valHtml}</td>`;
+      tbody.appendChild(tr);
+    });
+    document.getElementById('dials-source').textContent = `Source: ${data.source}`;
+  } catch (e) {
+    document.querySelector('#dials tbody').innerHTML = `<tr><td colspan="2" class="error">Error: ${escapeHtml(e.message)}</td></tr>`;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadRouting();
+  loadDials();
+});
+</script>
+<script>
+(function () {
+  var MSG = "read-only public snapshot";
+  function toast() {
+    var t = document.getElementById("snapshot-toast");
+    if (!t) {
+      t = document.createElement("div");
+      t.id = "snapshot-toast";
+      t.setAttribute("role", "status");
+      t.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);"
+        + "background:#1c1a17;color:#f5efe4;padding:10px 18px;border-radius:8px;"
+        + "font:14px/1.4 -apple-system,'Segoe UI',Helvetica,Arial,sans-serif;"
+        + "z-index:10000;box-shadow:0 4px 16px rgba(0,0,0,.3);";
+      document.body.appendChild(t);
+    }
+    t.textContent = MSG;
+    t.style.display = "block";
+    clearTimeout(t._h);
+    t._h = setTimeout(function () { t.style.display = "none"; }, 2600);
+  }
+  var origFetch = window.fetch;
+  window.fetch = function (url, opts) {
+    var m = opts && opts.method ? String(opts.method).toUpperCase() : "GET";
+    if (m !== "GET" && m !== "HEAD") {
+      toast();
+      return Promise.resolve(new Response(JSON.stringify({ error: MSG }), {
+        status: 403, headers: { "Content-Type": "application/json" }
+      }));
+    }
+    return origFetch.apply(this, arguments);
+  };
+  document.addEventListener("submit", function (e) {
+    e.preventDefault(); toast();
+  }, true);
+  document.addEventListener("click", function (e) {
+    var b = e.target && e.target.closest ? e.target.closest("button") : null;
+    if (b && (b.type === "submit" || b.getAttribute("data-action"))) {
+      if (!b.closest("form")) { e.preventDefault(); toast(); }
+    }
+  }, true);
+})();
+</script>
+</body>
+</html>

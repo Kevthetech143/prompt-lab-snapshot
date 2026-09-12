@@ -1,0 +1,119 @@
+{
+  "bots": [
+    {
+      "adapter": "claude_code",
+      "group": "",
+      "heartbeat": "2026-09-12T17:26:08",
+      "id": "bot-01",
+      "model": "claude-opus-5",
+      "name": "bot-01",
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "group": "",
+      "heartbeat": "2026-09-12T17:26:06",
+      "id": "bot-03",
+      "model": "claude-opus-5",
+      "name": "bot-04",
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "group": "",
+      "heartbeat": "2026-09-12T17:26:20",
+      "id": "bot-05",
+      "model": "claude-opus-5",
+      "name": "bot-05",
+      "status": "running"
+    },
+    {
+      "adapter": "grok",
+      "group": "builders",
+      "heartbeat": "2026-09-12T17:26:06",
+      "id": "bot-07",
+      "model": "grok-4.6",
+      "name": "bot-08",
+      "status": "running"
+    },
+    {
+      "adapter": "codex",
+      "group": "system",
+      "heartbeat": "2026-09-12T17:26:19",
+      "id": "bot-09",
+      "model": "gpt-5.6-sol",
+      "name": "bot-09",
+      "status": "running"
+    },
+    {
+      "adapter": "codex",
+      "group": "",
+      "heartbeat": "2026-09-12T17:26:10",
+      "id": "bot-11",
+      "model": "gpt-6-astra",
+      "name": "bot-12",
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "group": "bot-13",
+      "heartbeat": "2026-09-12T17:26:20",
+      "id": "bot-13",
+      "model": "claude-opus-5",
+      "name": "bot-14",
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "group": "",
+      "heartbeat": "2026-09-12T17:26:20",
+      "id": "bot-15",
+      "model": "claude-opus-5",
+      "name": "bot-16",
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "group": "finance",
+      "heartbeat": "2026-09-12T17:26:20",
+      "id": "bot-17",
+      "model": "claude-opus-5",
+      "name": "bot-18",
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "group": "builders",
+      "heartbeat": "2026-09-12T17:26:24",
+      "id": "bot-19",
+      "model": "claude-fable-5-1",
+      "name": "bot-19",
+      "status": "running"
+    },
+    {
+      "adapter": "claude_code",
+      "group": "",
+      "heartbeat": "2026-09-12T17:26:07",
+      "id": "bot-21",
+      "model": "claude-fable-5-1",
+      "name": "bot-22",
+      "status": "running"
+    }
+  ],
+  "changed": [],
+  "heavy": 8000,
+  "mode": "live",
+  "reasoning_every": 10,
+  "running": 11,
+  "sandbox": "[path]",
+  "welded": [
+    "honesty_fact_assumption_label",
+    "main_payment_card",
+    "never_reveal_ai",
+    "no_verdict_without_valid_data",
+    "payment_wallets",
+    "payments_risk_scaled",
+    "secret_routing"
+  ],
+  "why_no_live_write": "[text hidden in the public snapshot]"
+}

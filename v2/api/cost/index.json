@@ -1,0 +1,91 @@
+{
+  "bots": [
+    {
+      "eff_tokens_per_turn": 338,
+      "id": "bot-01",
+      "name": "bot-01"
+    },
+    {
+      "eff_tokens_per_turn": 335,
+      "id": "bot-03",
+      "name": "bot-04"
+    },
+    {
+      "eff_tokens_per_turn": 343,
+      "id": "bot-05",
+      "name": "bot-05"
+    },
+    {
+      "eff_tokens_per_turn": 343,
+      "id": "bot-07",
+      "name": "bot-08"
+    },
+    {
+      "eff_tokens_per_turn": 335,
+      "id": "bot-09",
+      "name": "bot-09"
+    },
+    {
+      "eff_tokens_per_turn": 340,
+      "id": "bot-11",
+      "name": "bot-12"
+    },
+    {
+      "eff_tokens_per_turn": 515,
+      "id": "bot-13",
+      "name": "bot-14"
+    },
+    {
+      "eff_tokens_per_turn": 337,
+      "id": "bot-15",
+      "name": "bot-16"
+    },
+    {
+      "eff_tokens_per_turn": 340,
+      "id": "bot-17",
+      "name": "bot-18"
+    },
+    {
+      "eff_tokens_per_turn": 363,
+      "id": "bot-19",
+      "name": "bot-19"
+    },
+    {
+      "eff_tokens_per_turn": 824,
+      "id": "bot-21",
+      "name": "bot-22"
+    }
+  ],
+  "heaviest": [
+    {
+      "card": "contact_block",
+      "eff_tokens_per_turn": 484,
+      "words": "contact block"
+    },
+    {
+      "card": "astra_identity",
+      "eff_tokens_per_turn": 333,
+      "words": "astra identity"
+    },
+    {
+      "card": "payments_risk_scaled",
+      "eff_tokens_per_turn": 330,
+      "words": "payments risk scaled"
+    },
+    {
+      "card": "business",
+      "eff_tokens_per_turn": 330,
+      "words": "business"
+    },
+    {
+      "card": "payment_wallets",
+      "eff_tokens_per_turn": 330,
+      "words": "payment wallets"
+    }
+  ],
+  "trims": [
+    "[text hidden in the public snapshot]",
+    "[text hidden in the public snapshot]",
+    "[text hidden in the public snapshot]"
+  ]
+}

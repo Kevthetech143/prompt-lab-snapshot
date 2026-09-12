@@ -1,0 +1,541 @@
+{
+  "bot": "bot-13",
+  "dials": {
+    "context_watch": {
+      "bot-11": {
+        "hard_limit_tokens": 500000,
+        "idle_min": 10,
+        "limit_tokens": 250000,
+        "subagent_fresh_min": 20
+      },
+      "bot-19": {
+        "hard_limit_tokens": 500000,
+        "idle_min": 10,
+        "limit_tokens": 250000,
+        "subagent_fresh_min": 20
+      },
+      "bot-21": {
+        "hard_limit_tokens": 500000,
+        "idle_min": 10,
+        "limit_tokens": 250000,
+        "subagent_fresh_min": 20
+      }
+    },
+    "context_watch_source": "[path]",
+    "scalars": [
+      {
+        "default": 0.35,
+        "meaning": "[text hidden in the public snapshot]",
+        "name": "conflict_topic_similarity",
+        "value": 0.35
+      },
+      {
+        "default": 1650,
+        "meaning": "[text hidden in the public snapshot]",
+        "name": "context_growth_per_turn",
+        "value": 1650
+      },
+      {
+        "default": 0.55,
+        "meaning": "content-word overlap at or above which a new line counts as already said",
+        "name": "dedup_similarity",
+        "value": 0.55
+      },
+      {
+        "default": 3,
+        "meaning": "how many weakest/oldest lines a cap refusal names as demote candidates",
+        "name": "demote_candidates",
+        "value": 3
+      },
+      {
+        "default": 4750,
+        "meaning": "reference heavy prompt, in tokens — the 100% the cost reader compares against",
+        "name": "heavy_prompt_tokens",
+        "value": 8000
+      },
+      {
+        "default": 4000,
+        "meaning": "WHOLE-CARD character cap for a card with no cap of its own (what it costs)",
+        "name": "max_chars_default",
+        "value": 20000
+      },
+      {
+        "default": 200,
+        "meaning": "longest ONE entry may be before the door forces a note-file split",
+        "name": "max_entry_chars",
+        "value": 200
+      },
+      {
+        "default": 20,
+        "meaning": "ENTRY-COUNT cap for a card with no cap of its own (how many things to read)",
+        "name": "max_lines_default",
+        "value": 100
+      },
+      {
+        "default": 11,
+        "meaning": "how many turns the compose probe composes when proving a write",
+        "name": "probe_turns",
+        "value": 11
+      },
+      {
+        "default": 2,
+        "meaning": "how many turns the auto-slow rule adds to a crossing card's every-N",
+        "name": "slowdown_step",
+        "value": 2
+      },
+      {
+        "default": 50,
+        "meaning": "entry count a card crosses to trigger the auto-slow rule ([hidden], 2026-09-01)",
+        "name": "slowdown_threshold",
+        "value": 50
+      }
+    ]
+  },
+  "groups": [
+    {
+      "cards": 18,
+      "key": "every-turn",
+      "label": "Every turn",
+      "rows": [
+        {
+          "cadence": "every turn",
+          "title": "Identity",
+          "tokens": 19
+        },
+        {
+          "cadence": "every turn",
+          "title": "Business",
+          "tokens": 33
+        },
+        {
+          "cadence": "every turn",
+          "title": "Escalation",
+          "tokens": 14
+        },
+        {
+          "cadence": "every turn",
+          "title": "Honesty labels",
+          "tokens": 101
+        },
+        {
+          "cadence": "every turn",
+          "title": "Secret routing",
+          "tokens": 149
+        },
+        {
+          "cadence": "every turn",
+          "title": "Never reveal AI",
+          "tokens": 47
+        },
+        {
+          "cadence": "every turn",
+          "title": "Contact block",
+          "tokens": 48
+        },
+        {
+          "cadence": "every turn",
+          "title": "History block",
+          "tokens": 6
+        },
+        {
+          "cadence": "every turn",
+          "title": "Message block",
+          "tokens": 20
+        },
+        {
+          "cadence": "every turn",
+          "title": "Payments risk scaled",
+          "tokens": 158
+        },
+        {
+          "cadence": "every turn",
+          "title": "Payment wallets",
+          "tokens": 153
+        },
+        {
+          "cadence": "every turn",
+          "title": "No verdict without valid data",
+          "tokens": 83
+        },
+        {
+          "cadence": "every turn",
+          "title": "Main payment card",
+          "tokens": 124
+        },
+        {
+          "cadence": "every turn",
+          "title": "intro",
+          "tokens": 27
+        },
+        {
+          "cadence": "every turn",
+          "title": "tone",
+          "tokens": 15
+        },
+        {
+          "cadence": "every turn",
+          "title": "identity guard",
+          "tokens": 29
+        },
+        {
+          "cadence": "every turn",
+          "title": "format guard",
+          "tokens": 12
+        },
+        {
+          "cadence": "every turn",
+          "title": "bot-13 send capability",
+          "tokens": 127
+        }
+      ],
+      "tokens": 1165
+    },
+    {
+      "cards": 0,
+      "key": "every-2",
+      "label": "Every 2 turns",
+      "rows": [],
+      "tokens": 0
+    },
+    {
+      "cards": 0,
+      "key": "every-5",
+      "label": "Every 5 turns",
+      "rows": [],
+      "tokens": 0
+    },
+    {
+      "cards": 0,
+      "key": "every-10",
+      "label": "Every 10 turns",
+      "rows": [],
+      "tokens": 0
+    },
+    {
+      "cards": 17,
+      "key": "once",
+      "label": "Other cadences",
+      "rows": [
+        {
+          "cadence": "every 152 turns",
+          "title": "Fleet brain map",
+          "tokens": 554
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Steering (shared)",
+          "tokens": 295
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Fleet behavior — core",
+          "tokens": 604
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Fleet behavior",
+          "tokens": 2600
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Fleet awareness",
+          "tokens": 1055
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Ritual: route first",
+          "tokens": 76
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Ritual: work to done",
+          "tokens": 125
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Ritual: then reply",
+          "tokens": 146
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Design styles",
+          "tokens": 204
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Local awareness",
+          "tokens": 377
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Local behavior",
+          "tokens": 384
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Local brain map",
+          "tokens": 42
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Local critical file",
+          "tokens": 111
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Skills map",
+          "tokens": 3102
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Reasoning: bucket",
+          "tokens": 131
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Reasoning: truth discipline",
+          "tokens": 236
+        },
+        {
+          "cadence": "every 152 turns",
+          "title": "Reasoning: digest",
+          "tokens": 1971
+        }
+      ],
+      "tokens": 12013
+    }
+  ],
+  "layers": [
+    {
+      "cards": 22,
+      "label": "Global",
+      "slot": "global",
+      "tokens": 6614
+    },
+    {
+      "cards": 5,
+      "label": "Per-bot role",
+      "slot": "agent_role",
+      "tokens": 4016
+    },
+    {
+      "cards": 3,
+      "label": "Reasoning",
+      "slot": "reasoning",
+      "tokens": 2338
+    }
+  ],
+  "next_turn": {
+    "cards": 35,
+    "rows": [
+      {
+        "cadence": "every turn",
+        "title": "Identity",
+        "tokens": 19
+      },
+      {
+        "cadence": "every turn",
+        "title": "Business",
+        "tokens": 33
+      },
+      {
+        "cadence": "every turn",
+        "title": "Escalation",
+        "tokens": 14
+      },
+      {
+        "cadence": "every turn",
+        "title": "Honesty labels",
+        "tokens": 101
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Fleet brain map",
+        "tokens": 554
+      },
+      {
+        "cadence": "every turn",
+        "title": "Secret routing",
+        "tokens": 149
+      },
+      {
+        "cadence": "every turn",
+        "title": "Never reveal AI",
+        "tokens": 47
+      },
+      {
+        "cadence": "every turn",
+        "title": "Contact block",
+        "tokens": 48
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Steering (shared)",
+        "tokens": 295
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Fleet behavior — core",
+        "tokens": 604
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Fleet behavior",
+        "tokens": 2600
+      },
+      {
+        "cadence": "every turn",
+        "title": "History block",
+        "tokens": 6
+      },
+      {
+        "cadence": "every turn",
+        "title": "Message block",
+        "tokens": 20
+      },
+      {
+        "cadence": "every turn",
+        "title": "Payments risk scaled",
+        "tokens": 158
+      },
+      {
+        "cadence": "every turn",
+        "title": "Payment wallets",
+        "tokens": 153
+      },
+      {
+        "cadence": "every turn",
+        "title": "No verdict without valid data",
+        "tokens": 83
+      },
+      {
+        "cadence": "every turn",
+        "title": "Main payment card",
+        "tokens": 124
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Fleet awareness",
+        "tokens": 1055
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Ritual: route first",
+        "tokens": 76
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Ritual: work to done",
+        "tokens": 125
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Ritual: then reply",
+        "tokens": 146
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Design styles",
+        "tokens": 204
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Local awareness",
+        "tokens": 377
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Local behavior",
+        "tokens": 384
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Local brain map",
+        "tokens": 42
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Local critical file",
+        "tokens": 111
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Skills map",
+        "tokens": 3102
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Reasoning: bucket",
+        "tokens": 131
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Reasoning: truth discipline",
+        "tokens": 236
+      },
+      {
+        "cadence": "every 152 turns",
+        "title": "Reasoning: digest",
+        "tokens": 1971
+      },
+      {
+        "cadence": "every turn",
+        "title": "intro",
+        "tokens": 27
+      },
+      {
+        "cadence": "every turn",
+        "title": "tone",
+        "tokens": 15
+      },
+      {
+        "cadence": "every turn",
+        "title": "identity guard",
+        "tokens": 29
+      },
+      {
+        "cadence": "every turn",
+        "title": "format guard",
+        "tokens": 12
+      },
+      {
+        "cadence": "every turn",
+        "title": "bot-13 send capability",
+        "tokens": 127
+      }
+    ],
+    "tokens_this_turn": 10076,
+    "turn": 1
+  },
+  "routing": {
+    "source": "[path]",
+    "tiers": [
+      {
+        "chars": 2963,
+        "models": [
+          "claude-fable-5*",
+          "claude-opus-5*",
+          "gpt-6-astra*"
+        ],
+        "tier": "A"
+      },
+      {
+        "chars": 6545,
+        "models": [
+          "claude-sonnet-5*",
+          "claude-opus-4-8*",
+          "claude-haiku-4-5*",
+          "grok-4*"
+        ],
+        "tier": "B"
+      },
+      {
+        "chars": 16337,
+        "models": [
+          "*"
+        ],
+        "tier": "C"
+      }
+    ]
+  }
+}

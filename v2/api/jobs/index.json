@@ -1,0 +1,1128 @@
+{
+  "clocks": [
+    {
+      "cadence": "Every day at 9:06am and 9:06pm",
+      "enabled": true,
+      "extra": "next: Sat 12 Sep, 9:06pm",
+      "kind": "",
+      "last": "Delivered to inbox at 2026-09-12 09:06:00 (id=cron_bot-21_[hidden]_b1ec1e30)",
+      "name": "AI news roundup"
+    },
+    {
+      "cadence": "Every day at 6:00am",
+      "enabled": true,
+      "extra": "next: Sun 13 Sep, 6:00am",
+      "kind": "",
+      "last": "not recorded",
+      "name": "Brain index drift"
+    },
+    {
+      "cadence": "could not be read",
+      "enabled": true,
+      "extra": "next: unknown",
+      "kind": "",
+      "last": "not recorded",
+      "name": "Heartbeat check"
+    },
+    {
+      "cadence": "Every 1 minute",
+      "enabled": true,
+      "extra": "next: within the next 1 minute",
+      "kind": "",
+      "last": "not recorded",
+      "name": "Helper dispatcher"
+    },
+    {
+      "cadence": "Every day at 9:07am",
+      "enabled": true,
+      "extra": "next: Sun 13 Sep, 9:07am",
+      "kind": "",
+      "last": "[2026-09-12T13:07:09+00:00] pulse sent to Telegram",
+      "name": "Market pulse"
+    },
+    {
+      "cadence": "Every day at 9:00am",
+      "enabled": true,
+      "extra": "next: Sun 13 Sep, 9:00am",
+      "kind": "",
+      "last": "Delivered to inbox at 2026-09-12 09:00:00 (id=cron_bot-03_[hidden]_58c84918)",
+      "name": "Morning prayer"
+    },
+    {
+      "cadence": "Every day at 12:00pm",
+      "enabled": true,
+      "extra": "next: Sun 13 Sep, 12:00pm",
+      "kind": "",
+      "last": "Delivered to inbox at 2026-09-12 12:00:00 (id=cron_bot-01_[hidden]_55c7822e)",
+      "name": "Noon price check"
+    },
+    {
+      "cadence": "Every day at 9:15am",
+      "enabled": true,
+      "extra": "next: Sun 13 Sep, 9:15am",
+      "kind": "",
+      "last": "Delivered to inbox at 2026-09-12 12:00:00 (id=cron_bot-01_[hidden]_55c7822e)",
+      "name": "Profit check"
+    },
+    {
+      "cadence": "Every day at 8:33am",
+      "enabled": true,
+      "extra": "next: Sun 13 Sep, 8:33am",
+      "kind": "",
+      "last": "Delivered to inbox at 2026-09-12 12:00:00 (id=cron_bot-01_[hidden]_55c7822e)",
+      "name": "Read customer messages"
+    },
+    {
+      "cadence": "Every 30 minutes",
+      "enabled": true,
+      "extra": "next: within the next 30 minutes",
+      "kind": "",
+      "last": "not recorded",
+      "name": "Shop watcher"
+    },
+    {
+      "cadence": "The 1st and 16th of each month at 2:20pm",
+      "enabled": true,
+      "extra": "next: Wed 16 Sep, 2:20pm",
+      "kind": "",
+      "last": "not recorded",
+      "name": "Tidy the rule cards"
+    },
+    {
+      "cadence": "Every 3 minutes",
+      "enabled": true,
+      "extra": "next: within the next 3 minutes",
+      "kind": "",
+      "last": "[2026-09-12 17:23:51 EDT] poll complete",
+      "name": "Turn off the rented computer"
+    },
+    {
+      "cadence": "When the Mac starts up",
+      "enabled": true,
+      "extra": "next: not on a clock",
+      "kind": "",
+      "last": "not recorded",
+      "name": "Wake everything up"
+    },
+    {
+      "cadence": "Every day at 12:05am",
+      "enabled": false,
+      "extra": "next: Sun 13 Sep, 12:05am",
+      "kind": "",
+      "last": "Delivered to inbox at 2026-09-07 00:05:00 (id=cron_bot-19_[hidden]_75a76ea4)",
+      "name": "Nightly lesson round"
+    }
+  ],
+  "cron": [
+    {
+      "cadence": "6 9,21 * * *",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "ai-news-digest"
+    },
+    {
+      "cadence": "[hidden] (launchd, RunAtLoad only, no interval)",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "app-autostart"
+    },
+    {
+      "cadence": "daily at 12:00",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "bm-buybox-noon-check"
+    },
+    {
+      "cadence": "daily at 09:03",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "bm-buybox-report-daily"
+    },
+    {
+      "cadence": "3 9 */2 * *",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "bm-cut-sweep-daily"
+    },
+    {
+      "cadence": "every 30 minutes",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "bm-premium-watcher"
+    },
+    {
+      "cadence": "daily at 09:15",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "bm-win-profit-gated-daily"
+    },
+    {
+      "cadence": "daily at 06:00",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "brain-index-drift"
+    },
+    {
+      "cadence": "every 4 minutes",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "cache-keepalive-context-cap"
+    },
+    {
+      "cadence": "20 14 1,16 * *",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "card-shrink-maintenance"
+    },
+    {
+      "cadence": "0 8 * * 1-5",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "catalyst-radar"
+    },
+    {
+      "cadence": "not scheduled",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "com.claw4mac.helper-dispatcher"
+    },
+    {
+      "cadence": "daily at 10:17",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "comic-library-daily-pull"
+    },
+    {
+      "cadence": "0,30 9-16 * * 1-5",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "condition-alert-watcher"
+    },
+    {
+      "cadence": "daily at 08:33",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "customer-msg-sweep-daily"
+    },
+    {
+      "cadence": "dynamic",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "dynamic-self-reschedule"
+    },
+    {
+      "cadence": "daily at 09:08",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "email-triage-daily"
+    },
+    {
+      "cadence": "every 900s, fires once/day 08:20-08:49 ET",
+      "enabled": null,
+      "extra": "",
+      "kind": "helper card",
+      "last": "not recorded",
+      "name": "family-health-digest"
+    },
+    {
+      "cadence": "daily at 23:30",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "fb-price-check.txt"
+    },
+    {
+      "cadence": "15 0 16 4 *",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "fb-price-check.txt"
+    },
+    {
+      "cadence": "40 0 16 4 *",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "fb-price-check.txt"
+    },
+    {
+      "cadence": "10 1 16 4 *",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "fb-price-check.txt"
+    },
+    {
+      "cadence": "0 12 * * 0",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "fetch-recap.sh"
+    },
+    {
+      "cadence": "every 300s poll, one-shot per plist (launchd)",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "gmail-await-bm-events"
+    },
+    {
+      "cadence": "every 300s poll, one-shot per plist (launchd)",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "gmail-await-easypost-hold"
+    },
+    {
+      "cadence": "every 300s poll, one-shot per plist (launchd)",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "gmail-await-eshco"
+    },
+    {
+      "cadence": "every 300s poll, one-shot per plist (launchd)",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "gmail-await-fal-unlock"
+    },
+    {
+      "cadence": "every 300s poll, one-shot per plist (launchd)",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "gmail-await-[hidden]-frontdesk-test"
+    },
+    {
+      "cadence": "every 300s poll, one-shot per plist (launchd)",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 300s poll, one-shot per plist (launchd)",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "gmail-await-parafin-relink"
+    },
+    {
+      "cadence": "fires on incoming bot-13 (in-session, no engine)",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "bot-13-watch-kathy"
+    },
+    {
+      "cadence": "fires on incoming bot-13 (in-session, no engine)",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "bot-13-watch-kenrick"
+    },
+    {
+      "cadence": "fires on incoming bot-13 (in-session, no engine)",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "bot-13-watch-leonardo"
+    },
+    {
+      "cadence": "fires on incoming bot-13 (in-session, no engine)",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "bot-13-watch-omar"
+    },
+    {
+      "cadence": "fires on incoming bot-13 (in-session, no engine)",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "bot-13-watch-pete"
+    },
+    {
+      "cadence": "every 5 minutes",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "late_recheck_keeper.sh"
+    },
+    {
+      "cadence": "daily at 09:00",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "morning-prayer"
+    },
+    {
+      "cadence": "0 3,4,5,6,7,8 * * *",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "nemo-overnight"
+    },
+    {
+      "cadence": "7,27,47 * * * *",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "pokemon-scanner-build-loop"
+    },
+    {
+      "cadence": "every 86400s",
+      "enabled": null,
+      "extra": "",
+      "kind": "helper card",
+      "last": "not recorded",
+      "name": "promised-vs-armed"
+    },
+    {
+      "cadence": "daily at 09:13",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "psrd-AUTONOMOUS"
+    },
+    {
+      "cadence": "0,30 9-16 * * 1-5",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "qqq-dip-watcher"
+    },
+    {
+      "cadence": "7 3 * * 0",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "refresh_bm_prices.sh"
+    },
+    {
+      "cadence": "0 14 25 8 *",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "rh_place_order.py"
+    },
+    {
+      "cadence": "12 9 * * 6",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "run-campaign-refresh.sh"
+    },
+    {
+      "cadence": "0,30 9-16 * * 1-5",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "run-position-watch.sh"
+    },
+    {
+      "cadence": "0,30 9-16 * * 1-5",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "run-position-watch.sh"
+    },
+    {
+      "cadence": "every 3 minutes",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "runpod-idle-watcher"
+    },
+    {
+      "cadence": "daily at 00:05",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "self-improvement-nightly"
+    },
+    {
+      "cadence": "every 5 minutes",
+      "enabled": null,
+      "extra": "",
+      "kind": "watcher",
+      "last": "not recorded",
+      "name": "sentinel"
+    },
+    {
+      "cadence": "daily at 09:07",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "trading-pulse"
+    },
+    {
+      "cadence": "every 15 minutes",
+      "enabled": null,
+      "extra": "",
+      "kind": "cron job",
+      "last": "not recorded",
+      "name": "venture-15min-nudge"
+    }
+  ],
+  "helpers": [
+    {
+      "cadence": "every 5 minutes",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 12, 07:34",
+      "name": "ai guide daily"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "never",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 15 minutes",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 12, 08:34",
+      "name": "family health digest"
+    },
+    {
+      "cadence": "every 5 minutes",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "never",
+      "name": "ideas daily"
+    },
+    {
+      "cadence": "every 1 day",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "never",
+      "name": "james vision model"
+    },
+    {
+      "cadence": "every 5 minutes",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 12, 09:40",
+      "name": "bot-19 context"
+    },
+    {
+      "cadence": "every 5 minutes",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 11, 10:45",
+      "name": "bot-22 context"
+    },
+    {
+      "cadence": "every 5 minutes",
+      "enabled": true,
+      "extra": "",
+      "kind": "act",
+      "last": "never",
+      "name": "bot-19 liveness"
+    },
+    {
+      "cadence": "every 1 day",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "never",
+      "name": "bot-19 most used refresh"
+    },
+    {
+      "cadence": "every 1 day",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 11, 18:11",
+      "name": "promised vs armed"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 12, 14:15",
+      "name": "token alert amazon bm fb"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 13:01",
+      "name": "token alert bot-04"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 12, 15:11",
+      "name": "token alert bot-05"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 08, 23:07",
+      "name": "token alert bot-07"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "never",
+      "name": "token alert bot-09"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 12, 08:35",
+      "name": "token alert health fitness"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 13:16",
+      "name": "token alert bot-13"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 13:16",
+      "name": "token alert bot-16"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 09, 11:06",
+      "name": "token alert bot-17"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 12, 14:48",
+      "name": "token alert bot-19"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 12, 14:42",
+      "name": "token alert bot-22"
+    },
+    {
+      "cadence": "every 5 minutes",
+      "enabled": true,
+      "extra": "",
+      "kind": "alert",
+      "last": "never",
+      "name": "ultron new build"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 13:24",
+      "name": "await fleet opus5"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 11, 06:42",
+      "name": "await muse ai guide 001"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 11, 06:47",
+      "name": "await muse ai guide 001a"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 11, 06:49",
+      "name": "await muse ai guide 001b"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 21:46",
+      "name": "await muse cancel site4"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 20:17",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 11, 06:52",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 11, 05:53",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 11, 05:32",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 22:56",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 14:25",
+      "name": "await muse identity"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 16:57",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 16:41",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 16:58",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 16:18",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 11, 05:29",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 11, 05:35",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 14:13",
+      "name": "await muse ping"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 17:02",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 17:07",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 19:37",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 20:23",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 20:39",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 17:58",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 18:02",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 18:12",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 18:03",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 18:11",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 20:25",
+      "name": "await muse scopecheck"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 19:10",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 20:23",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 20:45",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 21:33",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 21:46",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 18:02",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 22:56",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 20:18",
+      "name": "await muse status check"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 11, 06:15",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 17:50",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 16:26",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 16:28",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 16:32",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 16:49",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 23:04",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 22:31",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 22:35",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 22:54",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 23:18",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 10, 23:26",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 11, 05:52",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 1 minute",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 11, 06:15",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "every 5 minutes",
+      "enabled": false,
+      "extra": "",
+      "kind": "alert",
+      "last": "Sep 08, 18:13",
+      "name": "health fitness context"
+    }
+  ]
+}

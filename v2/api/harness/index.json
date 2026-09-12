@@ -1,0 +1,215 @@
+{
+  "groups": [
+    {
+      "cards": [
+        {
+          "config_path": "[path] and [path]<bot-id>.json",
+          "id": "card-schedule-buses",
+          "name": "Card schedule (buses)",
+          "settings": [
+            "every (how often it fires)",
+            "mode (turns or tokens)",
+            "models (which brains may board)",
+            "max_rides (when it retires)",
+            "expiry (calendar end date)",
+            "locked (cannot be changed by a garage)"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "[hidden] or bot-19 for the fleet registry; each agent for its own garage"
+        },
+        {
+          "config_path": "[path] and [path]",
+          "id": "task-router-go",
+          "name": "Task router (Go)",
+          "settings": [
+            "tier rules (who does what)",
+            "delegation ladder (Muse first, local only on BLOCKED)",
+            "hard stops (money, legal, irreversible)"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "[hidden]"
+        },
+        {
+          "config_path": "[path]",
+          "id": "bus-manager",
+          "name": "Bus manager",
+          "settings": [
+            "the four modes (list, create, move, add)",
+            "every bus ends with a real compose probe, never a claim"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "[hidden] or bot-19 for fleet buses; each agent for its own garage"
+        },
+        {
+          "config_path": "[path]",
+          "id": "brain-timeline",
+          "name": "Brain timeline",
+          "settings": [
+            "--full (dated table)",
+            "--all-bots",
+            "--since 7d (recent only)"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "any agent"
+        }
+      ],
+      "title": "Prompt and cards"
+    },
+    {
+      "cards": [
+        {
+          "config_path": "[path] and helper-runner.py; cards live under <cards-dir>/helpers/",
+          "id": "helper-runner",
+          "name": "Helper runner",
+          "settings": [
+            "every (check interval)",
+            "disabled (skip this card)",
+            "own_plist (card needs its own launchd job)"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "lead-only"
+        },
+        {
+          "config_path": "[path] and context-alert.py",
+          "id": "context-watcher",
+          "name": "Context watcher",
+          "settings": [
+            "max context size (500k hard cap per 2026-09-11 backup name)",
+            "restart window rules"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "lead-only"
+        },
+        {
+          "config_path": "[path]",
+          "id": "restart-audit",
+          "name": "Restart audit",
+          "settings": [
+            "which bots to audit",
+            "where the audit log goes"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "lead-only"
+        },
+        {
+          "config_path": "[path]",
+          "id": "most-used-tracker",
+          "name": "Most used tracker",
+          "settings": [
+            "--days N (default 14)",
+            "--card (print only the 6-line block)"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "any agent"
+        }
+      ],
+      "title": "Watchers and helpers"
+    },
+    {
+      "cards": [
+        {
+          "config_path": "[path] (send.sh, listen.sh, WORK-PROTOCOL.md)",
+          "id": "muse-link",
+          "name": "Muse link",
+          "settings": [
+            "task_id and attempt on every message",
+            "ACK then RESULT_SENT lifecycle",
+            "BUSY while a run is in progress"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "[hidden]"
+        },
+        {
+          "config_path": "the laptop-link-poller cron schedule on the Muse side",
+          "id": "muse-job-watcher",
+          "name": "Muse job watcher",
+          "settings": [
+            "poll interval (5 minutes)",
+            "task id ledger at [path]"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "[hidden]"
+        },
+        {
+          "config_path": "[path]",
+          "id": "muse-work-route",
+          "name": "Muse work route",
+          "settings": [
+            "which jobs go to Muse (research, builds, code, config edits)",
+            "what needs local instead (secrets, money gates, restarts, [hidden]'s vaults)"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "any agent"
+        }
+      ],
+      "title": "Muse and workers"
+    },
+    {
+      "cards": [
+        {
+          "config_path": "[path] started by run.sh (nohup, no launchd)",
+          "id": "site-server",
+          "name": "Site server (Prompt Lab)",
+          "settings": [
+            "port (8790, local only)",
+            "sandbox-only writes (write_json refuses paths outside ./sandbox)",
+            "restart: re-run run.sh after killing the old server (lead only)"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "lead-only"
+        },
+        {
+          "config_path": "[path]",
+          "id": "marketplace-inbox",
+          "name": "Marketplace inbox",
+          "settings": [
+            "port (8734)",
+            "snapshot path (state/inbox.json)",
+            "refresh cadence (5 min, read-only, counts-only)"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "lead-only"
+        },
+        {
+          "config_path": "[path]",
+          "id": "voice-server",
+          "name": "Voice server",
+          "settings": [
+            "port (8123)",
+            "voice choice (kokoro-tts)"
+          ],
+          "status": "live",
+          "what": "Local text-to-speech server used for voice replies.",
+          "where": "[hidden]"
+        },
+        {
+          "config_path": "[path]",
+          "id": "approve-clicker",
+          "name": "Approve clicker",
+          "settings": [
+            "target button words (Approve, Allow, Confirm, Accept)",
+            "check interval (1.5s)",
+            "visual re-confirm before clicking"
+          ],
+          "status": "live",
+          "what": "[text hidden in the public snapshot]",
+          "where": "[hidden]"
+        }
+      ],
+      "title": "Site and tools"
+    }
+  ]
+}

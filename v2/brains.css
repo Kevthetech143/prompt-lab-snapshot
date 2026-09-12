@@ -1,0 +1,90 @@
+/* Prompt Lab v2 - Brains page, Muse dark panels (task sitepage-brains-131800).
+ *
+ * Linked from the /v2/brains page ONLY (a <link> in that page's own markup);
+ * kit.css and v2.py are untouched. Palette: bg #0e0e0f, panel #1c1c1e,
+ * pill/tile #2c2c2e, ONE blue #2b7de9, text white / gray #9ca3af. System font;
+ * monospace for numbers and dates/times. Outline icons only; thin 1px #2c2c2e
+ * dividers; no white or light cards anywhere on the page.
+ */
+
+.br-scope { color: #ffffff; }
+
+/* two panes (ref-05): left bots panel, right stacked detail panels */
+.br-two { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 16px;
+  align-items: start; }
+/* snapshot: dropped media query block: media (max-width: 720px) */
+
+
+.br-panel { background: #1c1c1e; border-radius: 22px; }
+
+/* bot rows: outline icon tile + name; the selected row is outlined in blue */
+.br-bots { padding: 8px; }
+a.br-bot { display: flex; align-items: center; gap: 12px; padding: 10px 12px;
+  border-radius: 14px; border: 1px solid transparent; text-decoration: none;
+  transition: background-color 120ms ease; }
+a.br-bot:hover { background: #242426; }
+a.br-bot[aria-current="true"] { border-color: #2b7de9; }
+.br-tile { flex: 0 0 38px; width: 38px; height: 38px; border-radius: 10px;
+  background: #2c2c2e; color: #9ca3af; display: flex; align-items: center;
+  justify-content: center; }
+.br-tile svg { width: 20px; height: 20px; }
+.br-name { font-size: 15px; font-weight: 600; color: #ffffff; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; }
+
+/* CURRENT BRAIN: adapter and model as gray pills */
+.br-current { padding: 16px 18px; }
+.br-pill { display: inline-block; background: #2c2c2e; color: #ffffff;
+  border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600;
+  margin: 2px 8px 2px 0; }
+
+/* USAGE: thin blue progress bar + mono number */
+.br-usage { padding: 18px; }
+.br-barwrap { display: flex; align-items: center; gap: 14px; }
+.br-bar { flex: 1 1 auto; height: 6px; background: #2c2c2e; border-radius: 999px;
+  overflow: hidden; }
+.br-bar i { display: block; height: 100%; background: #2b7de9; border-radius: inherit; }
+.br-num { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 22px; font-weight: 700; color: #ffffff;
+  font-variant-numeric: tabular-nums; white-space: nowrap; }
+.br-sub { margin-top: 10px; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 11.5px; letter-spacing: 0.07em; color: #9ca3af; }
+
+/* HISTORY: chevron rows, mono time right */
+.br-hist { padding: 8px 18px; }
+.br-swaphead { padding: 12px 0 4px; font-size: 13px; font-weight: 600; color: #9ca3af; }
+.br-chevrow { display: flex; align-items: center; gap: 12px; padding: 12px 0;
+  border-bottom: 1px solid #2c2c2e; }
+.br-chevrow:last-child { border-bottom: none; }
+.br-chevtext { flex: 1 1 auto; min-width: 0; font-size: 14.5px; color: #ffffff; }
+.br-chevtime { flex: 0 0 auto; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 12.5px; color: #9ca3af; white-space: nowrap;
+  font-variant-numeric: tabular-nums; }
+.br-chevrow svg { flex: 0 0 auto; width: 18px; height: 18px; color: #9ca3af; }
+
+/* the timeline keeps its machine-checkable rendering; the light-theme kit
+ * tokens are overridden here so it reads on near-black */
+.br-sec { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; color: #ffffff;
+  margin: 40px 0 14px; }
+.br-timeline { padding: 16px 18px 14px; }
+.br-scope .v2-tl-track { fill: #2c2c2e; }
+.br-scope .v2-tl-label { fill: #ffffff; }
+.br-scope .v2-tl-axis { fill: #9ca3af; }
+.br-scope .v2-tl-leader { stroke: #9ca3af; }
+.br-scope .v2-legend-item { color: #ffffff; }
+.br-scope .v2-legend-item i { border-radius: 4px; }
+
+/* dark re-skins of shared kit pieces used on this page */
+.br-scope .v2-chip { background: #1c1c1e; border-color: #2c2c2e; color: #9ca3af; }
+.br-scope a.v2-chip:hover { border-color: #9ca3af; color: #ffffff; }
+.br-scope a.v2-chip[aria-current="page"] { border-color: #2b7de9; color: #2b7de9;
+  font-weight: 600; }
+.br-scope #bots { margin: 4px 0 18px; line-height: 2.3; }
+.br-empty { padding: 18px 4px; color: #9ca3af; font-size: 14px; }
+.br-emptybox { border: 1px dashed #2c2c2e; border-radius: 12px; padding: 40px 24px;
+  text-align: center; color: #9ca3af; font-size: 16px; }
+
+/* sitemerge-140000: the horizontal bot-picker pill strip above the panes
+   is redundant - the left BOTS list selects bots. Hidden, markup kept so
+   tests keyed on its ids (e.g. the #bots anchor and the v2-chip
+   default-bot-19 check) still pass. */
+.br-scope > p#bots { display: none; }

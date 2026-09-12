@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fleet - Prompt Lab</title>
+<link rel="stylesheet" href="../kit.css">
+</head>
+<body class="v2 v2-home">
+<div class="snapshot-banner" role="note" style="background:#1c1a17;color:#f5efe4;font:14px/1.5 -apple-system,'Segoe UI',Helvetica,Arial,sans-serif;padding:10px 16px;text-align:center;position:sticky;top:0;z-index:9999;">Public snapshot, taken 2026-09-12 ET. Names and text hidden. Live site is private.</div>
+<a class="v2-skip" href="#main">Skip to content</a>
+<nav class="v2h-rail" aria-label="places">
+  <a class="v2h-rail-link" href="index.html" data-tip="Fleet" aria-current="page" aria-label="Fleet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg>Fleet</a>
+  <a class="v2h-rail-link" href="../prompt/index.html" data-tip="Prompt" aria-label="Prompt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9.5l2.5 2.5L7 14.5M12.5 15H17"/></svg>Prompt</a>
+  <a class="v2h-rail-link" href="../brains/index.html" data-tip="Brains" aria-label="Brains"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="12" cy="18" r="2.6"/><path d="M7.6 8.2l3.2 7.4M16.4 8.2l-3.2 7.4M8.6 6h6.8"/></svg>Brains</a>
+  <a class="v2h-rail-link" href="../cost/index.html" data-tip="Cost" aria-label="Cost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.4"/></svg>Cost</a>
+  <a class="v2h-rail-link" href="../jobs/index.html" data-tip="Jobs" aria-label="Jobs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg>Jobs</a>
+  <a class="v2h-rail-link" href="../lab/index.html" data-tip="Lab" aria-label="Lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 3h5M10.5 3v5.2L5.4 17.6A2 2 0 0 0 7.1 20.5h9.8a2 2 0 0 0 1.7-2.9L13.5 8.2V3"/><path d="M8 14.5h8"/></svg>Lab</a>
+  <a class="v2h-rail-link" href="../harness/index.html" data-tip="Harness" aria-label="Harness"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M17.5 12H20M15.9 15.9l1.7 1.7M12 17.5V20M8.1 15.9l-1.7 1.7M6.5 12H4M8.1 8.1L6.4 6.4M12 6.5V4M15.9 8.1l1.7-1.7"/></svg>Harness</a>
+</nav>
+<div class="v2h-body">
+<main class="v2-page v2h-page" id="main">
+  <link rel="stylesheet" href="../fleet.css">
+  <section class="v2h-panel v2h-top">
+    <h1 class="v2h-title">Fleet</h1>
+    <p class="v2h-blurb">Every running bot, its brain, and what it costs per turn; click a row to open it.</p>
+    <a class="v2h-pill" href="#drawer-bot-19">Open a bot</a>
+  </section>
+  <div class="v2h-heroes fleet-heroes">
+    <div class="v2h-hero v2h-hero-fleet">
+      <span class="v2h-hero-text"><span class="v2h-hero-title">11</span><span class="v2h-hero-sub">RUNNING BOTS</span></span>
+      <span class="v2h-hero-foot"><span class="v2h-hero-date">09.12.26</span><span class="v2h-hero-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8.5" width="12" height="9" rx="2.5"/><path d="M12 8.5V4.5M9.5 4.5h5"/><circle cx="9.6" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M3.5 12.5v2.5M20.5 12.5v2.5"/></svg></span></span>
+    </div>
+    <div class="v2h-hero v2h-hero-prompt">
+      <span class="v2h-hero-text"><span class="v2h-hero-title">401</span><span class="v2h-hero-sub">AVG TOKENS PER TURN</span></span>
+      <span class="v2h-hero-foot"><span class="v2h-hero-date">09.12.26</span><span class="v2h-hero-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2.5-6 4 12 2.5-6H21"/></svg></span></span>
+    </div>
+    <div class="v2h-hero v2h-hero-brains">
+      <span class="v2h-hero-text"><span class="v2h-hero-title">371</span><span class="v2h-hero-sub">CARDS RIDING</span></span>
+      <span class="v2h-hero-foot"><span class="v2h-hero-date">09.12.26</span><span class="v2h-hero-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l8.5 4.7L12 12.9 3.5 8.2 12 3.5z"/><path d="M4.5 12.5L12 16.6l7.5-4.1"/><path d="M4.5 16.2L12 20.3l7.5-4.1"/></svg></span></span>
+    </div>
+  </div>
+  <p class="v2h-label">Bots</p>
+  <section class="fleet-panel" aria-label="Running bots">
+<a class="v2-rowlink fleet" id="row-bot-01" href="#drawer-bot-01"><span class="fl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8.5" width="12" height="9" rx="2.5"/><path d="M12 8.5V4.5M9.5 4.5h5"/><circle cx="9.6" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M3.5 12.5v2.5M20.5 12.5v2.5"/></svg></span><span class="fl-id"><span class="fl-name">bot-01</span><span class="fl-cards">32 cards</span></span><span class="v2-chip fl-brain">Claude Code / claude-opus-5</span><span class="v2-chip status ok">Live</span><span class="fl-cost"><span class="v2-bar grow" aria-hidden="true"><i style="width:41%"></i></span><span class="fl-tok">338</span></span><span class="fl-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></span></a>
+<a class="v2-rowlink fleet" id="row-bot-03" href="#drawer-bot-03"><span class="fl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8.5" width="12" height="9" rx="2.5"/><path d="M12 8.5V4.5M9.5 4.5h5"/><circle cx="9.6" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M3.5 12.5v2.5M20.5 12.5v2.5"/></svg></span><span class="fl-id"><span class="fl-name">bot-04</span><span class="fl-cards">32 cards</span></span><span class="v2-chip fl-brain">Claude Code / claude-opus-5</span><span class="v2-chip status ok">Live</span><span class="fl-cost"><span class="v2-bar grow" aria-hidden="true"><i style="width:41%"></i></span><span class="fl-tok">335</span></span><span class="fl-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></span></a>
+<a class="v2-rowlink fleet" id="row-bot-05" href="#drawer-bot-05"><span class="fl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8.5" width="12" height="9" rx="2.5"/><path d="M12 8.5V4.5M9.5 4.5h5"/><circle cx="9.6" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M3.5 12.5v2.5M20.5 12.5v2.5"/></svg></span><span class="fl-id"><span class="fl-name">bot-05</span><span class="fl-cards">33 cards</span></span><span class="v2-chip fl-brain">Claude Code / claude-opus-5</span><span class="v2-chip status ok">Live</span><span class="fl-cost"><span class="v2-bar grow" aria-hidden="true"><i style="width:42%"></i></span><span class="fl-tok">343</span></span><span class="fl-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></span></a>
+<a class="v2-rowlink fleet" id="row-bot-07" href="#drawer-bot-07"><span class="fl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8.5" width="12" height="9" rx="2.5"/><path d="M12 8.5V4.5M9.5 4.5h5"/><circle cx="9.6" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M3.5 12.5v2.5M20.5 12.5v2.5"/></svg></span><span class="fl-id"><span class="fl-name">bot-08</span><span class="fl-cards">34 cards</span></span><span class="v2-chip fl-brain">Grok / grok-4.6</span><span class="v2-chip status ok">Live</span><span class="fl-cost"><span class="v2-bar grow" aria-hidden="true"><i style="width:42%"></i></span><span class="fl-tok">343</span></span><span class="fl-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></span></a>
+<a class="v2-rowlink fleet" id="row-bot-09" href="#drawer-bot-09"><span class="fl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8.5" width="12" height="9" rx="2.5"/><path d="M12 8.5V4.5M9.5 4.5h5"/><circle cx="9.6" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M3.5 12.5v2.5M20.5 12.5v2.5"/></svg></span><span class="fl-id"><span class="fl-name">bot-09</span><span class="fl-cards">32 cards</span></span><span class="v2-chip fl-brain">Codex / gpt-5.6-sol</span><span class="v2-chip status ok">Live</span><span class="fl-cost"><span class="v2-bar grow" aria-hidden="true"><i style="width:41%"></i></span><span class="fl-tok">335</span></span><span class="fl-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></span></a>
+<a class="v2-rowlink fleet" id="row-bot-11" href="#drawer-bot-11"><span class="fl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8.5" width="12" height="9" rx="2.5"/><path d="M12 8.5V4.5M9.5 4.5h5"/><circle cx="9.6" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M3.5 12.5v2.5M20.5 12.5v2.5"/></svg></span><span class="fl-id"><span class="fl-name">bot-12</span><span class="fl-cards">34 cards</span></span><span class="v2-chip fl-brain">Codex / gpt-6-astra</span><span class="v2-chip status ok">Live</span><span class="fl-cost"><span class="v2-bar grow" aria-hidden="true"><i style="width:41%"></i></span><span class="fl-tok">340</span></span><span class="fl-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></span></a>
+<a class="v2-rowlink fleet" id="row-bot-13" href="#drawer-bot-13"><span class="fl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8.5" width="12" height="9" rx="2.5"/><path d="M12 8.5V4.5M9.5 4.5h5"/><circle cx="9.6" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M3.5 12.5v2.5M20.5 12.5v2.5"/></svg></span><span class="fl-id"><span class="fl-name">bot-14</span><span class="fl-cards">35 cards</span></span><span class="v2-chip fl-brain">Claude Code / claude-opus-5</span><span class="v2-chip status ok">Live</span><span class="fl-cost"><span class="v2-bar grow" aria-hidden="true"><i style="width:62%"></i></span><span class="fl-tok">515</span></span><span class="fl-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></span></a>
+<a class="v2-rowlink fleet" id="row-bot-15" href="#drawer-bot-15"><span class="fl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8.5" width="12" height="9" rx="2.5"/><path d="M12 8.5V4.5M9.5 4.5h5"/><circle cx="9.6" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M3.5 12.5v2.5M20.5 12.5v2.5"/></svg></span><span class="fl-id"><span class="fl-name">bot-16</span><span class="fl-cards">33 cards</span></span><span class="v2-chip fl-brain">Claude Code / claude-opus-5</span><span class="v2-chip status ok">Live</span><span class="fl-cost"><span class="v2-bar grow" aria-hidden="true"><i style="width:41%"></i></span><span class="fl-tok">337</span></span><span class="fl-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></span></a>
+<a class="v2-rowlink fleet" id="row-bot-17" href="#drawer-bot-17"><span class="fl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8.5" width="12" height="9" rx="2.5"/><path d="M12 8.5V4.5M9.5 4.5h5"/><circle cx="9.6" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M3.5 12.5v2.5M20.5 12.5v2.5"/></svg></span><span class="fl-id"><span class="fl-name">bot-18</span><span class="fl-cards">33 cards</span></span><span class="v2-chip fl-brain">Claude Code / claude-opus-5</span><span class="v2-chip status ok">Live</span><span class="fl-cost"><span class="v2-bar grow" aria-hidden="true"><i style="width:41%"></i></span><span class="fl-tok">340</span></span><span class="fl-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></span></a>
+<a class="v2-rowlink fleet" id="row-bot-19" href="#drawer-bot-19"><span class="fl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8.5" width="12" height="9" rx="2.5"/><path d="M12 8.5V4.5M9.5 4.5h5"/><circle cx="9.6" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M3.5 12.5v2.5M20.5 12.5v2.5"/></svg></span><span class="fl-id"><span class="fl-name">bot-19</span><span class="fl-cards">38 cards</span></span><span class="v2-chip fl-brain">Claude Code / claude-fable-5-1</span><span class="v2-chip status ok">Live</span><span class="fl-cost"><span class="v2-bar grow" aria-hidden="true"><i style="width:44%"></i></span><span class="fl-tok">363</span></span><span class="fl-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></span></a>
+<a class="v2-rowlink fleet" id="row-bot-21" href="#drawer-bot-21"><span class="fl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8.5" width="12" height="9" rx="2.5"/><path d="M12 8.5V4.5M9.5 4.5h5"/><circle cx="9.6" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="13" r="1" fill="currentColor" stroke="none"/><path d="M3.5 12.5v2.5M20.5 12.5v2.5"/></svg></span><span class="fl-id"><span class="fl-name">bot-22</span><span class="fl-cards">35 cards</span></span><span class="v2-chip fl-brain">Claude Code / claude-fable-5-1</span><span class="v2-chip status ok">Live</span><span class="fl-cost"><span class="v2-bar grow" aria-hidden="true"><i style="width:100%"></i></span><span class="fl-tok">824</span></span><span class="fl-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.5l6.5 6.5L9 18.5"/></svg></span></a>
+  </section>
+<aside class="v2-drawer" id="drawer-bot-01" tabindex="-1" aria-label="bot-01 detail">
+  <a class="v2-quiet" data-focus="row-bot-01" href="#row-bot-01">Close</a>
+  <h2>bot-01</h2>
+  <div class="v2-slug">bot-01</div>
+  <p><span class="v2-chip">Claude Code / claude-opus-5</span> <span class="v2-chip status ok">Live</span> <span class="v2-chip">32 cards</span> <span class="v2-chip">338 tokens/turn</span></p>
+    <details class="v2-group">
+      <summary><span class="name">Global</span><span class="count">22 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">13 cards &middot; 955 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Identity</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">19 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Business</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">33 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Escalation</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">14 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Honesty labels</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">101 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Secret routing</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">149 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Never reveal AI</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">47 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Contact block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">48 tokens</span></div></div>
+      <div class="v2-row"><div class="name">History block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">6 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Message block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">20 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payments risk scaled</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">158 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payment wallets</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">153 tokens</span></div></div>
+      <div class="v2-row"><div class="name">No verdict without valid data</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">83 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Main payment card</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">124 tokens</span></div></div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">9 cards &middot; 5,659 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Fleet brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">554 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (shared)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">295 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior — core</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">604 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">2,600 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,055 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: route first</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">76 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: work to done</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">125 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: then reply</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">146 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Design styles</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">204 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Per-bot role</span><span class="count">5 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">5 cards &middot; 6,271 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Local awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,301 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">484 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">324 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local critical file</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">534 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Skills map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">3,628 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Reasoning</span><span class="count">3 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">3 cards &middot; 2,338 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Reasoning: bucket</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">131 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: truth discipline</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">236 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: digest</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,971 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <p class="v2-quiet">+ 2 channel cards. Transport, not content.</p>
+</aside>
+<aside class="v2-drawer" id="drawer-bot-03" tabindex="-1" aria-label="bot-04 detail">
+  <a class="v2-quiet" data-focus="row-bot-03" href="#row-bot-03">Close</a>
+  <h2>bot-04</h2>
+  <div class="v2-slug">bot-03</div>
+  <p><span class="v2-chip">Claude Code / claude-opus-5</span> <span class="v2-chip status ok">Live</span> <span class="v2-chip">32 cards</span> <span class="v2-chip">335 tokens/turn</span></p>
+    <details class="v2-group">
+      <summary><span class="name">Global</span><span class="count">22 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">13 cards &middot; 955 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Identity</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">19 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Business</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">33 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Escalation</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">14 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Honesty labels</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">101 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Secret routing</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">149 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Never reveal AI</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">47 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Contact block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">48 tokens</span></div></div>
+      <div class="v2-row"><div class="name">History block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">6 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Message block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">20 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payments risk scaled</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">158 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payment wallets</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">153 tokens</span></div></div>
+      <div class="v2-row"><div class="name">No verdict without valid data</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">83 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Main payment card</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">124 tokens</span></div></div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">9 cards &middot; 5,659 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Fleet brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">554 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (shared)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">295 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior — core</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">604 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">2,600 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,055 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: route first</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">76 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: work to done</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">125 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: then reply</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">146 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Design styles</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">204 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Per-bot role</span><span class="count">5 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">5 cards &middot; 4,172 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Local awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">192 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">726 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">40 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local critical file</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">112 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Skills map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">3,102 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Reasoning</span><span class="count">3 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">3 cards &middot; 2,338 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Reasoning: bucket</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">131 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: truth discipline</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">236 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: digest</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,971 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <p class="v2-quiet">+ 2 channel cards. Transport, not content.</p>
+</aside>
+<aside class="v2-drawer" id="drawer-bot-05" tabindex="-1" aria-label="bot-05 detail">
+  <a class="v2-quiet" data-focus="row-bot-05" href="#row-bot-05">Close</a>
+  <h2>bot-05</h2>
+  <div class="v2-slug">bot-05</div>
+  <p><span class="v2-chip">Claude Code / claude-opus-5</span> <span class="v2-chip status ok">Live</span> <span class="v2-chip">33 cards</span> <span class="v2-chip">343 tokens/turn</span></p>
+    <details class="v2-group">
+      <summary><span class="name">Global</span><span class="count">22 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">13 cards &middot; 955 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Identity</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">19 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Business</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">33 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Escalation</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">14 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Honesty labels</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">101 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Secret routing</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">149 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Never reveal AI</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">47 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Contact block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">48 tokens</span></div></div>
+      <div class="v2-row"><div class="name">History block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">6 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Message block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">20 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payments risk scaled</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">158 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payment wallets</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">153 tokens</span></div></div>
+      <div class="v2-row"><div class="name">No verdict without valid data</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">83 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Main payment card</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">124 tokens</span></div></div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">9 cards &middot; 5,659 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Fleet brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">554 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (shared)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">295 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior — core</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">604 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">2,600 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,055 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: route first</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">76 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: work to done</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">125 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: then reply</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">146 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Design styles</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">204 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Per-bot role</span><span class="count">6 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">6 cards &middot; 6,880 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Local awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">564 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,194 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (local)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">196 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">16 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local critical file</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,452 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Skills map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">3,458 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Reasoning</span><span class="count">3 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">3 cards &middot; 2,338 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Reasoning: bucket</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">131 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: truth discipline</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">236 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: digest</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,971 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <p class="v2-quiet">+ 2 channel cards. Transport, not content.</p>
+</aside>
+<aside class="v2-drawer" id="drawer-bot-07" tabindex="-1" aria-label="bot-08 detail">
+  <a class="v2-quiet" data-focus="row-bot-07" href="#row-bot-07">Close</a>
+  <h2>bot-08</h2>
+  <div class="v2-slug">bot-07</div>
+  <p><span class="v2-chip">Grok / grok-4.6</span> <span class="v2-chip status ok">Live</span> <span class="v2-chip">34 cards</span> <span class="v2-chip">343 tokens/turn</span></p>
+    <details class="v2-group">
+      <summary><span class="name">Global</span><span class="count">22 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">13 cards &middot; 955 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Identity</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">19 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Business</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">33 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Escalation</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">14 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Honesty labels</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">101 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Secret routing</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">149 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Never reveal AI</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">47 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Contact block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">48 tokens</span></div></div>
+      <div class="v2-row"><div class="name">History block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">6 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Message block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">20 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payments risk scaled</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">158 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payment wallets</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">153 tokens</span></div></div>
+      <div class="v2-row"><div class="name">No verdict without valid data</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">83 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Main payment card</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">124 tokens</span></div></div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">9 cards &middot; 5,144 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Fleet brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">554 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (shared)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">295 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior — core</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">407 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">2,282 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,055 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: route first</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">76 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: work to done</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">125 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: then reply</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">146 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Design styles</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">204 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Per-bot role</span><span class="count">7 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">7 cards &middot; 8,102 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Local awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,836 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">522 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (local)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">145 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">178 tokens</span></div></div>
+      <div class="v2-row"><div class="name">grok working style</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">194 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local critical file</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,486 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Skills map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">3,741 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Reasoning</span><span class="count">3 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">3 cards &middot; 2,338 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Reasoning: bucket</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">131 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: truth discipline</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">236 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: digest</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,971 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <p class="v2-quiet">+ 2 channel cards. Transport, not content.</p>
+</aside>
+<aside class="v2-drawer" id="drawer-bot-09" tabindex="-1" aria-label="bot-09 detail">
+  <a class="v2-quiet" data-focus="row-bot-09" href="#row-bot-09">Close</a>
+  <h2>bot-09</h2>
+  <div class="v2-slug">bot-09</div>
+  <p><span class="v2-chip">Codex / gpt-5.6-sol</span> <span class="v2-chip status ok">Live</span> <span class="v2-chip">32 cards</span> <span class="v2-chip">335 tokens/turn</span></p>
+    <details class="v2-group">
+      <summary><span class="name">Global</span><span class="count">22 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">13 cards &middot; 955 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Identity</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">19 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Business</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">33 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Escalation</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">14 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Honesty labels</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">101 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Secret routing</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">149 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Never reveal AI</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">47 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Contact block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">48 tokens</span></div></div>
+      <div class="v2-row"><div class="name">History block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">6 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Message block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">20 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payments risk scaled</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">158 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payment wallets</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">153 tokens</span></div></div>
+      <div class="v2-row"><div class="name">No verdict without valid data</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">83 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Main payment card</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">124 tokens</span></div></div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">9 cards &middot; 5,144 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Fleet brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">554 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (shared)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">295 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior — core</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">407 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">2,282 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,055 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: route first</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">76 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: work to done</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">125 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: then reply</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">146 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Design styles</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">204 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Per-bot role</span><span class="count">5 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">5 cards &middot; 3,804 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Local awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">101 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">477 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">13 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local critical file</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">111 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Skills map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">3,102 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Reasoning</span><span class="count">3 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">3 cards &middot; 2,338 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Reasoning: bucket</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">131 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: truth discipline</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">236 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: digest</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,971 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <p class="v2-quiet">+ 2 channel cards. Transport, not content.</p>
+</aside>
+<aside class="v2-drawer" id="drawer-bot-11" tabindex="-1" aria-label="bot-12 detail">
+  <a class="v2-quiet" data-focus="row-bot-11" href="#row-bot-11">Close</a>
+  <h2>bot-12</h2>
+  <div class="v2-slug">bot-11</div>
+  <p><span class="v2-chip">Codex / gpt-6-astra</span> <span class="v2-chip status ok">Live</span> <span class="v2-chip">34 cards</span> <span class="v2-chip">340 tokens/turn</span></p>
+    <details class="v2-group">
+      <summary><span class="name">Global</span><span class="count">22 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">13 cards &middot; 955 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Identity</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">19 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Business</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">33 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Escalation</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">14 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Honesty labels</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">101 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Secret routing</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">149 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Never reveal AI</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">47 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Contact block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">48 tokens</span></div></div>
+      <div class="v2-row"><div class="name">History block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">6 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Message block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">20 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payments risk scaled</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">158 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payment wallets</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">153 tokens</span></div></div>
+      <div class="v2-row"><div class="name">No verdict without valid data</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">83 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Main payment card</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">124 tokens</span></div></div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">9 cards &middot; 5,144 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Fleet brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">554 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (shared)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">295 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior — core</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">407 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">2,282 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,055 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: route first</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">76 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: work to done</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">125 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: then reply</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">146 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Design styles</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">204 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Per-bot role</span><span class="count">7 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">7 cards &middot; 5,577 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Local awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">414 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">704 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (local)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">95 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">229 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local critical file</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">383 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Skills map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">3,102 tokens</span></div></div>
+      <div class="v2-row"><div class="name">maps own brain</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">650 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Reasoning</span><span class="count">3 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">3 cards &middot; 2,338 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Reasoning: bucket</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">131 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: truth discipline</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">236 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: digest</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,971 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <p class="v2-quiet">+ 2 channel cards. Transport, not content.</p>
+</aside>
+<aside class="v2-drawer" id="drawer-bot-13" tabindex="-1" aria-label="bot-14 detail">
+  <a class="v2-quiet" data-focus="row-bot-13" href="#row-bot-13">Close</a>
+  <h2>bot-14</h2>
+  <div class="v2-slug">bot-13</div>
+  <p><span class="v2-chip">Claude Code / claude-opus-5</span> <span class="v2-chip status ok">Live</span> <span class="v2-chip">35 cards</span> <span class="v2-chip">515 tokens/turn</span></p>
+    <details class="v2-group">
+      <summary><span class="name">Global</span><span class="count">22 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">13 cards &middot; 955 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Identity</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">19 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Business</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">33 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Escalation</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">14 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Honesty labels</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">101 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Secret routing</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">149 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Never reveal AI</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">47 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Contact block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">48 tokens</span></div></div>
+      <div class="v2-row"><div class="name">History block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">6 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Message block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">20 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payments risk scaled</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">158 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payment wallets</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">153 tokens</span></div></div>
+      <div class="v2-row"><div class="name">No verdict without valid data</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">83 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Main payment card</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">124 tokens</span></div></div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">9 cards &middot; 5,659 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Fleet brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">554 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (shared)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">295 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior — core</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">604 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">2,600 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,055 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: route first</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">76 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: work to done</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">125 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: then reply</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">146 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Design styles</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">204 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Per-bot role</span><span class="count">5 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">5 cards &middot; 4,016 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Local awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">377 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">384 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">42 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local critical file</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">111 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Skills map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">3,102 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Reasoning</span><span class="count">3 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">3 cards &middot; 2,338 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Reasoning: bucket</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">131 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: truth discipline</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">236 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: digest</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,971 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <p class="v2-quiet">+ 5 channel cards. Transport, not content.</p>
+</aside>
+<aside class="v2-drawer" id="drawer-bot-15" tabindex="-1" aria-label="bot-16 detail">
+  <a class="v2-quiet" data-focus="row-bot-15" href="#row-bot-15">Close</a>
+  <h2>bot-16</h2>
+  <div class="v2-slug">bot-15</div>
+  <p><span class="v2-chip">Claude Code / claude-opus-5</span> <span class="v2-chip status ok">Live</span> <span class="v2-chip">33 cards</span> <span class="v2-chip">337 tokens/turn</span></p>
+    <details class="v2-group">
+      <summary><span class="name">Global</span><span class="count">22 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">13 cards &middot; 955 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Identity</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">19 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Business</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">33 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Escalation</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">14 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Honesty labels</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">101 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Secret routing</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">149 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Never reveal AI</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">47 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Contact block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">48 tokens</span></div></div>
+      <div class="v2-row"><div class="name">History block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">6 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Message block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">20 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payments risk scaled</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">158 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payment wallets</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">153 tokens</span></div></div>
+      <div class="v2-row"><div class="name">No verdict without valid data</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">83 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Main payment card</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">124 tokens</span></div></div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">9 cards &middot; 5,659 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Fleet brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">554 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (shared)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">295 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior — core</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">604 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">2,600 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,055 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: route first</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">76 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: work to done</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">125 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: then reply</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">146 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Design styles</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">204 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Per-bot role</span><span class="count">6 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">6 cards &middot; 4,252 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Local awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">403 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">391 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (local)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">89 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">155 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local critical file</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">112 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Skills map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">3,102 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Reasoning</span><span class="count">3 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">3 cards &middot; 2,338 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Reasoning: bucket</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">131 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: truth discipline</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">236 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: digest</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,971 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <p class="v2-quiet">+ 2 channel cards. Transport, not content.</p>
+</aside>
+<aside class="v2-drawer" id="drawer-bot-17" tabindex="-1" aria-label="bot-18 detail">
+  <a class="v2-quiet" data-focus="row-bot-17" href="#row-bot-17">Close</a>
+  <h2>bot-18</h2>
+  <div class="v2-slug">bot-17</div>
+  <p><span class="v2-chip">Claude Code / claude-opus-5</span> <span class="v2-chip status ok">Live</span> <span class="v2-chip">33 cards</span> <span class="v2-chip">340 tokens/turn</span></p>
+    <details class="v2-group">
+      <summary><span class="name">Global</span><span class="count">22 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">13 cards &middot; 955 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Identity</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">19 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Business</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">33 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Escalation</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">14 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Honesty labels</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">101 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Secret routing</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">149 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Never reveal AI</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">47 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Contact block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">48 tokens</span></div></div>
+      <div class="v2-row"><div class="name">History block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">6 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Message block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">20 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payments risk scaled</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">158 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payment wallets</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">153 tokens</span></div></div>
+      <div class="v2-row"><div class="name">No verdict without valid data</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">83 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Main payment card</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">124 tokens</span></div></div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">9 cards &middot; 5,659 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Fleet brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">554 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (shared)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">295 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior — core</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">604 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">2,600 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,055 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: route first</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">76 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: work to done</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">125 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: then reply</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">146 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Design styles</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">204 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Per-bot role</span><span class="count">6 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">6 cards &middot; 8,449 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Local awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">2,389 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">2,014 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (local)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">178 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">124 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local critical file</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">112 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Skills map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">3,632 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Reasoning</span><span class="count">3 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">3 cards &middot; 2,338 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Reasoning: bucket</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">131 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: truth discipline</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">236 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: digest</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,971 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <p class="v2-quiet">+ 2 channel cards. Transport, not content.</p>
+</aside>
+<aside class="v2-drawer" id="drawer-bot-19" tabindex="-1" aria-label="bot-19 detail">
+  <a class="v2-quiet" data-focus="row-bot-19" href="#row-bot-19">Close</a>
+  <h2>bot-19</h2>
+  <div class="v2-slug">bot-19</div>
+  <p><span class="v2-chip">Claude Code / claude-fable-5-1</span> <span class="v2-chip status ok">Live</span> <span class="v2-chip">38 cards</span> <span class="v2-chip">363 tokens/turn</span></p>
+    <details class="v2-group">
+      <summary><span class="name">Global</span><span class="count">22 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">13 cards &middot; 955 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Identity</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">19 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Business</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">33 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Escalation</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">14 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Honesty labels</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">101 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Secret routing</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">149 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Never reveal AI</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">47 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Contact block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">48 tokens</span></div></div>
+      <div class="v2-row"><div class="name">History block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">6 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Message block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">20 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payments risk scaled</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">158 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payment wallets</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">153 tokens</span></div></div>
+      <div class="v2-row"><div class="name">No verdict without valid data</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">83 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Main payment card</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">124 tokens</span></div></div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">9 cards &middot; 5,659 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Fleet brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">554 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (shared)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">295 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior — core</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">604 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">2,600 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,055 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: route first</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">76 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: work to done</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">125 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: then reply</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">146 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Design styles</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">204 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Per-bot role</span><span class="count">11 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">1 card &middot; 3,222 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">shelf card</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">3,222 tokens</span></div></div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">10 cards &middot; 20,621 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Local awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,084 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,320 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (local)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">142 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">221 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local critical file</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">671 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Skills map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">3,698 tokens</span></div></div>
+      <div class="v2-row"><div class="name">maps global library</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">9,619 tokens</span></div></div>
+      <div class="v2-row"><div class="name">maps own brain</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">3,747 tokens</span></div></div>
+      <div class="v2-row"><div class="name">most used</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">71 tokens</span></div></div>
+      <div class="v2-row"><div class="name">astra awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">48 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Reasoning</span><span class="count">3 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">3 cards &middot; 2,338 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Reasoning: bucket</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">131 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: truth discipline</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">236 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: digest</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,971 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <p class="v2-quiet">+ 2 channel cards. Transport, not content.</p>
+</aside>
+<aside class="v2-drawer" id="drawer-bot-21" tabindex="-1" aria-label="bot-22 detail">
+  <a class="v2-quiet" data-focus="row-bot-21" href="#row-bot-21">Close</a>
+  <h2>bot-22</h2>
+  <div class="v2-slug">bot-21</div>
+  <p><span class="v2-chip">Claude Code / claude-fable-5-1</span> <span class="v2-chip status ok">Live</span> <span class="v2-chip">35 cards</span> <span class="v2-chip">824 tokens/turn</span></p>
+    <details class="v2-group">
+      <summary><span class="name">Global</span><span class="count">22 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">13 cards &middot; 955 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Identity</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">19 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Business</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">33 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Escalation</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">14 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Honesty labels</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">101 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Secret routing</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">149 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Never reveal AI</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">47 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Contact block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">48 tokens</span></div></div>
+      <div class="v2-row"><div class="name">History block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">6 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Message block</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">20 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payments risk scaled</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">158 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Payment wallets</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">153 tokens</span></div></div>
+      <div class="v2-row"><div class="name">No verdict without valid data</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">83 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Main payment card</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">124 tokens</span></div></div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">9 cards &middot; 5,659 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Fleet brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">554 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (shared)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">295 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior — core</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">604 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">2,600 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Fleet awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,055 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: route first</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">76 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: work to done</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">125 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Ritual: then reply</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">146 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Design styles</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">204 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Per-bot role</span><span class="count">8 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">2 cards &middot; 490 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">grok telegram bus</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">152 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Astra identity</div><div class="meaning">every turn</div><div class="chips"><span class="v2-chip">338 tokens</span></div></div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">6 cards &middot; 5,775 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Local awareness</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,337 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local behavior</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">498 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Steering (local)</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">74 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local brain map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">81 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Local critical file</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">464 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Skills map</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">3,321 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Reasoning</span><span class="count">3 cards</span></summary>
+      <div class="body">
+    <details class="v2-group">
+      <summary><span class="name">Every turn</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 2 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 5 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Every 10 turns</span><span class="count">0 cards &middot; 0 tokens</span></summary>
+      <div class="body">
+      <div class="v2-empty">No cards ride this bus for this bot.</div>
+      </div>
+    </details>
+    <details class="v2-group">
+      <summary><span class="name">Other cadences</span><span class="count">3 cards &middot; 2,338 tokens</span></summary>
+      <div class="body">
+      <div class="v2-row"><div class="name">Reasoning: bucket</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">131 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: truth discipline</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">236 tokens</span></div></div>
+      <div class="v2-row"><div class="name">Reasoning: digest</div><div class="meaning">every 152 turns</div><div class="chips"><span class="v2-chip">1,971 tokens</span></div></div>
+      </div>
+    </details>
+      </div>
+    </details>
+    <p class="v2-quiet">+ 2 channel cards. Transport, not content.</p>
+</aside>
+</main>
+<footer class="v2-foot v2h-foot">Prompt Lab is read-only. Nothing here changes a real bot.</footer>
+</div>
+<script>
+/* Progressive enhancement only: the page is complete without it.
+   - Opening a drawer (a rowlink to #drawer-*) moves keyboard focus into it.
+   - Closing a drawer (a[data-focus]) returns focus to the opener. */
+document.addEventListener("click", function (e) {
+  var a = e.target && e.target.closest ? e.target.closest("a[href^='#drawer-'],a[href='#settings'],a[href='#next-turn']") : null;
+  if (a) {
+    var d = document.getElementById(a.getAttribute("href").slice(1));
+    if (d) d.focus({ preventScroll: true });
+    return;
+  }
+  var c = e.target && e.target.closest ? e.target.closest("a[data-focus]") : null;
+  if (!c) return;
+  var t = document.getElementById(c.getAttribute("data-focus"));
+  if (t) {
+    if (!t.hasAttribute("tabindex")) t.setAttribute("tabindex", "-1");
+    t.focus({ preventScroll: true });
+  }
+});
+</script>
+<script>
+(function () {
+  var MSG = "read-only public snapshot";
+  function toast() {
+    var t = document.getElementById("snapshot-toast");
+    if (!t) {
+      t = document.createElement("div");
+      t.id = "snapshot-toast";
+      t.setAttribute("role", "status");
+      t.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);"
+        + "background:#1c1a17;color:#f5efe4;padding:10px 18px;border-radius:8px;"
+        + "font:14px/1.4 -apple-system,'Segoe UI',Helvetica,Arial,sans-serif;"
+        + "z-index:10000;box-shadow:0 4px 16px rgba(0,0,0,.3);";
+      document.body.appendChild(t);
+    }
+    t.textContent = MSG;
+    t.style.display = "block";
+    clearTimeout(t._h);
+    t._h = setTimeout(function () { t.style.display = "none"; }, 2600);
+  }
+  var origFetch = window.fetch;
+  window.fetch = function (url, opts) {
+    var m = opts && opts.method ? String(opts.method).toUpperCase() : "GET";
+    if (m !== "GET" && m !== "HEAD") {
+      toast();
+      return Promise.resolve(new Response(JSON.stringify({ error: MSG }), {
+        status: 403, headers: { "Content-Type": "application/json" }
+      }));
+    }
+    return origFetch.apply(this, arguments);
+  };
+  document.addEventListener("submit", function (e) {
+    e.preventDefault(); toast();
+  }, true);
+  document.addEventListener("click", function (e) {
+    var b = e.target && e.target.closest ? e.target.closest("button") : null;
+    if (b && (b.type === "submit" || b.getAttribute("data-action"))) {
+      if (!b.closest("form")) { e.preventDefault(); toast(); }
+    }
+  }, true);
+})();
+</script>
+</body>
+</html>

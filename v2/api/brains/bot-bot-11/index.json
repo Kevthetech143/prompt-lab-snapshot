@@ -1,0 +1,47 @@
+{
+  "bot": "bot-11",
+  "segments": [
+    {
+      "brain": "claude_code/claude-opus-5",
+      "end": "2026-09-08T20:19:41",
+      "start": "2026-09-07T07:45:31"
+    },
+    {
+      "brain": "codex/gpt-6-astra",
+      "end": "2026-09-10T09:53:21",
+      "start": "2026-09-08T20:19:41"
+    },
+    {
+      "brain": "claude_code/claude-opus-5",
+      "end": "2026-09-12T09:34:46",
+      "start": "2026-09-10T09:53:21"
+    },
+    {
+      "brain": "codex/gpt-6-astra",
+      "end": "2026-09-12T17:26:35.280812",
+      "start": "2026-09-12T09:34:46"
+    }
+  ],
+  "swaps": [
+    {
+      "new": "claude_code/claude-opus-5",
+      "old": "claude_code/claude-fable-5",
+      "ts": "2026-09-07T07:45:31"
+    },
+    {
+      "new": "codex/gpt-6-astra",
+      "old": "claude_code/claude-opus-5",
+      "ts": "2026-09-08T20:19:41"
+    },
+    {
+      "new": "claude_code/claude-opus-5",
+      "old": "codex/gpt-6-astra",
+      "ts": "2026-09-10T09:53:21"
+    },
+    {
+      "new": "codex/gpt-6-astra",
+      "old": "claude_code/claude-opus-5",
+      "ts": "2026-09-12T09:34:46"
+    }
+  ]
+}

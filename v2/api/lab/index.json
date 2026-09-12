@@ -1,0 +1,88 @@
+{
+  "machine": [
+    {
+      "href": "/api/version",
+      "meaning": "Build and version info.",
+      "name": "Version"
+    },
+    {
+      "href": "/api/live",
+      "meaning": "What is really happening right now.",
+      "name": "Live feed"
+    },
+    {
+      "href": "/api/xray?bot=bot-19&turn=1",
+      "meaning": "One turn's composed prompt, as JSON.",
+      "name": "Prompt x-ray"
+    },
+    {
+      "href": "/api/overview",
+      "meaning": "Bots, dials and bench state.",
+      "name": "Overview"
+    },
+    {
+      "href": null,
+      "meaning": "Send bot + needle; POST only, no GET link.",
+      "name": "POST /api/probe"
+    }
+  ],
+  "v2": [
+    {
+      "href": "/v2/api/fleet",
+      "meaning": "One row per running bot.",
+      "name": "Fleet"
+    },
+    {
+      "href": "/v2/api/prompt?bot=bot-19",
+      "meaning": "Layers, bus groups, dials, next turn.",
+      "name": "Prompt"
+    },
+    {
+      "href": "/v2/api/prompt/next?bot=bot-19",
+      "meaning": "The composed next-turn list.",
+      "name": "Next turn"
+    },
+    {
+      "href": "/v2/api/brains?bot=bot-19",
+      "meaning": "Timeline segments and the swap log.",
+      "name": "Brains"
+    },
+    {
+      "href": "/v2/api/cost",
+      "meaning": "Per-bot bars, heaviest cards, trims.",
+      "name": "Cost"
+    },
+    {
+      "href": "/v2/api/jobs",
+      "meaning": "Clocks, cron jobs, helper cards.",
+      "name": "Jobs"
+    },
+    {
+      "href": "/v2/api/harness",
+      "meaning": "Every moving part, status checked live.",
+      "name": "Harness"
+    }
+  ],
+  "workbench": [
+    {
+      "href": "/lab",
+      "meaning": "Pretend runs of the real setup. The rule factory.",
+      "name": "The play workbench"
+    },
+    {
+      "href": "/system-visual",
+      "meaning": "The whole harness on one page, in pictures.",
+      "name": "How the system fits together"
+    },
+    {
+      "href": "/routing.html",
+      "meaning": "Tier table and the big knobs.",
+      "name": "Routing and dials"
+    },
+    {
+      "href": "/cards.html",
+      "meaning": "All cards, grouped by owner.",
+      "name": "Every card"
+    }
+  ]
+}

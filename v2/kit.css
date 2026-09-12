@@ -1,0 +1,420 @@
+/* Prompt Lab v2 - Console Readout (task siteredesign2-083000)
+ *
+ * The quiet instrument panel, turned up to readable-at-a-glance. Still
+ * light, still hairlines, one blue: but display type, readout tiles with
+ * label-above-number and a delta line, a masthead with a 4px accent strip,
+ * aligned columns on the data-heavy pages, and a staggered rise-in on load.
+ *
+ * Locks:
+ *   type scale - display: 76 (tile numbers), 60 (H1), 44 (H1 under 768px),
+ *     40 (rank numerals), 32 (strip figures); headings: 22 (sections),
+ *     18 (brand, drawer titles); body 15, meta 13, micro labels 12.
+ *     H1 60/700/-0.02em, section heads 22/700, tile numbers 76/700 tabular.
+ *   spacing unit: 8px - max content width: 1120px
+ *   radius: tiles/panels/drawers 12 - buttons/inputs/nav indicators 8 -
+ *     chips pill - legend swatches 4 (the single documented exception)
+ *   colour: every visible colour is a token; --v2-accent only on bot-19
+ *     actions, active-state indicators, the masthead strip, and the lead
+ *     tile edge
+ *   no eyebrows, no em-dash in copy, middle dot at most 1 per line,
+ *     no dark mode, no gradients, no glass, no serif
+ *   JS: one tiny progressive-enhancement script (drawer focus return only);
+ *     the page is complete without it
+ *
+ * Components: masthead, page header, bot-19 action, quiet link, readout
+ * tile (label / number / delta), column head, panel, summary strip, group
+ * panel (native details), row, chip (neutral / status), ranked row, drawer,
+ * empty state, cost bar, legend.
+ */
+
+:root {
+  --v2-ink: #1f2933;
+  --v2-muted: #4a5560;         /* darkened siteredesign3-152000: 13px grey was [path] on the edge; now [path] */
+  --v2-faint: #6b7280;         /* darkened siteredesign3-152000: faint labels now [path] */
+  --v2-line: #e3e6ea;
+  --v2-bg: #ffffff;
+  --v2-bg-soft: #f7f8fa;
+  --v2-accent: #2456e0;         /* the one accent: bot-19 actions, active nav,
+                                   masthead strip, lead tile edge */
+  --v2-accent-ink: #ffffff;     /* white on accent passes AA */
+  --v2-ok: #1c7a3d;
+  --v2-ok-bg: #eaf5ee;
+  --v2-watch: #a86a08;
+  --v2-watch-bg: #fdf4e2;
+  --v2-off: #4a5560;
+  --v2-off-bg: #f1f2f4;
+  --v2-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+.v2 { margin: 0; background: var(--v2-bg); color: var(--v2-ink);
+      font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 15px; line-height: 1.5; }
+
+.v2 a, .v2 summary { touch-action: manipulation; }
+
+/* skip link: keyboard users jump straight to the page content */
+.v2-skip { position: absolute; left: 16px; top: 8px; z-index: 100;
+           background: var(--v2-accent); color: var(--v2-accent-ink);
+           padding: 8px 16px; border-radius: 8px; text-decoration: none;
+           font-size: 13px; font-weight: 600;
+           transform: translateY(-72px);
+           transition: transform 150ms ease; }
+.v2-skip:focus-visible { transform: none; }
+
+.v2 a:focus-visible, .v2 summary:focus-visible {
+  outline: 2px solid var(--v2-accent);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* masthead: 4px accent strip, brand left, nav right ---------------- */
+/* the strip is the site's signature: one accent, used with intent */
+.v2-topbar { border-top: 4px solid var(--v2-accent);
+             border-bottom: 1px solid var(--v2-line); background: var(--v2-bg); }
+.v2-topbar .wrap { max-width: 1120px; margin: 0 auto; padding: 18px 24px;
+                   display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+.v2-brand { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+.v2-nav { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
+.v2-nav a { text-decoration: none; color: var(--v2-muted); font-size: 13px;
+            font-weight: 500; padding: 8px 14px; border-radius: 999px;
+            transition: color 150ms ease, background-color 150ms ease; }
+.v2-nav a:hover { color: var(--v2-ink); background: var(--v2-bg-soft); }
+.v2-nav a[aria-current="page"] { background: var(--v2-accent);
+            color: var(--v2-accent-ink); font-weight: 600; }
+
+/* page ----------------------------------------------------- */
+.v2-page { max-width: 1120px; margin: 0 auto; padding: 48px 24px 80px; }
+
+/* page header: display title left, purpose sentence, action right */
+.v2-header { display: flex; align-items: flex-end; justify-content: space-between;
+             gap: 24px; margin-bottom: 40px; flex-wrap: wrap; }
+.v2-header h1 { font-size: 60px; font-weight: 700; margin: 0 0 12px;
+                letter-spacing: -0.02em; line-height: 1.05; }
+.v2-header p { margin: 0; color: var(--v2-muted); font-size: 15px; max-width: 60ch; }
+
+/* bot-19 action: the ONE obvious button per place */
+.v2-action { display: inline-block; background: var(--v2-accent);
+             color: var(--v2-accent-ink); border: none; border-radius: 8px;
+             padding: 12px 24px; font-size: 15px; font-weight: 600;
+             text-decoration: none; cursor: pointer; white-space: nowrap;
+             transition: transform 150ms ease, filter 150ms ease; }
+.v2-action:hover { filter: brightness(0.92); transform: translateY(-1px); }
+.v2-action:active { transform: scale(0.98); }
+
+/* quiet link: secondary actions */
+.v2-quiet { color: var(--v2-muted); font-size: 13px; text-decoration: none;
+            transition: color 150ms ease; }
+.v2-quiet:hover { color: var(--v2-ink); text-decoration: underline; }
+
+/* readout tile: label ABOVE the number, big tabular number, delta line -- */
+.v2-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+            margin-bottom: 48px; }
+/* snapshot: dropped media query block: media (max-width: 768px) */
+
+.v2-tile { border: 1px solid var(--v2-line); border-radius: 12px;
+           padding: 24px; background: var(--v2-bg);
+           animation: v2-rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+           transition: transform 180ms ease, box-shadow 180ms ease; }
+.v2-tile:hover { transform: translateY(-2px);
+                 box-shadow: 0 4px 16px rgba(31, 41, 51, 0.08); }
+/* the single most important tile per page carries the accent edge.
+   Inset shadow, not a thicker border, so the tile stays the same height. */
+.v2-tile.lead { box-shadow: inset 0 4px 0 var(--v2-accent);
+                  background: var(--v2-bg-soft); }
+.v2-tile.lead:hover { box-shadow: inset 0 4px 0 var(--v2-accent),
+                                 0 4px 16px rgba(31, 41, 51, 0.08);
+                                 background: var(--v2-bg-soft); }
+.v2-tile .t { font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+              text-transform: uppercase; color: var(--v2-muted); margin: 0 0 12px; }
+.v2-tile .n { font-size: 76px; font-weight: 700; letter-spacing: -0.02em;
+              line-height: 1; font-variant-numeric: tabular-nums;
+              margin: 0 0 12px; overflow-wrap: break-word; }
+/* the honest unavailable state should not shout like a number */
+.v2-tile .n.na { font-size: 32px; }
+.v2-tile .d { font-size: 13px; color: var(--v2-muted); margin: 0; }
+
+/* summary strip: one-line readout counts above a data-heavy list ----- */
+.v2-strip { display: flex; gap: 40px; flex-wrap: wrap; margin-bottom: 24px; }
+.v2-strip .s { display: flex; align-items: baseline; gap: 12px; }
+.v2-strip .n { font-size: 32px; font-weight: 700; letter-spacing: -0.01em;
+               font-variant-numeric: tabular-nums; }
+.v2-strip .t { font-size: 13px; color: var(--v2-muted); }
+
+/* panel: one bordered home for a row list --------------------------- */
+.v2-panel { border: 1px solid var(--v2-line); border-radius: 12px;
+            background: var(--v2-bg); padding: 8px 24px; margin-bottom: 24px; }
+
+/* column head: labels aligned to the grid below --------------------- */
+.v2-colhead { display: grid; grid-template-columns: 1.3fr 0.7fr 2fr;
+              gap: 16px; padding: 16px 24px 12px; margin-bottom: 8px;
+              border-bottom: 2px solid var(--v2-ink);
+              font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
+              text-transform: uppercase; color: var(--v2-faint); }
+.v2-colhead span:last-child { text-align: left; }
+a.v2-rowlink.fleet .v2-row { display: grid;
+              grid-template-columns: 1.3fr 0.7fr 2fr; }
+a.v2-rowlink.fleet .v2-row .chips { justify-content: flex-start; }
+/* snapshot: dropped media query block: media (max-width: 768px) */
+
+
+/* group panel: collapsible, chevron marker, count in header ------- */
+details.v2-group { border: 1px solid var(--v2-line); border-radius: 12px;
+                   background: var(--v2-bg); margin-bottom: 16px; }
+details.v2-group summary { list-style: none; cursor: pointer;
+                           padding: 18px 24px; display: flex; align-items: baseline;
+                           gap: 16px; border-radius: 12px; }
+details.v2-group summary::-webkit-details-marker { display: none; }
+details.v2-group summary::before { content: "\203A"; color: var(--v2-faint);
+                                   font-size: 18px; font-weight: 600;
+                                   display: inline-block; flex-shrink: 0;
+                                   transition: transform 200ms ease; }
+details.v2-group[open] summary::before { transform: rotate(90deg); }
+details.v2-group summary .name { font-size: 15px; font-weight: 600; }
+details.v2-group summary .count { font-size: 13px; color: var(--v2-muted);
+                                  margin-left: auto; }
+.v2-group .body { padding: 16px 24px 24px; border-top: 1px solid var(--v2-line); }
+
+/* row: name, meaning, 1–2 chips, optional quiet action ------- */
+.v2-row { display: flex; align-items: baseline; gap: 16px; padding: 12px 0;
+          border-bottom: 1px solid var(--v2-line); }
+.v2-row:last-child { border-bottom: none; }
+.v2-row .name { font-size: 15px; font-weight: 600; white-space: nowrap;
+               min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.v2-row .name a { color: inherit; text-decoration: none; }
+.v2-row .name a:hover { text-decoration: underline; }
+.v2-row .meaning { font-size: 13px; color: var(--v2-muted); flex: 1; min-width: 0; }
+.v2-row .meaning code { font-family: var(--v2-mono); font-size: 12px;
+                        color: var(--v2-muted); }
+.v2-row .chips { display: flex; gap: 8px; flex-shrink: 0; align-items: center;
+                 flex-wrap: wrap; }
+
+/* ranked row: heaviest-cards list reads as a leaderboard ----------- */
+.v2-hrow { display: grid; grid-template-columns: 64px 1fr auto; gap: 16px;
+           align-items: baseline; padding: 14px 0;
+           border-bottom: 1px solid var(--v2-line); }
+.v2-hrow:last-child { border-bottom: none; }
+.v2-hrow .rank { font-size: 40px; font-weight: 700; color: var(--v2-faint);
+                 font-variant-numeric: tabular-nums; line-height: 1; }
+.v2-hrow .name { font-size: 15px; font-weight: 600; min-width: 0;
+                 overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.v2-hrow .chips { display: flex; gap: 8px; align-items: center; }
+
+/* chips: two styles - neutral and status -------------------- */
+.v2-chip { display: inline-block; font-size: 13px; padding: 4px 12px;
+           border-radius: 999px; border: 1px solid var(--v2-line);
+           color: var(--v2-ink); background: var(--v2-bg); white-space: nowrap;
+           transition: border-color 150ms ease, color 150ms ease; }
+.v2-chip.status { border-color: transparent; font-weight: 600; }
+.v2-chip.status.ok { color: var(--v2-ok); background: var(--v2-ok-bg); }
+.v2-chip.status.watch { color: var(--v2-watch); background: var(--v2-watch-bg); }
+.v2-chip.status.off { color: var(--v2-off); background: var(--v2-off-bg); }
+
+/* drawer: right-side detail, slides on :target, transform + opacity only */
+.v2-drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 92vw);
+             background: var(--v2-bg); border-left: 1px solid var(--v2-line);
+             padding: 32px 24px; overflow-y: auto; z-index: 50;
+             visibility: hidden; opacity: 0; transform: translateX(40px);
+             transition: transform 200ms ease, opacity 200ms ease, visibility 0s 200ms;
+             overscroll-behavior: contain; }
+.v2-drawer:target { visibility: visible; opacity: 1; transform: none;
+                  transition: transform 200ms ease, opacity 200ms ease; }
+/* keyboard: the drawer is a focus target when opened */
+.v2-drawer:focus { outline: 2px solid var(--v2-accent); outline-offset: -2px; }
+.v2-drawer h2 { font-size: 18px; margin: 0 0 8px; }
+.v2-drawer .slug { font-family: var(--v2-mono); font-size: 13px;
+                   color: var(--v2-faint); word-break: break-all; }
+
+/* empty state: one sentence, never scaffolding -------------- */
+.v2-empty { border: 1px dashed var(--v2-line); border-radius: 12px;
+            padding: 40px 24px; text-align: center; color: var(--v2-muted);
+            font-size: 16px; }
+
+/* section headings: 20px, real air above ----------------------------- */
+.v2-sec { font-size: 22px; font-weight: 700; letter-spacing: -0.01em;
+          margin: 44px 0 16px; }
+
+/* in-page anchors land below the topbar, not under it */
+.v2-sec[id], #bots, #groups { scroll-margin-top: 16px; }
+
+/* the brains timeline keeps its minimum width on narrow screens: it
+   scrolls sideways instead of shrinking its labels below legibility */
+.v2-tl-scroll { overflow-x: auto; }
+.v2-tl-scroll svg { min-width: 600px; }
+
+.v2-foot { max-width: 1120px; margin: 0 auto; padding: 0 24px 48px;
+           color: var(--v2-faint); font-size: 13px; }
+
+/* tabular stamp column for the Home "What changed today" panel */
+.v2-stamp { font-size: 13px; color: var(--v2-muted); white-space: nowrap;
+            font-variant-numeric: tabular-nums; flex-shrink: 0;
+            min-width: 150px; }
+
+/* grey monospace tag: the one place a raw slug may appear in the UI */
+.v2-slug { font-family: var(--v2-mono); font-size: 13px; color: var(--v2-faint); }
+
+/* cost bar: taller than the old 8px, still a hairline pill ---------- */
+.v2-bar { display: inline-block; width: 140px; height: 12px; background: var(--v2-bg-soft);
+          border: 1px solid var(--v2-line); border-radius: 999px; overflow: hidden;
+          vertical-align: middle; flex-shrink: 0; }
+.v2-bar i { display: block; height: 100%; background: var(--v2-ink);
+            transform-origin: left center; }
+/* bars grow left-to-right on page entry, staggered 60ms.
+   Delays are inline (style="animation-delay:NmS"); reduced-motion collapses all. */
+.v2-bar.grow i { animation: v2-grow 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* a whole row that opens a drawer: hover wash + a nudge on interactive rows only */
+a.v2-rowlink { display: block; color: inherit; text-decoration: none; border-radius: 12px;
+               transition: background-color 150ms ease; }
+a.v2-rowlink:hover { background: var(--v2-bg-soft); }
+a.v2-rowlink:hover .v2-row { transform: translateX(3px) translateY(-2px); }
+/* 24px inset matches the column header above, so Bot sits under BOT. */
+a.v2-rowlink .v2-row { padding-left: 24px; padding-right: 24px;
+                       transition: transform 150ms ease, background-color 150ms ease; }
+
+/* chips that are links (bot selector) */
+a.v2-chip { text-decoration: none; }
+a.v2-chip:hover { border-color: var(--v2-ink); }
+a.v2-chip[aria-current="page"] { border-color: var(--v2-accent);
+                                 color: var(--v2-accent); font-weight: 600; }
+
+/* the number next to a cost bar: meta type, tabular figures */
+.v2-tok { font-size: 14px; color: var(--v2-ink); font-weight: 600; white-space: nowrap;
+          font-variant-numeric: tabular-nums; }
+
+/* Legend for the model-coloured Brains timeline */
+.v2-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 8px 0 0; }
+.v2-legend-item { display: inline-flex; align-items: center; gap: 6px; font-size: 13px;
+                  color: var(--v2-ink); }
+/* single documented radius exception: colour wells stay 4px */
+.v2-legend-item i { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+
+/* Brains timeline ink: all colours through the tokens */
+.v2-tl-track { fill: var(--v2-bg-soft); }
+.v2-tl-label { fill: var(--v2-ink); }
+.v2-tl-axis { fill: var(--v2-faint); }
+.v2-tl-leader { stroke: var(--v2-muted); stroke-width: 1; }
+/* the signature moment: timeline segments grow left-to-right on page entry,
+   staggered 60ms, transform-origin left. Delays are inline per segment. */
+.v2-tl-seg { transform-box: fill-box; transform-origin: left center;
+             animation: v2-grow 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.v2-page svg { max-width: 100%; height: auto; }
+
+/* snapshot: dropped keyframes animation */
+
+
+/* the tile entrance: rise + fade, staggered per tile via inline delay.
+   The arrived state is the default, so reduced-motion never strands content. */
+/* snapshot: dropped keyframes animation */
+
+
+/* Reduced motion: every animation collapses to its final state instantly.
+   The arrived state is the default, so nothing can strand content hidden. */
+/* snapshot: dropped media query block: media (prefers-reduced-motion: reduce) */
+
+
+/* ────────────────────────────────────────────────────────────────
+ * Muse dark panels — Home rebuild (task siteredesign4h-110900).
+ * Scoped under body.v2-home. Every other place keeps pass-3: none of
+ * the selectors below matches outside the Home shell.
+ * Palette: bg #0e0e0f, panel #1c1c1e, pill #2c2c2e, one blue #2b7de9,
+ * text white / gray #9ca3af. System font; mono for numbers and dates.
+ * ──────────────────────────────────────────────────────────────── */
+
+.v2-home { background: #0e0e0f; color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+body.v2-home { display: flex; align-items: stretch; min-height: 100vh; }
+.v2h-hero-sub, .v2h-hero-date, .v2h-change-time {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+
+/* left icon rail (ref-04): narrow column, outline icons, tooltip on hover */
+.v2h-rail { flex: 0 0 68px; width: 68px; position: sticky; top: 0; height: 100vh;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 18px 0; border-right: 1px solid #1c1c1e; background: #0e0e0f; z-index: 20; }
+.v2h-rail-link { position: relative; width: 46px; height: 46px; flex: 0 0 46px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; color: #9ca3af; text-decoration: none; font-size: 0; line-height: 0; }
+.v2h-rail-link svg { width: 23px; height: 23px; }
+.v2h-rail-link:hover { color: #ffffff; background: #1c1c1e; }
+.v2h-rail-link[aria-current="page"] { color: #ffffff; background: #2c2c2e; }
+.v2h-rail-link::after { content: attr(data-tip); position: absolute; left: calc(100% + 10px);
+  top: 50%; transform: translateY(-50%) translateX(-4px); background: #2c2c2e; color: #ffffff;
+  font-size: 13px; line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  padding: 6px 12px; border-radius: 8px; white-space: nowrap; opacity: 0; pointer-events: none;
+  transition: opacity 120ms ease, transform 120ms ease; }
+.v2h-rail-link:hover::after, .v2h-rail-link:focus-visible::after { opacity: 1; transform: translateY(-50%) translateX(0); }
+
+.v2h-body { flex: 1 1 auto; min-width: 0; }
+.v2-home .v2-page { padding-top: 28px; }
+.v2h-page { width: 100%; }
+
+/* top panel (ref-01): one rounded gray panel, title, full-width gray pill */
+.v2h-panel { background: #1c1c1e; border-radius: 22px; }
+.v2h-top { padding: 26px; margin-bottom: 18px; }
+.v2h-title { margin: 0 0 18px; font-size: 30px; font-weight: 700; letter-spacing: -0.02em; color: #ffffff; }
+.v2h-blurb { margin: 0 0 18px; color: #9ca3af; font-size: 15.5px; line-height: 1.55; max-width: 62ch; }
+.v2h-pill { display: block; width: 100%; box-sizing: border-box; text-align: center;
+  background: #2c2c2e; color: #ffffff; border-radius: 999px; padding: 15px 20px;
+  font-size: 17px; font-weight: 600; text-decoration: none; }
+.v2h-pill:hover { background: #3a3a3e; color: #ffffff; }
+
+/* hero tile grid (ref-01): grainy two-tone gradient tiles, whole tile is the link */
+.v2h-heroes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+/* snapshot: unwrapped media query: media (min-width: 700px) */
+ .v2h-heroes { grid-template-columns: repeat(3, 1fr); } 
+/* snapshot: unwrapped media query: media (min-width: 1024px) */
+ .v2h-heroes { grid-template-columns: repeat(4, 1fr); gap: 16px; } 
+.v2h-hero { position: relative; display: flex; flex-direction: column; justify-content: space-between;
+  aspect-ratio: 1 / 1; border-radius: 26px; padding: 20px; overflow: hidden;
+  color: #ffffff; text-decoration: none;
+  background: linear-gradient(135deg, var(--g1), var(--g2));
+  transition: transform 140ms ease; }
+.v2h-hero:hover { transform: translateY(-2px); }
+.v2h-hero::after { content: ""; position: absolute; inset: 0; border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  opacity: 0.5; mix-blend-mode: overlay; pointer-events: none; }
+.v2h-hero-text, .v2h-hero-foot { position: relative; z-index: 1; display: flex; }
+.v2h-hero-text { flex-direction: column; align-items: flex-start; }
+.v2h-hero-foot { align-items: flex-end; justify-content: space-between; }
+.v2h-hero-title { font-size: clamp(19px, 1.4vw + 14px, 27px); font-weight: 800; letter-spacing: -0.015em; line-height: 1.1; }
+.v2h-hero-sub { display: block; margin-top: 7px; font-size: 11.5px; letter-spacing: 0.07em;
+  line-height: 1.55; opacity: 0.95; }
+.v2h-hero-date { font-size: 13px; opacity: 0.88; }
+.v2h-hero-ic { display: inline-flex; opacity: 0.92; }
+.v2h-hero-ic svg { width: 27px; height: 27px; }
+.v2h-hero-fleet { --g1: #f0503c; --g2: #8f1d16; }
+.v2h-hero-prompt { --g1: #2b7de9; --g2: #173a75; }
+.v2h-hero-brains { --g1: #9d5cf0; --g2: #45207e; }
+.v2h-hero-cost { --g1: #2fbf71; --g2: #0f5a34; }
+.v2h-hero-jobs { --g1: #fb8b3c; --g2: #8a3a10; }
+.v2h-hero-lab { --g1: #2dd4bf; --g2: #0b5a52; }
+.v2h-hero-harness { --g1: #6b7280; --g2: #33383e; }
+
+/* what changed today: small gray section label over one rounded panel */
+.v2h-label { margin: 30px 6px 10px; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.09em; text-transform: uppercase; color: #9ca3af; }
+.v2h-changes { padding: 6px 22px; }
+.v2h-change { display: flex; align-items: center; gap: 14px; padding: 13px 0;
+  border-bottom: 1px solid #2c2c2e; }
+.v2h-change:last-child { border-bottom: none; }
+.v2h-change-ic { flex: 0 0 36px; width: 36px; height: 36px; border-radius: 10px;
+  background: #2c2c2e; color: #9ca3af; display: flex; align-items: center; justify-content: center; }
+.v2h-change-ic svg { width: 18px; height: 18px; }
+.v2h-change-text { flex: 1 1 auto; min-width: 0; font-size: 15px; color: #ffffff; }
+.v2h-change-time { flex: 0 0 auto; font-size: 12px; color: #9ca3af; white-space: nowrap; }
+.v2h-empty { padding: 18px 0; color: #9ca3af; font-size: 14px; }
+
+.v2-home .v2-foot { color: #9ca3af; }
+.v2h-foot { text-align: center; }
+.v2-home .v2-skip { background: #2b7de9; }
+.v2-home a:focus-visible { outline-color: #2b7de9; }
+
+/* grain boost (siteredesign4h-110900): visible at 1x like ref-01 */
+.v2h-hero::after { opacity: 0.8;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E"); }
+
+/* small screens: tighter rail and page, calmer tiles, wrapped change rows */
+/* snapshot: dropped media query block: media (max-width: 560px) */
+

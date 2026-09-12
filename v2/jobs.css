@@ -1,0 +1,89 @@
+/* ────────────────────────────────────────────────────────────────
+ * Muse dark panels — Jobs page rebuild (task sitepage-jobs-131800).
+ * Page-local stylesheet: linked ONLY from /v2/jobs (v2_jobs.py injects
+ * <link rel="stylesheet" href="/v2/jobs.css"> into its own body HTML).
+ * kit.css and v2.py are untouched; nothing below matches other pages
+ * because every selector is scoped to the .v2j- prefix (the rail, the
+ * top panel and the footer keep kit.css's shared .v2h-* classes).
+ * Palette: bg #0e0e0f, panel #1c1c1e, pill/tile #2c2c2e, ONE blue
+ * #2b7de9, text white / gray #9ca3af. System font; mono for numbers,
+ * schedules, dates and times. No white or light cards anywhere.
+ * ──────────────────────────────────────────────────────────────── */
+
+.v2j-main { display: block; }
+
+.v2j-cad, .v2j-last, .v2j-count, .v2j-hero-sub, .v2j-hero-date {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+
+/* hero tile (ref-01, like Home): grainy two-tone gradient card */
+.v2j-hero { position: relative; display: flex; flex-direction: column;
+  justify-content: space-between; overflow: hidden;
+  border-radius: 26px; padding: 26px; min-height: 170px;
+  margin: 0 0 8px; color: #ffffff;
+  background: linear-gradient(135deg, #fb8b3c, #8a3a10); }
+.v2j-hero::after { content: ""; position: absolute; inset: 0;
+  border-radius: inherit; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+  opacity: 0.8; mix-blend-mode: overlay; }
+.v2j-hero-text, .v2j-hero-foot { position: relative; z-index: 1; display: flex; }
+.v2j-hero-text { flex-direction: column; align-items: flex-start; }
+.v2j-hero-foot { align-items: flex-end; justify-content: space-between; margin-top: 34px; }
+.v2j-hero-title { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+.v2j-hero-sub { display: block; margin-top: 8px; font-size: 11.5px;
+  letter-spacing: 0.07em; line-height: 1.55; opacity: 0.95; text-transform: uppercase; }
+.v2j-hero-date { font-size: 13px; opacity: 0.88; }
+.v2j-hero-ic { display: inline-flex; opacity: 0.92; }
+.v2j-hero-ic svg { width: 30px; height: 30px; }
+
+/* section label: small gray caps + count pill (ref-07) */
+.v2j-label { margin: 30px 6px 10px; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.09em; text-transform: uppercase; color: #9ca3af;
+  display: flex; align-items: center; gap: 8px; }
+.v2j-count { display: inline-flex; align-items: center; justify-content: center;
+  min-width: 26px; height: 22px; padding: 0 8px; border-radius: 999px;
+  background: #2c2c2e; color: #ffffff; font-size: 12px; font-weight: 600;
+  letter-spacing: 0; }
+
+/* one rounded panel per group (ref-07) */
+.v2j-panel { background: #1c1c1e; border-radius: 22px; padding: 6px 22px;
+  margin-bottom: 6px; }
+
+/* chevron row: icon tile + name + mono cadence + status pill */
+.v2j-row { display: flex; align-items: center; gap: 14px;
+  padding: 13px 0; border-bottom: 1px solid #2c2c2e; border-radius: 8px; }
+.v2j-row:last-child { border-bottom: none; }
+.v2j-row:hover { background: #232325; }
+.v2j-sbrow { display: flex; align-items: center; gap: 14px;
+  padding: 13px 0; border-bottom: 1px solid #2c2c2e; }
+.v2j-tile { flex: 0 0 36px; width: 36px; height: 36px; border-radius: 10px;
+  background: #2c2c2e; color: #9ca3af;
+  display: flex; align-items: center; justify-content: center; }
+.v2j-tile svg { width: 18px; height: 18px; }
+.v2j-text { flex: 1 1 auto; min-width: 0; }
+.v2j-name { display: block; font-size: 15px; font-weight: 700; color: #ffffff;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.v2j-cad { display: block; margin-top: 3px; font-size: 12.5px; color: #9ca3af; }
+.v2j-last { display: block; margin-top: 2px; font-size: 11.5px; color: #6b7280; }
+
+/* status: dark pill with a green (on) or gray (off) dot */
+.v2j-status { flex: 0 0 auto; display: inline-flex; align-items: center;
+  justify-content: center; width: 34px; height: 22px;
+  background: #0e0e0f; border-radius: 999px; }
+.v2j-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.v2j-dot.on { background: #30d158; }
+.v2j-dot.off { background: #6b7280; }
+.v2j-dot.unknown { background: transparent; border: 1.5px solid #6b7280;
+  width: 7px; height: 7px; }
+
+.v2j-empty { padding: 18px 0; color: #9ca3af; font-size: 14px; }
+
+/* sandbox section: same section-label + panel vocabulary */
+.v2j-sandbox { margin-top: 6px; }
+.v2j-action { display: block; box-sizing: border-box; text-align: center;
+  background: #2c2c2e; color: #ffffff; border-radius: 999px;
+  padding: 13px 20px; font-size: 15px; font-weight: 600; text-decoration: none;
+  margin: 6px 0 12px; }
+.v2j-action:hover { background: #3a3a3e; color: #ffffff; }
+
+/* snapshot: dropped media query block: media (max-width: 560px) */
+

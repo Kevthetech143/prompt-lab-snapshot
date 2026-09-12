@@ -1,0 +1,59 @@
+/* site v2 — /v2/lab: Muse dark panels rows (ref-02 + ref-07).
+   Loaded from the lab page only; the shared shell stays in kit.css. */
+.lab-wrap { max-width: 920px; margin: 0 auto; padding: 6px 20px 48px; }
+
+/* section label: small gray caps text above a panel */
+.lab-sec {
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.09em; text-transform: uppercase;
+  color: #9ca3af; margin: 28px 8px 10px;
+}
+
+/* one panel per group */
+.lab-panel {
+  background: #1c1c1e; border-radius: 22px; padding: 4px 0;
+}
+
+/* a row: outline icon tile, bold white title + gray one-line desc,
+   gray mono hint on the right, trailing chevron (or POST pill) */
+.lab-row {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 18px; text-decoration: none; color: inherit;
+}
+.lab-rowlink + .lab-row, .lab-row + .lab-rowlink, .lab-rowlink + .lab-rowlink {
+  border-top: 1px solid #2c2c2e;
+}
+a.lab-rowlink:hover { background: rgba(255, 255, 255, 0.045); }
+a.lab-rowlink:first-child { border-top-left-radius: 22px; border-top-right-radius: 22px; }
+a.lab-rowlink:last-child { border-bottom-left-radius: 22px; border-bottom-right-radius: 22px; }
+
+.lab-tile {
+  flex: 0 0 auto; width: 44px; height: 44px;
+  background: #2c2c2e; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: #e8e9eb;
+}
+.lab-tile svg { width: 24px; height: 24px; }
+
+.lab-text { flex: 1 1 auto; min-width: 0; }
+.lab-name { display: block; font-weight: 700; color: #ffffff; font-size: 16px; line-height: 1.3; }
+.lab-desc { display: block; color: #9ca3af; font-size: 13.5px; line-height: 1.45; margin-top: 2px; }
+
+.lab-hint {
+  flex: 0 0 auto; white-space: nowrap;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 12.5px; color: #9ca3af;
+}
+
+.lab-chev { flex: 0 0 auto; color: #6b7280; display: flex; }
+.lab-chev svg { width: 20px; height: 20px; }
+
+/* POST-only row: small gray pill instead of a chevron */
+.lab-post {
+  flex: 0 0 auto; background: #2c2c2e; color: #9ca3af;
+  border-radius: 999px; padding: 5px 11px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+/* snapshot: dropped media query block: media (max-width: 560px) */
+
