@@ -12,17 +12,17 @@
     },
     {
       "href": "/api/xray?bot=bot-19&turn=1",
-      "meaning": "One turn's composed prompt, as JSON.",
+      "meaning": "One turn's whole prompt, shown as JSON.",
       "name": "Prompt x-ray"
     },
     {
       "href": "/api/overview",
-      "meaning": "Bots, dials and bench state.",
+      "meaning": "Bots, knobs, and workbench.",
       "name": "Overview"
     },
     {
       "href": null,
-      "meaning": "Send bot + needle; POST only, no GET link.",
+      "meaning": "Send bot + needle (a test word). POST only, no GET link.",
       "name": "POST /api/probe"
     }
   ],
@@ -34,22 +34,22 @@
     },
     {
       "href": "/v2/api/prompt?bot=bot-19",
-      "meaning": "Layers, bus groups, dials, next turn.",
+      "meaning": "Layers, bus groups, knobs, next turn.",
       "name": "Prompt"
     },
     {
       "href": "/v2/api/prompt/next?bot=bot-19",
-      "meaning": "The composed next-turn list.",
+      "meaning": "The finished next-turn list.",
       "name": "Next turn"
     },
     {
       "href": "/v2/api/brains?bot=bot-19",
-      "meaning": "Timeline segments and the swap log.",
+      "meaning": "Timeline pieces and the brain-change log.",
       "name": "Brains"
     },
     {
       "href": "/v2/api/cost",
-      "meaning": "Per-bot bars, heaviest cards, trims.",
+      "meaning": "Bars per bot, heaviest cards, cuts.",
       "name": "Cost"
     },
     {
@@ -59,30 +59,30 @@
     },
     {
       "href": "/v2/api/harness",
-      "meaning": "Every moving part, status checked live.",
+      "meaning": "Every moving part, checked live.",
       "name": "Harness"
     }
   ],
   "workbench": [
     {
       "href": "/lab",
-      "meaning": "Pretend runs of the real setup. The rule factory.",
+      "meaning": "Practice runs of the real setup. Where new rules get made.",
       "name": "The play workbench"
     },
     {
       "href": "/system-visual",
-      "meaning": "The whole harness on one page, in pictures.",
+      "meaning": "The whole setup on one page, in pictures.",
       "name": "How the system fits together"
     },
     {
       "href": "/routing.html",
       "meaning": "Tier table and the big knobs.",
-      "name": "Routing and dials"
+      "name": "Routing and knobs"
     },
     {
       "href": "/cards.html",
-      "meaning": "All cards, grouped by owner.",
-      "name": "Every card"
+      "meaning": "All cards, grouped by who owns them.",
+      "name": "Every rule sheet (card)"
     }
   ]
 }

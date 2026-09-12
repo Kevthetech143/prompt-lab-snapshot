@@ -213,7 +213,19 @@
       "kind": "unregistered",
       "live": true,
       "name": "[text hidden in the public snapshot]",
-      "schedule": "0 14 25 8 *",
+      "schedule": "0 9 16 11 *",
+      "source_file": "crontab -l",
+      "state": "unregistered"
+    },
+    {
+      "bot": "",
+      "command": "[text hidden in the public snapshot]",
+      "engine": "crontab",
+      "key": "[text hidden in the public snapshot]",
+      "kind": "unregistered",
+      "live": true,
+      "name": "[text hidden in the public snapshot]",
+      "schedule": "0 9 1 12 *",
       "source_file": "crontab -l",
       "state": "unregistered"
     },
@@ -709,5 +721,5 @@
   "live_count": 25,
   "loaded_failing_count": 0,
   "stale_count": 15,
-  "unregistered_count": 12
+  "unregistered_count": 13
 }

@@ -53,7 +53,7 @@
       "enabled": true,
       "extra": "next: Sun 13 Sep, 12:00pm",
       "kind": "",
-      "last": "Delivered to inbox at 2026-09-12 12:00:00 (id=cron_bot-01_[hidden]_55c7822e)",
+      "last": "[2026-09-12 18:17:12] OK inbox→[path] (id=cro",
       "name": "Noon price check"
     },
     {
@@ -61,7 +61,7 @@
       "enabled": true,
       "extra": "next: Sun 13 Sep, 9:15am",
       "kind": "",
-      "last": "Delivered to inbox at 2026-09-12 12:00:00 (id=cron_bot-01_[hidden]_55c7822e)",
+      "last": "[2026-09-12 18:17:12] OK inbox→[path] (id=cro",
       "name": "Profit check"
     },
     {
@@ -69,7 +69,7 @@
       "enabled": true,
       "extra": "next: Sun 13 Sep, 8:33am",
       "kind": "",
-      "last": "Delivered to inbox at 2026-09-12 12:00:00 (id=cron_bot-01_[hidden]_55c7822e)",
+      "last": "[2026-09-12 18:17:12] OK inbox→[path] (id=cro",
       "name": "Read customer messages"
     },
     {
@@ -93,7 +93,7 @@
       "enabled": true,
       "extra": "next: within the next 3 minutes",
       "kind": "",
-      "last": "[2026-09-12 17:23:51 EDT] poll complete",
+      "last": "[2026-09-12 18:24:05 EDT] poll complete",
       "name": "Turn off the rented computer"
     },
     {
@@ -459,14 +459,6 @@
       "name": "refresh_bm_prices.sh"
     },
     {
-      "cadence": "0 14 25 8 *",
-      "enabled": null,
-      "extra": "",
-      "kind": "unregistered",
-      "last": "not recorded",
-      "name": "rh_place_order.py"
-    },
-    {
       "cadence": "12 9 * * 6",
       "enabled": null,
       "extra": "",
@@ -515,6 +507,22 @@
       "name": "sentinel"
     },
     {
+      "cadence": "0 9 1 12 *",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
+      "cadence": "0 9 16 11 *",
+      "enabled": null,
+      "extra": "",
+      "kind": "unregistered",
+      "last": "not recorded",
+      "name": "[text hidden in the public snapshot]"
+    },
+    {
       "cadence": "daily at 09:07",
       "enabled": null,
       "extra": "",
@@ -546,7 +554,7 @@
       "extra": "",
       "kind": "alert",
       "last": "never",
-      "name": "[text hidden in the public snapshot]"
+      "name": "await muse intake repair 1518"
     },
     {
       "cadence": "every 15 minutes",
@@ -577,7 +585,7 @@
       "enabled": true,
       "extra": "",
       "kind": "alert",
-      "last": "Sep 12, 09:40",
+      "last": "Sep 12, 16:25",
       "name": "bot-19 context"
     },
     {
@@ -609,7 +617,7 @@
       "enabled": true,
       "extra": "",
       "kind": "alert",
-      "last": "Sep 11, 18:11",
+      "last": "Sep 12, 18:11",
       "name": "promised vs armed"
     },
     {
@@ -617,7 +625,7 @@
       "enabled": true,
       "extra": "",
       "kind": "alert",
-      "last": "Sep 12, 14:15",
+      "last": "Sep 12, 16:16",
       "name": "token alert amazon bm fb"
     },
     {
@@ -633,7 +641,7 @@
       "enabled": true,
       "extra": "",
       "kind": "alert",
-      "last": "Sep 12, 15:11",
+      "last": "Sep 12, 16:12",
       "name": "token alert bot-05"
     },
     {
@@ -689,7 +697,7 @@
       "enabled": true,
       "extra": "",
       "kind": "alert",
-      "last": "Sep 12, 14:48",
+      "last": "Sep 12, 15:49",
       "name": "token alert bot-19"
     },
     {
@@ -697,7 +705,7 @@
       "enabled": true,
       "extra": "",
       "kind": "alert",
-      "last": "Sep 12, 14:42",
+      "last": "Sep 12, 15:42",
       "name": "token alert bot-22"
     },
     {

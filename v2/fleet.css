@@ -62,7 +62,7 @@ a.v2-rowlink.fleet .v2-bar.grow i { display: block; height: 100%;
 .v2-drawer:focus { outline-color: #2b7de9; }
 .v2-drawer .v2-chip { background: #2c2c2e; border-color: transparent; color: #e5e5e7; }
 .v2-drawer .v2-chip.status.ok { color: #4ade80; background: rgba(47, 191, 113, 0.14); }
-.v2-drawer details.v2-group { border-color: #2c2c2e; }
+.v2-drawer details.v2-group { border-color: #2c2c2e; background: #1c1c1e; }
 .v2-drawer details.v2-group summary .name { color: #ffffff; }
 .v2-drawer details.v2-group summary .count { color: #9ca3af; }
 .v2-drawer details.v2-group summary::before { color: #6b7280; }

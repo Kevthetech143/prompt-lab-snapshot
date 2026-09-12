@@ -227,7 +227,7 @@ details.v2-group summary .count { font-size: 13px; color: var(--v2-muted);
                    color: var(--v2-faint); word-break: break-all; }
 
 /* empty state: one sentence, never scaffolding -------------- */
-.v2-empty { border: 1px dashed var(--v2-line); border-radius: 12px;
+.v2-empty:not(.v2-detail) { border: 1px dashed var(--v2-line); border-radius: 12px;
             padding: 40px 24px; text-align: center; color: var(--v2-muted);
             font-size: 16px; }
 
@@ -336,6 +336,15 @@ body.v2-home { display: flex; align-items: stretch; min-height: 100vh; }
   display: flex; align-items: center; justify-content: center;
   border-radius: 50%; color: #9ca3af; text-decoration: none; font-size: 0; line-height: 0; }
 .v2h-rail-link svg { width: 23px; height: 23px; }
+.v2h-rail-ic { display: flex; align-items: center; justify-content: center; }
+.v2h-rail-tx { display: none; }
+/* nontech3-175500: visible text label under each rail icon at wide widths */
+/* snapshot: unwrapped media query: media (min-width: 1200px) */
+
+  .v2h-rail { flex-basis: 78px; width: 78px; }
+  .v2h-rail-link { width: 62px; height: auto; min-height: 58px; flex-basis: auto; flex-direction: column; gap: 4px; border-radius: 14px; padding: 8px 4px; font-size: 10px; line-height: 1.25; }
+  .v2h-rail-tx { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
 .v2h-rail-link:hover { color: #ffffff; background: #1c1c1e; }
 .v2h-rail-link[aria-current="page"] { color: #ffffff; background: #2c2c2e; }
 .v2h-rail-link::after { content: attr(data-tip); position: absolute; left: calc(100% + 10px);
@@ -418,3 +427,30 @@ body.v2-home { display: flex; align-items: stretch; min-height: 100vh; }
 /* small screens: tighter rail and page, calmer tiles, wrapped change rows */
 /* snapshot: dropped media query block: media (max-width: 560px) */
 
+
+/* nontech1-163800: Home question rows + tile for-lines */
+.v2h-questions { margin: 18px 6px 4px; padding: 12px 18px; }
+.v2h-qrow { display: flex; gap: 12px; align-items: baseline; padding: 8px 0; }
+.v2h-qrow + .v2h-qrow { border-top: 1px solid rgba(255,255,255,0.07); }
+.v2h-qdot { flex: none; width: 10px; height: 10px; border-radius: 50%; transform: translateY(1px); }
+.v2h-qdot-green { background: #34d399; }
+.v2h-qdot-amber { background: #fbbf24; }
+.v2h-qdot-red { background: #f87171; }
+.v2h-q { font-weight: 600; }
+.v2h-a { color: var(--v2-muted); }
+.v2h-hero-for { display: block; margin-top: 5px; font-size: 12px; color: var(--v2-muted); letter-spacing: 0.01em; }
+
+/* Show-details toggle (task nontech2-171000) ---------------------------
+   One shared toggle in the top panel of every v2 page. OFF by default:
+   any element marked .v2-detail (file paths, ids/hashes, API routes, raw
+   logs, JSON, token counts under 1k) and any zero-count row (marked
+   .v2-empty AND .v2-detail) is hidden until the toggle adds
+   .v2-details-on to <body>. Plain .v2-empty boxes (empty-state messages)
+   keep their own look and stay visible. */
+.v2-details-toggle { display: none; }
+.v2-js .v2-details-toggle { display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 12px; font-size: 14px; color: var(--v2-muted); cursor: pointer;
+  user-select: none; }
+.v2-details-toggle input { width: 16px; height: 16px; accent-color: var(--v2-accent);
+  cursor: pointer; }
+body.v2:not(.v2-details-on) .v2-detail { display: none !important; }

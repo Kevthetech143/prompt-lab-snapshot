@@ -68,3 +68,6 @@
 /* ── Mobile: names truncate, bars shrink, tiles keep their shape */
 /* snapshot: dropped media query block: media (max-width: 560px) */
 
+
+/* nontech3-175500: unit label next to cost figures */
+.vc-unit { font-size: 11px; color: #9ca3af; font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
