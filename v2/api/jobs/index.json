@@ -51,9 +51,9 @@
     {
       "cadence": "Every day at 12:00pm",
       "enabled": true,
-      "extra": "next: Sun 13 Sep, 12:00pm",
+      "extra": "next: Mon 14 Sep, 12:00pm",
       "kind": "",
-      "last": "Delivered to inbox at 2026-09-13 09:15:00 (id=cron_bot-01_[hidden]_25d5191b)",
+      "last": "Delivered to inbox at 2026-09-13 12:00:00 (id=cron_bot-01_[hidden]_db2c4279)",
       "name": "Noon price check"
     },
     {
@@ -61,7 +61,7 @@
       "enabled": true,
       "extra": "next: Mon 14 Sep, 9:15am",
       "kind": "",
-      "last": "Delivered to inbox at 2026-09-13 09:15:00 (id=cron_bot-01_[hidden]_25d5191b)",
+      "last": "Delivered to inbox at 2026-09-13 12:00:00 (id=cron_bot-01_[hidden]_db2c4279)",
       "name": "Profit check"
     },
     {
@@ -69,7 +69,7 @@
       "enabled": true,
       "extra": "next: Mon 14 Sep, 8:33am",
       "kind": "",
-      "last": "Delivered to inbox at 2026-09-13 09:15:00 (id=cron_bot-01_[hidden]_25d5191b)",
+      "last": "Delivered to inbox at 2026-09-13 12:00:00 (id=cron_bot-01_[hidden]_db2c4279)",
       "name": "Read customer messages"
     },
     {
@@ -93,7 +93,7 @@
       "enabled": true,
       "extra": "next: within the next 3 minutes",
       "kind": "",
-      "last": "[2026-09-13 11:03:29 EDT] poll complete",
+      "last": "[2026-09-13 12:12:44 EDT] poll complete",
       "name": "Turn off the rented computer"
     },
     {

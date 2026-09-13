@@ -3,7 +3,7 @@
     {
       "adapter": "claude_code",
       "group": "",
-      "heartbeat": "2026-09-13T11:03:51",
+      "heartbeat": "2026-09-13T12:14:54",
       "id": "bot-01",
       "model": "claude-opus-5",
       "name": "bot-01",
@@ -12,7 +12,7 @@
     {
       "adapter": "claude_code",
       "group": "",
-      "heartbeat": "2026-09-13T11:03:51",
+      "heartbeat": "2026-09-13T12:14:54",
       "id": "bot-03",
       "model": "claude-opus-5",
       "name": "bot-04",
@@ -21,7 +21,7 @@
     {
       "adapter": "claude_code",
       "group": "",
-      "heartbeat": "2026-09-13T11:04:08",
+      "heartbeat": "2026-09-13T12:14:39",
       "id": "bot-05",
       "model": "claude-opus-5",
       "name": "bot-05",
@@ -30,7 +30,7 @@
     {
       "adapter": "grok",
       "group": "builders",
-      "heartbeat": "2026-09-13T11:03:51",
+      "heartbeat": "2026-09-13T12:14:54",
       "id": "bot-07",
       "model": "grok-4.6",
       "name": "bot-08",
@@ -39,7 +39,7 @@
     {
       "adapter": "codex",
       "group": "system",
-      "heartbeat": "2026-09-13T11:04:07",
+      "heartbeat": "2026-09-13T12:14:38",
       "id": "bot-09",
       "model": "gpt-5.6-sol",
       "name": "bot-09",
@@ -48,7 +48,7 @@
     {
       "adapter": "codex",
       "group": "",
-      "heartbeat": "2026-09-13T11:03:58",
+      "heartbeat": "2026-09-13T12:14:29",
       "id": "bot-11",
       "model": "gpt-6-astra",
       "name": "bot-12",
@@ -57,7 +57,7 @@
     {
       "adapter": "claude_code",
       "group": "bot-13",
-      "heartbeat": "2026-09-13T11:04:07",
+      "heartbeat": "2026-09-13T12:14:38",
       "id": "bot-13",
       "model": "claude-opus-5",
       "name": "bot-14",
@@ -66,7 +66,7 @@
     {
       "adapter": "claude_code",
       "group": "",
-      "heartbeat": "2026-09-13T11:04:05",
+      "heartbeat": "2026-09-13T12:14:38",
       "id": "bot-15",
       "model": "claude-opus-5",
       "name": "bot-16",
@@ -75,7 +75,7 @@
     {
       "adapter": "claude_code",
       "group": "finance",
-      "heartbeat": "2026-09-13T11:04:05",
+      "heartbeat": "2026-09-13T12:14:38",
       "id": "bot-17",
       "model": "claude-opus-5",
       "name": "bot-18",
@@ -84,7 +84,7 @@
     {
       "adapter": "claude_code",
       "group": "builders",
-      "heartbeat": "2026-09-13T11:04:07",
+      "heartbeat": "2026-09-13T12:14:40",
       "id": "bot-19",
       "model": "claude-fable-5-1",
       "name": "bot-19",
@@ -93,7 +93,7 @@
     {
       "adapter": "claude_code",
       "group": "",
-      "heartbeat": "2026-09-13T11:03:51",
+      "heartbeat": "2026-09-13T12:14:54",
       "id": "bot-21",
       "model": "claude-fable-5-1",
       "name": "bot-22",
