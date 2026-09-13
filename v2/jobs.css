@@ -85,5 +85,12 @@
   margin: 6px 0 12px; }
 .v2j-action:hover { background: #3a3a3e; color: #ffffff; }
 
-/* snapshot: dropped media query block: media (max-width: 560px) */
-
+@media (max-width: 560px) {
+  .v2j-hero { padding: 20px; border-radius: 20px; min-height: 150px; }
+  .v2j-hero-title { font-size: 24px; }
+  .v2j-hero-sub { font-size: 10px; letter-spacing: 0.05em; }
+  .v2j-hero-ic svg { width: 24px; height: 24px; }
+  .v2j-panel { padding: 4px 16px; }
+  .v2j-row { gap: 12px; padding: 12px 0; }
+  .v2j-name { font-size: 14px; }
+}

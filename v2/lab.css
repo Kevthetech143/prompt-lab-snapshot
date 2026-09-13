@@ -55,5 +55,8 @@ a.lab-rowlink:last-child { border-bottom-left-radius: 22px; border-bottom-right-
   font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
 }
 
-/* snapshot: dropped media query block: media (max-width: 560px) */
-
+@media (max-width: 560px) {
+  .lab-wrap { padding: 4px 12px 36px; }
+  .lab-row { padding: 11px 14px; gap: 12px; }
+  .lab-hint { display: none; }
+}

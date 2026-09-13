@@ -71,15 +71,20 @@
 .v2hh-fault { color: #fb923c; background: rgba(251, 146, 60, 0.14); }
 
 /* wide: only the selected section shows (ref-05 right pane) */
-/* snapshot: unwrapped media query: media (min-width: 960px) */
-
+@media (min-width: 960px) {
   .v2hh-sec { display: none; }
   .v2hh-sel-prompt .v2hh-sec-prompt { display: block; }
   .v2hh-sel-watchers .v2hh-sec-watchers { display: block; }
   .v2hh-sel-muse .v2hh-sec-muse { display: block; }
   .v2hh-sel-site .v2hh-sec-site { display: block; }
-
+}
 
 /* narrow: single column, all sections visible, each with label + panel */
-/* snapshot: dropped media query block: media (max-width: 959px) */
-
+@media (max-width: 959px) {
+  .v2hh-wrap { flex-direction: column; }
+  .v2hh-sections { display: none; }
+  .v2hh-main { width: 100%; }
+  .v2hh-hero { min-height: 150px; }
+  .v2hh-row { flex-wrap: wrap; row-gap: 6px; }
+  .v2hh-chev { display: none; }
+}

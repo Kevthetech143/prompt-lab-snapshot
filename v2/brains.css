@@ -12,8 +12,7 @@
 /* two panes (ref-05): left bots panel, right stacked detail panels */
 .br-two { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 16px;
   align-items: start; }
-/* snapshot: dropped media query block: media (max-width: 720px) */
-
+@media (max-width: 720px) { .br-two { grid-template-columns: 1fr; } }
 
 .br-panel { background: #1c1c1e; border-radius: 22px; }
 

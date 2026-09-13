@@ -111,8 +111,10 @@
 /* readout tile: label ABOVE the number, big tabular number, delta line -- */
 .v2-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
             margin-bottom: 48px; }
-/* snapshot: dropped media query block: media (max-width: 768px) */
-
+@media (max-width: 768px) {
+  .v2-tiles { grid-template-columns: 1fr; }
+  .v2-header h1 { font-size: 44px; }
+}
 .v2-tile { border: 1px solid var(--v2-line); border-radius: 12px;
            padding: 24px; background: var(--v2-bg);
            animation: v2-rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -156,8 +158,10 @@
 a.v2-rowlink.fleet .v2-row { display: grid;
               grid-template-columns: 1.3fr 0.7fr 2fr; }
 a.v2-rowlink.fleet .v2-row .chips { justify-content: flex-start; }
-/* snapshot: dropped media query block: media (max-width: 768px) */
-
+@media (max-width: 768px) {
+  .v2-colhead { display: none; }
+  a.v2-rowlink.fleet .v2-row { display: flex; }
+}
 
 /* group panel: collapsible, chevron marker, count in header ------- */
 details.v2-group { border: 1px solid var(--v2-line); border-radius: 12px;
@@ -301,18 +305,26 @@ a.v2-chip[aria-current="page"] { border-color: var(--v2-accent);
              animation: v2-grow 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .v2-page svg { max-width: 100%; height: auto; }
 
-/* snapshot: dropped keyframes animation */
-
+@keyframes v2-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
 
 /* the tile entrance: rise + fade, staggered per tile via inline delay.
    The arrived state is the default, so reduced-motion never strands content. */
-/* snapshot: dropped keyframes animation */
-
+@keyframes v2-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
 
 /* Reduced motion: every animation collapses to its final state instantly.
    The arrived state is the default, so nothing can strand content hidden. */
-/* snapshot: dropped media query block: media (prefers-reduced-motion: reduce) */
-
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
 
 /* ────────────────────────────────────────────────────────────────
  * Muse dark panels — Home rebuild (task siteredesign4h-110900).
@@ -339,12 +351,11 @@ body.v2-home { display: flex; align-items: stretch; min-height: 100vh; }
 .v2h-rail-ic { display: flex; align-items: center; justify-content: center; }
 .v2h-rail-tx { display: none; }
 /* nontech3-175500: visible text label under each rail icon at wide widths */
-/* snapshot: unwrapped media query: media (min-width: 1200px) */
-
+@media (min-width: 1200px) {
   .v2h-rail { flex-basis: 78px; width: 78px; }
   .v2h-rail-link { width: 62px; height: auto; min-height: 58px; flex-basis: auto; flex-direction: column; gap: 4px; border-radius: 14px; padding: 8px 4px; font-size: 10px; line-height: 1.25; }
   .v2h-rail-tx { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
+}
 .v2h-rail-link:hover { color: #ffffff; background: #1c1c1e; }
 .v2h-rail-link[aria-current="page"] { color: #ffffff; background: #2c2c2e; }
 .v2h-rail-link::after { content: attr(data-tip); position: absolute; left: calc(100% + 10px);
@@ -371,10 +382,8 @@ body.v2-home { display: flex; align-items: stretch; min-height: 100vh; }
 
 /* hero tile grid (ref-01): grainy two-tone gradient tiles, whole tile is the link */
 .v2h-heroes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-/* snapshot: unwrapped media query: media (min-width: 700px) */
- .v2h-heroes { grid-template-columns: repeat(3, 1fr); } 
-/* snapshot: unwrapped media query: media (min-width: 1024px) */
- .v2h-heroes { grid-template-columns: repeat(4, 1fr); gap: 16px; } 
+@media (min-width: 700px) { .v2h-heroes { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .v2h-heroes { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
 .v2h-hero { position: relative; display: flex; flex-direction: column; justify-content: space-between;
   aspect-ratio: 1 / 1; border-radius: 26px; padding: 20px; overflow: hidden;
   color: #ffffff; text-decoration: none;
@@ -425,8 +434,18 @@ body.v2-home { display: flex; align-items: stretch; min-height: 100vh; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E"); }
 
 /* small screens: tighter rail and page, calmer tiles, wrapped change rows */
-/* snapshot: dropped media query block: media (max-width: 560px) */
-
+@media (max-width: 560px) {
+  .v2-home .v2-page { padding: 20px 14px 60px; }
+  .v2h-rail { flex-basis: 54px; width: 54px; }
+  .v2h-rail-link { width: 42px; height: 42px; flex-basis: 42px; }
+  .v2h-hero { padding: 14px; border-radius: 20px; }
+  .v2h-hero-sub { font-size: 10px; letter-spacing: 0.05em; }
+  .v2h-hero-ic svg { width: 22px; height: 22px; }
+  .v2h-hero-date { font-size: 11px; }
+  .v2h-change { flex-wrap: wrap; row-gap: 4px; padding: 12px 0; }
+  .v2h-change-text { flex: 1 1 calc(100% - 50px); }
+  .v2h-change-time { flex: 1 1 100%; text-align: right; }
+}
 
 /* nontech1-163800: Home question rows + tile for-lines */
 .v2h-questions { margin: 18px 6px 4px; padding: 12px 18px; }
@@ -454,3 +473,73 @@ body.v2-home { display: flex; align-items: stretch; min-height: 100vh; }
 .v2-details-toggle input { width: 16px; height: 16px; accent-color: var(--v2-accent);
   cursor: pointer; }
 body.v2:not(.v2-details-on) .v2-detail { display: none !important; }
+
+/* ────────────────────────────────────────────────────────────────
+ * mobile-193800 (2026-09-12): phone layout.
+ * Public-snapshot banner: a full-width strip above the layout, never a
+ * sidebar column. body.v2-home is a row flex (rail + body); flex-wrap
+ * lets the banner take its own row when injected (order:-1 puts it first).
+ * ──────────────────────────────────────────────────────────────── */
+body.v2-home { flex-wrap: wrap; }
+body > .snapshot-banner { display: block; width: 100%; max-width: 100%;
+  flex: 0 0 100%; order: -1;
+  padding: 10px 16px; text-align: center;
+  font-size: 13px; line-height: 1.45; letter-spacing: 0.01em;
+  background: #141416; color: #d7d7d9; border-bottom: 1px solid #2c2c2e; }
+
+@media (max-width: 760px) {
+  /* 1. left rail -> fixed bottom tab bar: 8 items, icon + tiny label,
+        horizontally scrollable if they ever exceed the width. */
+  .v2h-rail { position: fixed; left: 0; right: 0; bottom: 0; top: auto;
+    width: 100%; height: auto; flex: none;
+    flex-direction: row; justify-content: flex-start; align-items: stretch;
+    gap: 2px; padding: 6px 6px calc(6px + env(safe-area-inset-bottom, 0px));
+    border-right: none; border-top: 1px solid #2c2c2e;
+    background: #0e0e0f; z-index: 60; overflow-x: auto; }
+  .v2h-rail-link { flex: 1 0 auto; min-width: 52px; width: auto; height: auto;
+    flex-basis: auto; flex-direction: column; gap: 3px;
+    padding: 8px 6px; border-radius: 12px;
+    font-size: 9.5px; line-height: 1.25; color: #9ca3af; }
+  .v2h-rail-link svg { width: 21px; height: 21px; }
+  .v2h-rail-tx { display: block; max-width: 62px; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap; }
+  .v2h-rail-link::after { display: none; }
+  /* content takes the full width and clears the fixed tab bar */
+  .v2h-body { padding-bottom: 92px; }
+  .v2-home .v2-page { padding: 20px 14px 40px; }
+
+  /* 2. top panel: title + purpose stack; buttons full-width, one line;
+        the Show-details toggle sits under them, centered. */
+  .v2h-top { padding: 20px; }
+  .v2h-title { font-size: 30px; margin-bottom: 12px; }
+  .v2h-blurb { font-size: 14.5px; margin-bottom: 16px; }
+  .v2h-pill { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    font-size: 16px; padding: 14px 20px; }
+  .v2-details-toggle { margin-top: 14px; width: 100%; justify-content: center; }
+
+  /* 3. hero tiles: 2 columns 480-760px; [path] tall, numbers readable */
+  .v2h-heroes { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .v2h-heroes .v2h-hero { aspect-ratio: auto; min-height: 140px;
+    padding: 14px; border-radius: 20px; }
+  .v2h-hero-sub { font-size: 10px; letter-spacing: 0.05em; }
+  .v2h-hero-ic svg { width: 22px; height: 22px; }
+  .v2h-hero-date { font-size: 11px; }
+
+  /* 4. rows wrap onto two lines instead of overflowing */
+  .v2-row { flex-wrap: wrap; row-gap: 6px; }
+  .v2-tl-scroll { max-width: 100%; }
+
+  /* 5. slide-in detail panel -> full-screen sheet, Close pinned at top */
+  .v2-drawer { top: 0; right: 0; bottom: 0; left: 0; width: 100%;
+    border-left: none; transform: translateY(24px);
+    padding: 12px 16px calc(24px + env(safe-area-inset-bottom, 0px)); }
+  .v2-drawer:target { transform: none; }
+  .v2-drawer > a[data-focus] { position: sticky; top: 0; display: block;
+    text-align: right; padding: 14px 4px; font-size: 16px; font-weight: 600;
+    background: inherit; z-index: 2; }
+}
+
+/* below 480px: hero tiles go single column */
+@media (max-width: 480px) {
+  .v2h-heroes { grid-template-columns: 1fr; }
+}

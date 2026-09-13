@@ -3,9 +3,9 @@
     {
       "cadence": "Every day at 9:06am and 9:06pm",
       "enabled": true,
-      "extra": "next: Sat 12 Sep, 9:06pm",
+      "extra": "next: Sun 13 Sep, 9:06am",
       "kind": "",
-      "last": "Delivered to inbox at 2026-09-12 09:06:00 (id=cron_bot-21_[hidden]_b1ec1e30)",
+      "last": "Delivered to inbox at 2026-09-12 21:06:00 (id=cron_bot-21_[hidden]_6d5c7884)",
       "name": "AI news roundup"
     },
     {
@@ -53,7 +53,7 @@
       "enabled": true,
       "extra": "next: Sun 13 Sep, 12:00pm",
       "kind": "",
-      "last": "[2026-09-12 18:17:12] OK inbox→[path] (id=cro",
+      "last": "Delivered to inbox at 2026-09-12 23:30:00 (id=cron_uxui_[hidden]_9e434530)",
       "name": "Noon price check"
     },
     {
@@ -61,7 +61,7 @@
       "enabled": true,
       "extra": "next: Sun 13 Sep, 9:15am",
       "kind": "",
-      "last": "[2026-09-12 18:17:12] OK inbox→[path] (id=cro",
+      "last": "Delivered to inbox at 2026-09-12 23:30:00 (id=cron_uxui_[hidden]_9e434530)",
       "name": "Profit check"
     },
     {
@@ -69,7 +69,7 @@
       "enabled": true,
       "extra": "next: Sun 13 Sep, 8:33am",
       "kind": "",
-      "last": "[2026-09-12 18:17:12] OK inbox→[path] (id=cro",
+      "last": "Delivered to inbox at 2026-09-12 23:30:00 (id=cron_uxui_[hidden]_9e434530)",
       "name": "Read customer messages"
     },
     {
@@ -93,7 +93,7 @@
       "enabled": true,
       "extra": "next: within the next 3 minutes",
       "kind": "",
-      "last": "[2026-09-12 18:24:05 EDT] poll complete",
+      "last": "[2026-09-13 00:16:24 EDT] poll complete",
       "name": "Turn off the rented computer"
     },
     {
@@ -107,7 +107,7 @@
     {
       "cadence": "Every day at 12:05am",
       "enabled": false,
-      "extra": "next: Sun 13 Sep, 12:05am",
+      "extra": "next: Mon 14 Sep, 12:05am",
       "kind": "",
       "last": "Delivered to inbox at 2026-09-07 00:05:00 (id=cron_bot-19_[hidden]_75a76ea4)",
       "name": "Nightly lesson round"

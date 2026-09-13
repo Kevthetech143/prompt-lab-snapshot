@@ -54,10 +54,9 @@ a.v2p-settings:hover { color: #ffffff; text-decoration: underline; }
 .v2p-hero-teal { --g1: #2dd4bf; --g2: #0b5a52; }
 .v2p-heroes { display: grid; grid-template-columns: repeat(2, 1fr);
   gap: 14px; margin-top: 18px; }
-/* snapshot: unwrapped media query: media (min-width: 700px) */
-
+@media (min-width: 700px) {
   .v2p-heroes { grid-template-columns: repeat(3, 1fr); }
-
+}
 
 /* What rides, by bus: section label over ONE panel of chevron rows */
 .v2p-buses { padding: 4px 22px; }
@@ -106,5 +105,28 @@ a.v2p-dclose:hover { color: #ffffff; }
   justify-content: flex-end; }
 
 /* small screens */
-/* snapshot: dropped media query block: media (max-width: 560px) */
+@media (max-width: 560px) {
+  .v2p-heroes { gap: 10px; }
+  .v2p-hero { padding: 14px; border-radius: 20px; }
+  .v2p-hero-sub { font-size: 10px; letter-spacing: 0.05em; }
+  .v2p-hero-ic svg { width: 22px; height: 22px; }
+  .v2p-hero-date { font-size: 11px; }
+  .v2p-bus-row { padding: 13px 0; gap: 10px; }
+  .v2p-bus-name { font-size: 14.5px; }
+  .v2p-bus-count { font-size: 11.5px; }
+  .v2p-card-row { flex-wrap: wrap; gap: 4px; }
+  .v2p-card-meta { flex: 1 1 100%; }
+  .v2p-drow { flex-wrap: wrap; gap: 6px; }
+  .v2p-dmeta { flex: 1 1 100%; }
+}
 
+/* mobile-193800 (2026-09-12): Prompt hero tiles on phones —
+   2 columns 480-760px, single column below 480px, [path] tall. */
+@media (max-width: 760px) {
+  .v2p-heroes { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .v2p-hero { aspect-ratio: auto; min-height: 140px; padding: 14px;
+    border-radius: 20px; }
+}
+@media (max-width: 480px) {
+  .v2p-heroes { grid-template-columns: 1fr; }
+}

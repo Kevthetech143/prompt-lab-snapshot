@@ -79,8 +79,7 @@
   background-size: 200% 100%; animation: shimmer 1.3s ease-in-out infinite;
   border: 3px solid #e2dcc6;
 }
-/* snapshot: dropped keyframes animation */
-
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 
 /* ── empty state ─────────────────────────────────────────────────── */
 .empty-state {
@@ -141,8 +140,7 @@ nav.tabs .navlink:hover { background: #eef4e3; color: var(--navy); }
    different position/shape). Follows the app-shell convention: a fixed
    top bar for identity + mode, a fixed left rail for section nav, and
    a content area that owns everything else (Gmail/Linear/Notion style). */
-/* snapshot: unwrapped media query: media (min-width: 900px) */
-
+@media (min-width: 900px) {
   nav.tabs {
     position: fixed; left: 0; top: var(--shell-top);
     width: var(--shell-nav); height: calc(100vh - var(--shell-top));
@@ -165,7 +163,7 @@ nav.tabs .navlink:hover { background: #eef4e3; color: var(--navy); }
   nav.tabs .navlink:hover { background: #eef4e3; color: var(--navy); }
   main.tab { margin-left: var(--shell-nav); }
   .pagehead { padding-left: 0; }
-
+}
 
 .burger {
   margin-left: auto; width: 46px; height: 40px; border-radius: 12px; cursor: pointer;
@@ -210,8 +208,11 @@ nav.tabs .navlink:hover { background: #eef4e3; color: var(--navy); }
   box-shadow: 0 0 0 0 rgba(26,107,77,.6); animation: livepulse 2s infinite;
 }
 .livechip.sandbox .dot { background: #9a5620; animation: none; }
-/* snapshot: dropped keyframes animation */
-
+@keyframes livepulse {
+  0%   { box-shadow: 0 0 0 0 rgba(26,107,77,.5); }
+  70%  { box-shadow: 0 0 0 6px rgba(26,107,77,0); }
+  100% { box-shadow: 0 0 0 0 rgba(26,107,77,0); }
+}
 
 .fieldtop { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
 .fieldtop h2 { margin: 0; font-size: 25px; }
@@ -426,8 +427,7 @@ button.step {
 .busbox.drive { transform: translateX(30px); }
 .wheel { transform-origin: center; transform-box: fill-box; }
 .busbox.drive .wheel { animation: spin .55s linear 2; }
-/* snapshot: dropped keyframes animation */
-
+@keyframes spin { to { transform: rotate(360deg); } }
 
 .stopzone {
   position: absolute; left: 154px; right: 4px; bottom: 8px; top: 4px;
@@ -477,20 +477,20 @@ button.step {
 .guy.walk { animation: stroll .9s ease-in-out forwards; }
 .guy.walk .lg1 { animation: kick .2s ease-in-out 4 alternate; }
 .guy.walk .lg2 { animation: kick .2s ease-in-out 4 alternate-reverse; }
-/* snapshot: dropped keyframes animation */
-
-/* snapshot: dropped keyframes animation */
-
+@keyframes kick { from { transform: rotate(-18deg); } to { transform: rotate(18deg); } }
+@keyframes stroll {
+  0%   { transform: translateX(0); opacity: 1; }
+  70%  { transform: translateX(-88px) translateY(-2px); opacity: 1; }
+  100% { transform: translateX(-118px) scale(.45); opacity: 0; }
+}
 .guy.idle .body { animation: bob 2.6s ease-in-out infinite; }
-/* snapshot: dropped keyframes animation */
-
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
 .guy.dim { opacity: .32; }
 .guy.wig { animation: wig .45s; }
-/* snapshot: dropped keyframes animation */
-
+@keyframes wig { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-8deg); }
+                 60% { transform: rotate(8deg); } }
 .guy[hidden]d { animation: land .45s cubic-bezier(.3,1.7,.5,1); }
-/* snapshot: dropped keyframes animation */
-
+@keyframes land { 0% { transform: scale(.55); } 60% { transform: scale(1.1); } 100% { transform: none; } }
 
 /* a parent looks like a little stack of cards, and says how many are inside */
 /* two pretend cards peeking out behind the real one, sized to the BODY so they
@@ -593,8 +593,7 @@ button.step {
 .guybot:hover, .guybot.over { border-color: var(--navy); background: #eef6dd; }
 .guybot.lit { background: #ddf3c8; }
 .guybot.lit svg { animation: nod .5s ease; }
-/* snapshot: dropped keyframes animation */
-
+@keyframes nod { 0%,100% { transform: translateY(0); } 45% { transform: translateY(-7px); } }
 .guybot svg { width: 62px; height: 62px; display: block; margin: 0 auto;
               transition: width .25s, height .25s; }
 .guybot.big { border-color: var(--botink); background: var(--botwash); }
@@ -727,8 +726,7 @@ p.lede { margin: 6px 0 20px; font-size: 18px; color: var(--navy-2); max-width: 6
 .pop { background: var(--cream); border: 5px solid var(--navy); border-radius: 26px;
        width: min(580px, 100%); max-height: 88vh; overflow-y: auto; padding: 20px 24px;
        box-shadow: 0 10px 0 rgba(34,49,74,.25); animation: pin .2s cubic-bezier(.3,1.6,.5,1); }
-/* snapshot: dropped keyframes animation */
-
+@keyframes pin { from { transform: scale(.9); opacity: 0; } to { transform: none; opacity: 1; } }
 .pop h3 { font-family: var(--hand); font-size: 29px; margin: 0;
           display: flex; align-items: center; gap: 12px; }
 .pop h3 svg { width: 40px; height: 40px; flex: none; }
@@ -780,8 +778,7 @@ body.nerd .nerdonly.inline { display: inline; }
          transition: transform .3s cubic-bezier(.3,1.5,.5,1); pointer-events: none; }
 .toast.on { transform: translate(-50%, 0); }
 
-/* snapshot: dropped media query block: media (max-width: 1080px) */
-
+@media (max-width: 1080px) { .hero-in { grid-template-columns: 1fr; } }
 
 /* the envelope: the locked turn-carriers, boxed together on the always bus */
 .envelope { display: inline-flex; flex-wrap: wrap; align-items: flex-end; gap: 6px;

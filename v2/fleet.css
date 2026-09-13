@@ -5,10 +5,9 @@
  * System font; monospace for numbers/dates. No white or light cards. */
 
 /* three hero tiles: reuse kit.css .v2h-hero grain/gradient; stay 3-across */
-/* snapshot: unwrapped media query: media (min-width: 1024px) */
-
+@media (min-width: 1024px) {
   .fleet-heroes { grid-template-columns: repeat(3, 1fr); }
-
+}
 
 /* bot table: one rounded dark panel, thin dividers, hovered row lighter */
 .fleet-panel { background: #1c1c1e; border-radius: 22px; overflow: hidden; }
@@ -73,5 +72,8 @@ a.v2-rowlink.fleet .v2-bar.grow i { display: block; height: 100%;
 .v2-drawer .v2-quiet { color: #9ca3af; }
 .v2-drawer .v2-quiet:hover { color: #ffffff; }
 
-/* snapshot: dropped media query block: media (max-width: 640px) */
-
+@media (max-width: 640px) {
+  a.v2-rowlink.fleet { flex-wrap: wrap; row-gap: 10px; padding: 14px 14px; }
+  .fl-cost { margin-left: auto; }
+  a.v2-rowlink.fleet .v2-bar { width: 72px; }
+}
