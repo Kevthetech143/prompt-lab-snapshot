@@ -19178,7 +19178,7 @@
           "kind": "child_card",
           "shows_on_this_model": true,
           "tag": null,
-          "text": "MOST USED — last 14 days (Sep 01 to Sep 12)",
+          "text": "MOST USED — last 14 days (Sep 01 to Sep 13)",
           "title": "MOST USED — last 14 days",
           "tokens": 10
         },
@@ -19206,7 +19206,7 @@
           "kind": "child_card",
           "shows_on_this_model": true,
           "tag": null,
-          "text": "Top tool I run: Bash — 3125.",
+          "text": "Top tool I run: Bash — 3429.",
           "title": "Top tool I run: Bash —",
           "tokens": 7
         },
@@ -19220,7 +19220,7 @@
           "kind": "child_card",
           "shows_on_this_model": true,
           "tag": null,
-          "text": "Top helper I spawn: general-purpose — 406.",
+          "text": "Top helper I spawn: general-purpose — 416.",
           "title": "Top helper I spawn: general-purpose —",
           "tokens": 10
         },
@@ -19234,7 +19234,7 @@
           "kind": "child_card",
           "shows_on_this_model": true,
           "tag": null,
-          "text": "Top command I run: cat — 628.",
+          "text": "Top command I run: cat — 673.",
           "title": "Top command I run: cat —",
           "tokens": 7
         },

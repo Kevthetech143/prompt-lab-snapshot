@@ -1,9 +1,11 @@
 /* ────────────────────────────────────────────────────────────────
- * Muse dark panels — Prompt page (task sitepage-prompt-131800).
+ * Muse dark panels — Prompt page (task decks-004500).
  * Page-only stylesheet, linked from /v2/prompt only. Never edit kit.css.
- * Palette (matches Home): bg #0e0e0f, panel #1c1c1e, pill/tile #2c2c2e,
- * ONE blue #2b7de9, text white / gray #9ca3af. System font; monospace for
- * numbers, dates, times. No white or light cards anywhere on the page.
+ * Palette (today's kit.css tokens): bg #0b0b0c, panel #161618,
+ * panel-2 #1f1f22, text #f5f5f7, muted #8e8e93, ONE blue #2f7cf6.
+ * Deck layer colors: Global blue #2f7cf6->#1b4fb3,
+ * Per-bot role purple #8b5cf6->#5b2fb3, Reasoning teal #2dd4bf->#0f766e.
+ * System font; monospace for caps stats. No white or light cards anywhere.
  * ──────────────────────────────────────────────────────────────── */
 
 /* bot picker: ONE full-width pill strip (ref-07 search-pill shape) */
@@ -26,37 +28,122 @@ a.v2p-settings { display: inline-block; margin: 12px 6px 0; color: #9ca3af;
   font-size: 14px; text-decoration: none; }
 a.v2p-settings:hover { color: #ffffff; text-decoration: underline; }
 
-/* layer hero tiles: grainy two-tone gradient tiles, exactly like Home's
-   .v2h-hero (self-contained here so the page never depends on kit.css:
-   the acceptance height test renders with kit.css only) */
-.v2p-hero { position: relative; display: flex; flex-direction: column;
-  justify-content: space-between; aspect-ratio: 1 / 1; border-radius: 26px;
-  padding: 20px; overflow: hidden; color: #ffffff;
-  background: linear-gradient(135deg, var(--g1), var(--g2)); }
-.v2p-hero::after { content: ""; position: absolute; inset: 0;
-  border-radius: inherit;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
-  opacity: 0.8; mix-blend-mode: overlay; pointer-events: none; }
-.v2p-hero-text, .v2p-hero-foot { position: relative; z-index: 1; display: flex; }
-.v2p-hero-text { flex-direction: column; align-items: flex-start; }
-.v2p-hero-foot { align-items: flex-end; justify-content: space-between; }
-.v2p-hero-title { font-size: clamp(19px, 1.4vw + 14px, 27px); font-weight: 800;
-  letter-spacing: -0.015em; line-height: 1.1; }
-.v2p-hero-sub { display: block; margin-top: 7px; font-size: 11.5px;
-  letter-spacing: 0.07em; line-height: 1.55; opacity: 0.95;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
-.v2p-hero-date { font-size: 13px; opacity: 0.88;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
-.v2p-hero-ic { display: inline-flex; opacity: 0.92; }
-.v2p-hero-ic svg { width: 27px; height: 27px; }
-.v2p-hero-blue { --g1: #2b7de9; --g2: #173a75; }
-.v2p-hero-violet { --g1: #9d5cf0; --g2: #45207e; }
-.v2p-hero-teal { --g1: #2dd4bf; --g2: #0b5a52; }
-.v2p-heroes { display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: 14px; margin-top: 18px; }
-@media (min-width: 700px) {
-  .v2p-heroes { grid-template-columns: repeat(3, 1fr); }
+/* ── decks: parent cards as stacked hero tiles ── */
+.v2p-decks { display: grid; grid-template-columns: 1fr; gap: 10px;
+  margin-top: 10px; }
+@media (min-width: 760px) {
+  .v2p-decks { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 }
+@media (min-width: 1100px) {
+  .v2p-decks { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+}
+
+.v2p-deck { position: relative; background: none; border: 0;
+  padding: 0 16px 16px 0; text-align: left; cursor: pointer;
+  font: inherit; color: inherit;
+  transition: opacity 200ms ease-out; }
+.v2p-deck:focus-visible { outline: 2px solid #2f7cf6; outline-offset: 4px; }
+.v2p-deck-face { position: relative; z-index: 1; display: block;
+  min-height: 150px; border-radius: 20px; padding: 18px; color: #ffffff;
+  overflow: hidden; background: linear-gradient(135deg, var(--g1), var(--g2));
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out; }
+.v2p-deck-face::after { content: ""; position: absolute; inset: 0;
+  border-radius: inherit; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+  opacity: 0.8; mix-blend-mode: overlay; }
+.v2p-deck-blue { --g1: #2f7cf6; --g2: #1b4fb3; }
+.v2p-deck-violet { --g1: #8b5cf6; --g2: #5b2fb3; }
+.v2p-deck-teal { --g1: #2dd4bf; --g2: #0f766e; }
+
+/* the two shadow cards peeking out bottom-right */
+.v2p-deck-shadows i { position: absolute; border-radius: 20px;
+  background: var(--g2); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45); }
+.v2p-deck-shadows i:first-child { top: 8px; left: 8px; right: 8px; bottom: 8px;
+  opacity: 0.55; }
+.v2p-deck-shadows i:last-child { top: 16px; left: 16px; right: 0; bottom: 0;
+  opacity: 0.3; }
+
+.v2p-deck-badge { position: absolute; top: 12px; right: 12px; z-index: 2;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45); color: #ffffff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+.v2p-deck-title { position: relative; z-index: 1; display: block;
+  font-size: 20px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.15;
+  padding-right: 40px; }
+.v2p-deck-sentence { position: relative; z-index: 1; display: block;
+  margin-top: 8px; font-size: 14px; line-height: 1.45; opacity: 0.92; }
+.v2p-deck-caps { position: relative; z-index: 1; display: block;
+  margin-top: 12px; font-size: 11px; letter-spacing: 0.07em; opacity: 0.85;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+/* back pill on the deck itself, visible only while open */
+.v2p-deck-back { position: relative; z-index: 1; display: none;
+  margin-top: 12px; background: rgba(0, 0, 0, 0.45); color: #ffffff;
+  border-radius: 999px; padding: 8px 20px; font-size: 13px; font-weight: 700; }
+.v2p-deck.open .v2p-deck-back { display: inline-block; }
+
+/* open state: ring in the deck's color, others dim to 40% */
+.v2p-deck.open .v2p-deck-face { transform: scale(1.02);
+  box-shadow: 0 0 0 3px var(--g1), 0 10px 28px rgba(0, 0, 0, 0.5); }
+.v2p-decks.has-open .v2p-deck:not(.open) { opacity: 0.4; }
+
+/* flat card: a non-parent (or childless) card — no shadows, no badge */
+.v2p-deck.v2p-flat { padding: 0; cursor: default; }
+.v2p-deck.v2p-flat .v2p-deck-face { background: #1f1f22; min-height: 0; }
+.v2p-deck.v2p-flat .v2p-deck-face::after { display: none; }
+.v2p-deck.v2p-flat .v2p-deck-title { padding-right: 0; }
+
+/* ── fan-out: the child cards under the deck's row ── */
+.v2p-fanout { grid-column: 1 / -1; }
+.v2p-fanout[hidden] { display: none; }
+.v2p-children { display: grid; grid-template-columns: 1fr; gap: 10px; }
+@media (min-width: 760px) {
+  .v2p-children { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1100px) {
+  .v2p-children { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+}
+@keyframes v2p-fan {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: none; }
+}
+.v2p-fanout.v2p-fan .v2p-children { animation: v2p-fan 200ms ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  .v2p-fanout.v2p-fan .v2p-children { animation: none; }
+  .v2p-deck, .v2p-deck-face { transition: none; }
+}
+
+/* child card: gray panel, accent stripe, one sentence, size bar, cadence pill */
+.child-card { position: relative; background: #1f1f22; border-radius: 16px;
+  padding: 16px 16px 14px 20px; overflow: hidden; }
+.child-card::before { content: ""; position: absolute; left: 0; top: 0;
+  bottom: 0; width: 5px; background: var(--accent, #2f7cf6); }
+.cc-title { margin: 0 0 6px; font-size: 15px; font-weight: 700; color: #f5f5f7; }
+.cc-sentence { margin: 0 0 10px; font-size: 13.5px; line-height: 1.45;
+  color: #c9c9ce; }
+.cc-sentence.cc-empty { color: #8e8e93; font-style: italic; }
+.cc-size { height: 4px; background: #2c2c2e; border-radius: 999px;
+  margin-bottom: 10px; overflow: hidden; }
+.cc-size span { display: block; height: 100%; background: var(--accent, #2f7cf6);
+  border-radius: 999px; }
+.cc-pill { display: inline-block; background: #2c2c2e; color: #f5f5f7;
+  border-radius: 999px; padding: 4px 12px; font-size: 11.5px; font-weight: 600; }
+.cc-full { margin-top: 10px; }
+.cc-read { display: flex; align-items: center; gap: 6px; cursor: pointer;
+  color: #8e8e93; font-size: 13px; list-style: none; }
+.cc-read::-webkit-details-marker { display: none; }
+.cc-read .v2p-chev { width: 14px; height: 14px; }
+.cc-full[open] .cc-read .v2p-chev { transform: rotate(90deg); }
+.cc-fulltext { margin-top: 8px; font-size: 13px; line-height: 1.5;
+  color: #c9c9ce; white-space: pre-wrap; }
+
+/* back pill: closes the fan-out, at the end of the child grid */
+.v2p-backpill { display: block; margin: 14px auto 4px; background: #2c2c2e;
+  color: #ffffff; border: 0; border-radius: 999px; padding: 10px 28px;
+  font-size: 14px; font-weight: 700; cursor: pointer; }
+.v2p-backpill:hover { background: #3a3a3e; }
+.v2p-backpill:focus-visible { outline: 2px solid #2f7cf6; outline-offset: 2px; }
 
 /* What rides, by bus: section label over ONE panel of chevron rows */
 .v2p-buses { padding: 4px 22px; }
@@ -105,12 +192,13 @@ a.v2p-dclose:hover { color: #ffffff; }
   justify-content: flex-end; }
 
 /* small screens */
-@media (max-width: 560px) {
-  .v2p-heroes { gap: 10px; }
-  .v2p-hero { padding: 14px; border-radius: 20px; }
-  .v2p-hero-sub { font-size: 10px; letter-spacing: 0.05em; }
-  .v2p-hero-ic svg { width: 22px; height: 22px; }
-  .v2p-hero-date { font-size: 11px; }
+@media (max-width: 759px) {
+  .v2p-deck { padding: 0 12px 12px 0; }
+  .v2p-deck-face { min-height: 150px; padding: 16px; border-radius: 18px; }
+  .v2p-deck-shadows i:first-child { top: 6px; left: 6px; right: 6px; bottom: 6px; }
+  .v2p-deck-shadows i:last-child { top: 12px; left: 12px; right: 0; bottom: 0; }
+  .v2p-deck-title { font-size: 18px; }
+  .v2p-backpill { width: 100%; margin: 12px 0 2px; }
   .v2p-bus-row { padding: 13px 0; gap: 10px; }
   .v2p-bus-name { font-size: 14.5px; }
   .v2p-bus-count { font-size: 11.5px; }
@@ -118,15 +206,4 @@ a.v2p-dclose:hover { color: #ffffff; }
   .v2p-card-meta { flex: 1 1 100%; }
   .v2p-drow { flex-wrap: wrap; gap: 6px; }
   .v2p-dmeta { flex: 1 1 100%; }
-}
-
-/* mobile-193800 (2026-09-12): Prompt hero tiles on phones —
-   2 columns 480-760px, single column below 480px, [path] tall. */
-@media (max-width: 760px) {
-  .v2p-heroes { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .v2p-hero { aspect-ratio: auto; min-height: 140px; padding: 14px;
-    border-radius: 20px; }
-}
-@media (max-width: 480px) {
-  .v2p-heroes { grid-template-columns: 1fr; }
 }

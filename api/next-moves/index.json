@@ -1,187 +1,110 @@
 {
-  "generated_at": "2026-09-12T13:00:00-04:00",
+  "generated_at": "2026-09-13T09:21:17-04:00",
   "sections": [
     {
       "ideas": [
         {
           "action": {
-            "bot": "marketplace-helper",
-            "brief": "[text hidden in the public snapshot]",
-            "kind": "recurring"
-          },
-          "body": "[text hidden in the public snapshot]",
-          "created_at": "2026-09-12T09:15:00-04:00",
-          "evidence": [
-            {
-              "bot": "sample",
-              "date": "2026-09-11",
-              "quote": "sample: ID610 has been listed 6 days with zero offers since the price firm reply"
-            }
-          ],
-          "id": "mp-auto-price-drops",
-          "included": [
-            {
-              "detail": "Finds every listing 5+ days with no offers",
-              "label": "Stale listing sweep"
-            },
-            {
-              "detail": "Auto-drafts the 5% drop copy; you approve each one",
-              "label": "New descriptions"
-            }
-          ],
-          "outcome": "[text hidden in the public snapshot]",
-          "status": "new",
-          "tags": [
-            "facebook-marketplace",
-            "pricing",
-            "draft"
-          ],
-          "title": "Let me draft scheduled price drops for your stale listings"
-        },
-        {
-          "action": {
-            "bot": "listing-drafter",
+            "bot": "bot-01",
             "brief": "[text hidden in the public snapshot]",
             "kind": "task"
           },
           "body": "[text hidden in the public snapshot]",
-          "created_at": "2026-09-12T09:40:00-04:00",
+          "created_at": "2026-09-13T09:21:17-04:00",
           "evidence": [
             {
-              "bot": "sample",
-              "date": "2026-09-10",
-              "quote": "sample: bundled charger + [hidden] 2017 sold at $210 asking in under 48 hours"
-            }
-          ],
-          "id": "amz-renewed-bundle",
-          "included": [
-            {
-              "detail": "Matches the 96W charger with a lower-demand [hidden]",
-              "label": "Bundle pairing"
-            },
-            {
-              "detail": "Keeps the bundle at fair-market so it moves in 48 hours",
-              "label": "Price check"
-            }
-          ],
-          "outcome": "[text hidden in the public snapshot]",
-          "status": "new",
-          "tags": [
-            "amazon-renewed",
-            "bundling",
-            "draft"
-          ],
-          "title": "Let me bundle that 96W charger with the older [hidden]"
-        },
-        {
-          "action": {
-            "bot": "listing-drafter",
-            "brief": "[text hidden in the public snapshot]",
-            "kind": "task"
-          },
-          "body": "[text hidden in the public snapshot]",
-          "created_at": "2026-09-12T10:05:00-04:00",
-          "evidence": [
-            {
-              "bot": "sample",
-              "date": "2026-09-11",
+              "bot": "bot-01",
+              "date": "2026-09-12",
               "quote": "[text hidden in the public snapshot]"
             }
           ],
-          "id": "mp-macro-shots",
+          "id": "2026-09-13-loan",
           "included": [
             {
-              "detail": "Scans your active listings for missing macro shots",
-              "label": "Photo audit"
-            },
-            {
-              "detail": "Writes the add-a-photo captions for each listing",
-              "label": "Caption drafts"
+              "detail": "Both loans side by side, plain words",
+              "label": "One page"
             }
           ],
-          "outcome": "[text hidden in the public snapshot]",
-          "status": "seen",
+          "outcome": "A clear yes or no on the Amazon offer, with the cost of saying yes.",
+          "status": "new",
           "tags": [
-            "facebook-marketplace",
-            "photos",
-            "flag"
+            "amazon",
+            "loan"
           ],
-          "title": "Want me to flag listings missing close-up port photos?"
+          "title": "Let me compare the Amazon loan offer with your open Parafin loan first"
         }
       ],
-      "title": "Marketplace & resale"
+      "title": "Money"
     },
     {
       "ideas": [
         {
           "action": {
-            "bot": "reel-planner",
+            "bot": "bot-19",
             "brief": "[text hidden in the public snapshot]",
             "kind": "task"
           },
           "body": "[text hidden in the public snapshot]",
-          "created_at": "2026-09-12T11:20:00-04:00",
+          "created_at": "2026-09-13T09:21:17-04:00",
           "evidence": [
             {
-              "bot": "sample",
-              "date": "2026-09-11",
-              "quote": "sample: you judged the Rome v2 cut excellent and approved daily builds"
-            }
-          ],
-          "id": "reel-rome-series",
-          "included": [
-            {
-              "detail": "Market day in 44 BC, hooks and shot list included",
-              "label": "Episode outline"
+              "bot": "bot-19",
+              "date": "2026-09-12",
+              "quote": "we asked for something and got something totally different"
             },
             {
-              "detail": "Blogger-style narration matched to each beat",
-              "label": "Voiceover notes"
+              "bot": "bot-11",
+              "date": "2026-09-12",
+              "quote": "any chance for improvement point for muse as we go and find these gaps"
             }
           ],
-          "outcome": "[text hidden in the public snapshot]",
+          "id": "2026-09-13-muse-brief",
+          "included": [
+            {
+              "detail": "Reference screenshot and score required in every design brief",
+              "label": "Rule + skill"
+            }
+          ],
+          "outcome": "Fewer redo rounds on design work across the fleet.",
           "status": "new",
           "tags": [
-            "content",
-            "instagram",
-            "storyboard"
+            "muse",
+            "design"
           ],
-          "title": "Let me storyboard the next Rome vlog episode"
+          "title": "Let me make design asks to Muse stop coming back wrong"
         },
         {
           "action": {
-            "bot": "options-watcher",
+            "bot": "bot-07",
             "brief": "[text hidden in the public snapshot]",
             "kind": "recurring"
           },
           "body": "[text hidden in the public snapshot]",
-          "created_at": "2026-09-12T12:30:00-04:00",
+          "created_at": "2026-09-13T09:21:17-04:00",
           "evidence": [
             {
-              "bot": "sample",
-              "date": "2026-09-11",
-              "quote": "sample: you rolled the Friday SPY put at the last minute before the close"
+              "bot": "bot-07",
+              "date": "2026-09-12",
+              "quote": "im actively looking for strategies to make more engaging content"
             }
           ],
-          "id": "wheel-premium-reminder",
+          "id": "2026-09-13-hooks",
           "included": [
             {
-              "detail": "Strikes, premiums and assignment risk laid out in one note",
-              "label": "Friday nudge"
+              "detail": "Weekly 3-hook digest from the reels you shared",
+              "label": "Recurring task"
             }
           ],
-          "outcome": "[text hidden in the public snapshot]",
+          "outcome": "A growing hook library you can reuse on your own videos.",
           "status": "new",
           "tags": [
-            "options-wheel",
-            "reminders",
-            "draft"
+            "content"
           ],
-          "title": "Let me set up Friday premium-collection reminders"
+          "title": "Let me keep a swipe file of the hooks that work in the reels you send"
         }
       ],
-      "title": "Content & capital"
+      "title": "How we work"
     }
   ],
-  "source": "sample"
+  "source": "ideas-daily 2026-09-13"
 }
